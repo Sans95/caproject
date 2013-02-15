@@ -1,0 +1,19 @@
+%h1 Listing evaluation_sheets
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @evaluation_sheets.each do |evaluation_sheet|
+    %tr
+      %td= evaluation_sheet.date_of_receipt
+      %td= evaluation_sheet.residence_detials
+      %td= link_to 'Show', evaluation_sheet
+      %td= link_to 'Edit', edit_evaluation_sheet_path(evaluation_sheet)
+      %td= link_to 'Destroy', evaluation_sheet, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Evaluation sheet', new_evaluation_sheet_path

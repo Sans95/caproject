@@ -1,0 +1,197 @@
+= form_for @evaluation_sheet do |f|
+  - if @evaluation_sheet.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@evaluation_sheet.errors.count, "error")} prohibited this evaluation_sheet from being saved:"
+      %ul
+        - @evaluation_sheet.errors.full_messages.each do |msg|
+          %li= msg
+  = f.label :date_of_receipt, 'Date Of The Receipt Of The File:'       
+  = f.date_select :date_of_receipt, :start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true  
+  %br
+  = f.label :date_of_report, 'Date Of The Report:'       
+  = f.date_select :date_of_report,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br
+  %h2 A. APPLICANT
+  = f.label :app_res_address, 'RESIDENCE ADDRESS:'       
+  = f.text_area :app_res_address, :rows => '5'
+  %br
+  =f.label :app_residence_phone, 'Ph'
+  = f.text_field :app_res_address
+  %br
+  =f.label :app_mobile, 'Mobile'
+  = f.text_field :app_mobile
+  %br
+  =f.label :app_email_id, 'E-Mail Id'
+  = f.text_field :app_email_id
+  %br
+  =f.label :app_office_address, 'OFFICE ADDRESS'
+  = f.text_area :app_office_address,:rows=>'5'
+  %br
+  =f.label :app_office_phone, 'Ph'
+  = f.text_field :app_office_phone
+  %br
+  =f.label :app_designation, 'Design'
+  = f.text_field :app_designation
+  %br
+  =f.label :app_dob, 'Date Of Birth'
+  = f.date_select :app_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br 
+  %h2 CO-APPLICANT
+  = f.label :co_app_res_address, 'RESIDENCE ADDRESS'       
+  = f.text_area :co_app_res_address, :rows => '5'
+  %br
+  = f.label :co_app_residence_phone, 'Ph'
+  = f.text_field :co_app_residence_phone
+  %br
+  = f.label :co_app_mobile, 'Mobile'
+  = f.text_field :co_app_mobile
+  %br
+  = f.label :co_app_relationship, 'Relationship'
+  = f.text_field :co_app_relationship
+  %br
+  = f.label :co_app_office_address, 'OFFICE ADDRESS'
+  = f.text_area :co_app_office_address,:rows=>'5'
+  %br
+  = f.label :co_app_office_phone, 'Ph'
+  = f.text_field :co_app_office_phone
+  %br
+  = f.label :co_app_designation, 'Design'
+  = f.text_field :co_app_designation
+  %br
+  = f.label :co_app_dob, 'Date Of Birth'
+  = f.date_select :co_app_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+
+
+  %h2 B.PERSONAL DETAILS
+  %br
+  = f.label :education_background, 'Education Back Ground'
+  = f.text_field :education_background
+  %br
+  = f.label :family_background, 'Family Back Ground'
+  = f.text_area:family_background,:rows=> 5
+  %br
+
+  %h4 Residence Details
+  = f.label :residence_detials, 'Owned/Rented/Lease'
+  = f.select :residence_detials, [['Owned','owned'], ['Rented','rented'],['Lease','lease']]
+  %br
+  = f.label :residence_since, 'In present residence since'
+  = f.text_field :residence_since
+  %br
+  = f.label :no_of_dependants, 'No of Dependants'
+  = f.text_field :no_of_dependants
+
+  %h4 In case of Salaried
+  = f.label :years_in_current_company, 'Years in Current Company'
+  = f.text_field :years_in_current_company
+  %br
+  = f.label :nature_of_business_activities, 'Nature Of Business Activities'
+  = f.text_area :nature_of_business_activities, :rows => 5
+  %br
+  = f.label :total_experience, 'Total Experience'
+  = f.text_area :total_experience, :rows => 5
+
+  %h2 LOAN DETAILS
+  = f.label :loan_type, 'Loan Type'
+  = f.text_field :loan_type  
+  %br
+  = f.label :loan_requested, 'Loan Requested'
+  = f.text_field :loan_requested
+  %br
+  = f.label :loan_eligibility, 'Loan Eligibility'
+  = f.text_field :loan_eligibility
+  %br
+  = f.label :tenor, 'Tenor'
+  = f.text_field :tenor
+  %br
+  = f.label :ROI, 'ROI'
+  = f.text_field :ROI  
+
+  %h2 IN CASE OF SELF EMPLOYED
+  %br
+  = f.label :personal_discussion_by, 'Personal Discussion By:'
+  = f.text_field :personal_discussion_by  
+  %br
+  = f.label :name_of_business_org, 'Name Of Business Organisation'
+  = f.text_field :name_of_business_org  
+  %br
+  = f.label :nature_of_business, 'Nature Of Business'
+  = f.text_field :nature_of_business  
+  %br
+  = f.label :years_in_the_current_business, 'Years in The Current Business'
+  = f.text_field :years_in_the_current_business  
+  %br
+  = f.label :no_of_partners_or_directors, 'No Of Partners/Directors'
+  = f.text_field :no_of_partners_or_directors  
+  %br
+  = f.label :turnover_of_the_company, 'Turnover of The Company'
+  = f.text_field :turnover_of_the_company              
+  %br
+  %h4 Office Premises
+  = f.label :office_premises, 'Rent/Own/Lease'
+  = f.select :office_premises, [['Rent','rent'],['Own','own'], ['Lease','lease']] 
+  %br
+  = f.label :main_clients, 'Main Clients'
+  = f.text_field :main_clients 
+  %br
+  = f.label :comments_on_mode_of_sales, 'Comments on Mode of Sales, Collection Cycle and Margins'
+  = f.text_area :comments_on_mode_of_sales, :rows => 5
+  %h2 D. Assets
+  %br
+  = f.label :liabilities, 'Liabilities'
+  = f.text_field :liabilities 
+  %p With Corporation Bank
+  = f.text_field :with_corporation_bank_1 
+  = f.text_field :with_corporation_bank_2 
+  %p Other Banks
+  = f.text_field :other_banks_1 
+  = f.text_field :other_banks_2
+
+  %h2 E.Income Details (Per Month):
+  = f.label :Particulars, 'Particulars'
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.label :Applicant, 'Applicant'
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.label :Co_Applicant, 'Co-Applicant'
+  %br
+  =f.label :Income_from_Business, 'Income from Business'
+  = f.text_field :app_income_from_business 
+  = f.text_field :co_app_income_from_business
+  %br
+  =f.label :Salary, 'Salary(Net)'
+  = f.text_field :app_salary 
+  = f.text_field :co_app_salary
+  %br
+  =f.label :Rental_Income, 'Rental Income'
+  = f.text_field :app_rental_income 
+  = f.text_field :co_app_rental_income
+  %br
+  =f.label :Other_Source_of_Income, 'Other Source of Income'
+  = f.text_field :app_other_source_income 
+  = f.text_field :co_app_other_source_income
+  %br
+  =f.label :Total_Income, 'Total Income'
+  = f.text_field :app_total_income 
+  = f.text_field :co_app_total_income
+  %br
+  =f.label :House_Hold_Expense, 'House Hold Expense'
+  = f.text_field :app_house_hold_expense 
+  = f.text_field :co_app_house_hold_expense
+  %br
+  =f.label :Disposable_Income, 'Disposable Income'
+  = f.text_field :app_disposable_income 
+  = f.text_field :co_app_disposable_income
+  %h2 F.PROPERTY DETAILS
+  = f.label :property_address, 'ADDRESS'
+  = f.text_area :property_address, :rows => 5
+  %br
+  = f.label :date_of_site_visit, 'Date Of Site Visit'
+  = f.date_select :date_of_site_visit,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br
+  = f.label :person_visited, 'Person Visited'
+  = f.text_field :person_visited
+ 
+
+
+  .actions
+    = f.submit 'Save'

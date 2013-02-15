@@ -1,0 +1,4 @@
+class AddPartnersToEvaluationSheet < ActiveRecord::Migration
+  def change
+  end
+end
