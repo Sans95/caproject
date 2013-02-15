@@ -208,7 +208,119 @@
   %br
   = f.label :occupation_status, 'Occupation Status'
   = f.text_field :occupation_status
-
-
+  %br
+  = f.label :area_of_land_or_flat, 'Area of Land/Flat'
+  = f.text_field :area_of_land_or_flat
+  %br
+  = f.label :cost_of_land_or_flat, 'Cost of Land/Flat'
+  = f.text_field :cost_of_land_or_flat
+  %br
+  = f.label :cost_of_construction, 'Cost of Construction'
+  = f.text_field :cost_of_construction
+  %br
+  = f.label :total_cost_of_property, 'Total Cost of Property'
+  = f.text_field :total_cost_of_property
+  %br
+  = f.label :date_completion, 'Date Completion'
+  = f.date_select :date_completion,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br
+  = f.label :land_mark, 'Land Mark'
+  = f.text_field :land_mark
+  %br
+  = f.label :observations, 'Observations'
+  = f.text_area :observations, :rows => 5
+  %br
+  = f.label :end_use, 'End Use'
+  = f.text_area :end_use, :rows => 5
+  
+  %h2 In Case Of Builders
+  = f.label :established_since,' Established Since'
+  = f.text_field :established_since
+  %br
+  = f.label :no_of_projects_executed_so_far, 'No of projects executed so far'
+  = f.text_field :no_of_projects_executed_so_far
+  %br
+  = f.label :no_of_flats_sold, 'No of Flats Sold'
+  = f.text_field :no_of_flats_sold
+  %br
+  = f.label :no_of_flats_constructed, 'No of Flats Constructed'
+  = f.text_field :no_of_flats_constructed
+  %br
+  = f.label :enquiries_made, 'Enquiries made'       
+  = f.text_area :enquiries_made, :rows => '5'
+  %h2 Details of Verification Carried out
+  = f.label :Particulars, 'Particulars'
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.label :Applicant, 'Applicant'
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.label :Co_Applicant, 'Co-Applicant1'
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.label :Co_Applicant, 'Guarantor/Co-Applicant2'
+  
+  %br
+  =f.label :app_residence_physical, 'Residence(Physical)'
+  = f.text_field :app_residence_physical 
+  = f.text_field :co_app1_residence_physical
+  = f.text_field :co_app2_residence_physical
+  %br
+  =f.label :app_business_physical, 'Business(Physical)'
+  = f.text_field :app_business_physical 
+  = f.text_field :co_app1_business_physical
+  = f.text_field :co_app2_business_physical
+  %br
+  %h4 Telephone Verification:
+  =f.label :app_telephone_verify_residence, 'Residence:'
+  = f.text_field :app_telephone_verify_residence
+  = f.text_field :co_app1_phone_verify_residence
+  = f.text_field :co_app2_telephone_verify_residence
+  %br
+  =f.label :app_telephone_verify_office, 'Office:'
+  = f.text_field :app_telephone_verify_office
+  = f.text_field :co_app1_phone_verify_office
+  = f.text_field :co_app2_telephone_verify_office
+  %br
+  =f.label :app_doc_verified_original, 'Documents Verified (Original)'
+  = f.text_field :app_doc_verified_original
+  = f.text_field :co_app1_doc_verified_original
+  = f.text_field :co_app2_doc_verified_original
+  %br
+  =f.label :app_dob_signature_proof, 'DOB & Signature Proof:'
+  = f.text_field :app_dob_signature_proof
+  = f.text_field :co_app1_dob_signature_proof
+  = f.text_field :co_app2_dob_signature_proof
+  %br
+  =f.label :app_id_proof, 'ID Proof:'
+  = f.text_field :app_id_proof
+  = f.text_field :co_app1_id_proof
+  = f.text_field :co_app2_id_proof
+  %br
+  =f.label :app_pay_slips, 'Pay Slips/Financials'
+  = f.text_field :app_pay_slips
+  = f.text_field :co_app1_pay_slips
+  = f.text_field :co_app2_pay_slips
+  %br
+  =f.label :app_bank_statement, 'Bank Statement'
+  = f.text_field :app_bank_statement
+  = f.text_field :co_app1_bank_statement
+  = f.text_field :co_app2_bank_statement
+  %br
+  =f.label :app_IT_return, 'Form 16 IT Return'
+  = f.text_field :app_IT_return
+  = f.text_field :co_app1_IT_return
+  = f.text_field :co_app2_IT_return
+  %br
+  =f.label :app_ITR_check_status, 'ITR Check Status'
+  = f.text_field :app_ITR_check_status
+  = f.text_field :co_app1_ITR_check_status
+  = f.text_field :co_app2_ITR_check_status
+  %br
+  %h3 Particulars of References made: At least two references shall be obtained to confirm the identification of the Applicant:
+  = f.label :app_remarks, 'Remarks'
+  = f.text_area :app_remarks, :rows => 10
+  %br
+  =f.label :date, 'Date'
+  = f.date_select :date,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  
+ 
   .actions
     = f.submit 'Save'
