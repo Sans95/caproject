@@ -1,0 +1,46 @@
+= form_for @site_inspection do |f|
+  - if @site_inspection.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@site_inspection.errors.count, "error")} prohibited this site_inspection from being saved:"
+      %ul
+        - @site_inspection.errors.full_messages.each do |msg|
+          %li= msg
+  = f.label :branch, 'BRANCH:'       
+  = f.text_field :branch
+  %br
+  =f.label :name ,'CUSTOMER NAME: '
+  = f.text_field :name
+  %br
+  =f.label :address, 'ADDRESS(SITE):'
+  = f.text_area :address,:rows=>5
+  %br
+  =f.label :phone, 'TEL NO:'
+  = f.text_field :phone
+  %br
+  =f.label :date_site_visit, 'Date of Site Visit:'
+  = f.date_select :date_site_visit,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br
+  =f.label :verifier_name, 'Name of the Verifier:'
+  = f.text_field :verifier_name
+  %br
+  =f.label :contact_person, 'Contact Person/Designation:'
+  = f.text_field :contact_person
+  = f.text_field :designation
+  %br
+  =f.label :landmark, 'Land Mark'
+  = f.text_field :landmark
+  %br
+  =f.label :remarks, 'Remarks'
+  = f.text_area :remarks,:rows=>10
+  %br
+  =f.label :verifier_name2, 'Verifier Name:'
+  = f.text_field :verifier_name2
+  %br
+  =f.label :date_of_verification, 'Date of Verification:'
+  = f.date_select :date_of_verification,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br
+  =f.label :date, 'Date:'
+  = f.date_select :date,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+
+  .actions
+    = f.submit 'Save'

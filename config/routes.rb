@@ -1,5 +1,8 @@
 CA::Application.routes.draw do
   
+  resources :site_inspections
+
+
   resources :telephone_verifications
   resources :evaluation_sheets
 

@@ -1,0 +1,17 @@
+%h1 Listing site_inspections
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @site_inspections.each do |site_inspection|
+    %tr
+      %td= link_to 'Show', site_inspection
+      %td= link_to 'Edit', edit_site_inspection_path(site_inspection)
+      %td= link_to 'Destroy', site_inspection, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Site inspection', new_site_inspection_path
