@@ -136,6 +136,21 @@
   %br
   = f.label :comments_on_mode_of_sales, 'Comments on Mode of Sales, Collection Cycle and Margins'
   = f.text_area :comments_on_mode_of_sales, :rows => 5
+
+  %h4 Existing Loan Details(Secured & Unsecured Loans)
+  #loan_detail
+    = f.fields_for :loan_details do |loan_detail|
+      = render "/evaluation_sheets/loan_detail_field", {:f => loan_detail}  
+  .add-more
+    = link_to_add_fields 'Add More Existing Loan Details', f, :loan_details, "/evaluation_sheets/loan_detail_field",'loan_detail'
+
+  %h4 Credit Card Details
+  #credit_card
+    = f.fields_for :credit_cards do |credit_card|
+      = render "/evaluation_sheets/credit_card_field", {:f => credit_card}  
+  .add-more
+    = link_to_add_fields 'Add More Credit Card Details', f, :credit_cards, "/evaluation_sheets/credit_card_field",'credit_card'
+
   %h2 D. Assets
   %br
   = f.label :liabilities, 'Liabilities'

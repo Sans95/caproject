@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require twitter/bootstrap
+
+
+
+
+function add_fields(div_id, association, content) {  
+	var new_id = new Date().getTime();  
+	var regexp = new RegExp("new_" + association, "g");  
+  $('#'+div_id).append(content.replace(regexp, new_id));
+}  
+
