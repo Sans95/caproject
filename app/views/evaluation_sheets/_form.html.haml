@@ -190,7 +190,24 @@
   %br
   = f.label :person_visited, 'Person Visited'
   = f.text_field :person_visited
- 
+  %h4 Type of Locality
+  = f.label :type_of_locality, 'Residential/Commercial/Industrial/Agricultural'
+  = f.select :type_of_locality, [['Residential','Residential'],['Commercial','Commercial'], ['Industrial','Industrial'],['Agricultural','Agricultural']] 
+  %br
+  = f.label :neighborhood_confirmation, 'Neighborhood Confirmation'
+  = f.text_field :neighborhood_confirmation
+  %br
+  = f.label :total_no_of_floors_building, 'Total No.Of Floors in bldg'
+  = f.text_field :total_no_of_floors_building
+  %br
+  = f.label :is_the_property_ready, 'Is the Property Ready'
+  = f.text_field :is_the_property_ready
+  %br
+  = f.label :year_of_construction, 'Year of Construction'
+  = f.text_field :year_of_construction
+  %br
+  = f.label :occupation_status, 'Occupation Status'
+  = f.text_field :occupation_status
 
 
   .actions
