@@ -1,6 +1,369 @@
 %p#notice= notice
+  
+%p  
+  %b DATE OF RECEIPT OF THE FILE:
+  = @evaluation_sheet.date_of_receipt 
+  %br
+%p  
+  %b DATE OF THE REPORT:
+  = @evaluation_sheet.date_of_report
 
+%h2 A.APPLICANT  
+%p  
+  %b RESIDENCE ADDRESS:
+  = @evaluation_sheet.app_res_address
+  
+%p  
+  %b Ph:
+  = @evaluation_sheet.app_residence_phone
+  
+%p 
+  %b Mobile:
+  = @evaluation_sheet.app_mobile
+      
+%p  
+  %b E-Mail Id:
+  = @evaluation_sheet.app_email_id    
+  
+%p  
+  %b OFFICE ADDRESS:
+  = @evaluation_sheet.app_office_address 
+  
+%p  
+  %b Ph:
+  = @evaluation_sheet.app_office_phone 
+  
+%p  
+  %b Design:
+  = @evaluation_sheet.app_designation 
+        
+%p  
+  %b Date Of Birth:
+  = @evaluation_sheet.app_dob
 
+%h2 CO-APPLICANT
+%p  
+  %b RESIDENCE ADDRESS:
+  = @evaluation_sheet.co_app_res_address
+  
+%p  
+  %b Ph:
+  = @evaluation_sheet.co_app_residence_phone
+  
+%p 
+  %b Mobile:
+  = @evaluation_sheet.co_app_mobile
+      
+%p  
+  %b Relationship:
+  = @evaluation_sheet.co_app_relationship   
+  
+%p  
+  %b OFFICE ADDRESS:
+  = @evaluation_sheet.co_app_office_address 
+  
+%p  
+  %b Ph:
+  = @evaluation_sheet.co_app_office_phone 
+  
+%p  
+  %b Design:
+  = @evaluation_sheet.co_app_designation
+        
+%p  
+  %b Date Of Birth:
+  = @evaluation_sheet.co_app_dob
+
+%h2 B.PERSONAL DETAILS
+%p  
+  %b Education Back Ground:
+  = @evaluation_sheet.education_background
+  
+%p  
+  %b Family Back Ground:
+  = @evaluation_sheet.family_background
+
+%h5 Residence Details  
+%p  
+  %b Owned/Rented/Lease:
+  = @evaluation_sheet.residence_detials
+  
+%p  
+  %b In present residence since:
+  = @evaluation_sheet.residence_since
+  
+%p  
+  %b No of Dependants:
+  = @evaluation_sheet.no_of_dependants
+  
+%p  
+  %b Years in Current Company:
+  = @evaluation_sheet.years_in_current_company        
+  
+%p  
+  %b Nature Of Business Activities:
+  = @evaluation_sheet.nature_of_business_activities  
+  
+%p  
+  %b Total Experience:
+  = @evaluation_sheet.total_experience  
+
+%h2 LOAN DETAILS  
+%p  
+  %b Loan Type:
+  = @evaluation_sheet.loan_type
+  
+%p  
+  %b Loan Requested:
+  = @evaluation_sheet.loan_requested
+  
+%p  
+  %b Loan Eligibility:
+  = @evaluation_sheet.loan_eligibility
+  
+%p  
+  %b Tenor:
+  = @evaluation_sheet.tenor
+  
+%p  
+  %b ROI:
+  = @evaluation_sheet.ROI
+  
+%h2 IN CASE OF SELF EMPLOYED
+%p  
+  %b Personal Discussion By:
+  = @evaluation_sheet.personal_discussion_by
+  
+%p  
+  %b Name Of Business Organisation:
+  = @evaluation_sheet.name_of_business_org 
+  
+%p  
+  %b Nature Of Business:
+  = @evaluation_sheet.nature_of_business 
+  
+%p  
+  %b Years in The Current Business:
+  = @evaluation_sheet.years_in_the_current_business
+  
+%p  
+  %b No Of Partners/Directors:
+  = @evaluation_sheet.no_of_partners_or_directors
+  
+%p  
+  %b Turnover of The Company:
+  = @evaluation_sheet.turnover_of_the_company
+
+%h5 Office Premises  
+%p  
+  %b Rent/Own/Lease:
+  = @evaluation_sheet.office_premises
+  
+%p  
+  %b Employee Details:
+  = @evaluation_sheet.employee_details                     
+        
+%p  
+  %b Main Clients:
+  = @evaluation_sheet.main_clients 
+  
+%p  
+  %b Comments on Mode of Sales, Collection Cycle and Margins:
+  = @evaluation_sheet.comments_on_mode_of_sales
+  
+!--------------------------------------loan details -------------------------!
+
+%h2 D.Assets
+%p  
+  %b Liabilities:
+  = @evaluation_sheet.liabilities 
+  
+%p  
+  %b With Corporation Bank
+  = @evaluation_sheet.with_corporation_bank_1 
+  = @evaluation_sheet.with_corporation_bank_2  
+  
+%p  
+  %b Other Banks:
+  = @evaluation_sheet.other_banks_1 
+  = @evaluation_sheet.other_banks_2           
+  
+  
+%h2 E.Income Details (Per Month):  
+%p  
+  %b Particulars:  
+  %h6 Income From Business
+  %h6 Salary(Net)
+  %h6 Rental Income
+  %h6 Other Source of Income
+  %h6 Total Income
+  %h6 House Hold Expense
+  %h6 Disposable Income
+ 
+  %b Applicant
+  = @evaluation_sheet.app_income_from_business  
+  = @evaluation_sheet.app_salary
+  = @evaluation_sheet.app_rental_income 
+  = @evaluation_sheet.app_other_source_income 
+  = @evaluation_sheet.app_total_income 
+  = @evaluation_sheet.app_house_hold_expense 
+  = @evaluation_sheet.app_disposable_income
+
+  %b Co-Applicant
+  = @evaluation_sheet.co_app_income_from_business  
+  = @evaluation_sheet.co_app_salary
+  = @evaluation_sheet.co_app_rental_income 
+  = @evaluation_sheet.co_app_other_source_income 
+  = @evaluation_sheet.co_app_total_income 
+  = @evaluation_sheet.co_app_house_hold_expense 
+  = @evaluation_sheet.co_app_disposable_income  
+  
+%h2 F.PROPERTY DETAILS  
+%p  
+  %b ADDRESS:
+  = @evaluation_sheet.property_address 
+
+%p  
+  %b Date Of Site Visit:
+  = @evaluation_sheet.date_of_site_visit
+  
+%p  
+  %b Person Visited:
+  = @evaluation_sheet.person_visited 
+ 
+%h6 Type of Locality  
+%p  
+  %b Residential/Commercial/Industrial/Agricultural:
+  = @evaluation_sheet.type_of_locality 
+  
+%p  
+  %b Neighborhood Confirmation:
+  = @evaluation_sheet.neighborhood_confirmation 
+  
+%p  
+  %b Total No.Of Floors in bldg
+  = @evaluation_sheet.total_no_of_floors_building
+  
+%p  
+  %b Is the Property Ready ?
+  = @evaluation_sheet.is_the_property_ready
+  
+%p  
+  %b Year of Construction
+  = @evaluation_sheet.year_of_construction
+  
+%p  
+  %b Area of Land/Flat
+  = @evaluation_sheet.area_of_land_or_flat
+  
+%p  
+  %b Cost of Land/Flat
+  = @evaluation_sheet.cost_of_land_or_flat 
+  
+%p  
+  %b Cost of Construction
+  = @evaluation_sheet.cost_of_construction
+  
+%p  
+  %b Total Cost of Property
+  = @evaluation_sheet.total_cost_of_property
+  
+%p  
+  %b Date Completion
+  = @evaluation_sheet.date_completion
+  
+%p  
+  %b Land Mark
+  = @evaluation_sheet.land_mark
+  
+%p  
+  %b Observations
+  = @evaluation_sheet.observations
+  
+%p  
+  %b End Use
+  = @evaluation_sheet.end_use 
+         
+%h2 In Case of Builders
+%p  
+  %b Established Since
+  = @evaluation_sheet.established_since
+%p  
+  %b No of projects executed so far
+  = @evaluation_sheet.no_of_projects_executed_so_far 
+%p  
+  %b No of Flats Sold
+  = @evaluation_sheet.no_of_flats_sold
+                           
+%p  
+  %b No of Flats Constructed
+  = @evaluation_sheet.no_of_flats_constructed
+                               
+%p  
+  %b Enquiries made
+  = @evaluation_sheet.enquiries_made 
+  
+%p
+%h2 Details of Verification Carried out:         
+%p  
+  %b Particulars:  
+  %h6 Residence(Physical)
+  %h6 Business(Physical)
+  %h4 Telephone Verification:
+  %h6 Residence:
+  %h6 Office:
+  %h6 Documents Verified (Original)
+  %h6 DOB & Signature Proof:
+  %h6 ID Proof:
+  %h6 Pay Slips/Financials
+  %h6 Bank Statement:
+  %h6 Form 16 IT Return
+  %h6 ITR Check Status:
+  
+  %b Applicant
+  = @evaluation_sheet.app_residence_physical 
+  = @evaluation_sheet.app_business_physical
+  = @evaluation_sheet.app_telephone_verify_residence 
+  = @evaluation_sheet.app_telephone_verify_office 
+  = @evaluation_sheet.app_doc_verified_original
+  = @evaluation_sheet.app_dob_signature_proof 
+  = @evaluation_sheet.app_id_proof
+  = @evaluation_sheet.app_pay_slips 
+  = @evaluation_sheet.app_bank_statement
+  = @evaluation_sheet.app_IT_return
+  = @evaluation_sheet.app_ITR_check_status
+  
+  %b Co-Applicant1
+  = @evaluation_sheet.co_app1_residence_physical 
+  = @evaluation_sheet.co_app1_business_physical
+  = @evaluation_sheet.co_app1_phone_verify_residence 
+  = @evaluation_sheet.co_app1_phone_verify_office 
+  = @evaluation_sheet.co_app1_doc_verified_original
+  = @evaluation_sheet.co_app1_dob_signature_proof 
+  = @evaluation_sheet.co_app1_id_proof
+  = @evaluation_sheet.co_app1_pay_slips 
+  = @evaluation_sheet.co_app1_bank_statement
+  = @evaluation_sheet.co_app1_IT_return
+  = @evaluation_sheet.co_app1_ITR_check_status
+  
+  %b CO-Applicant2/Guarantor
+  = @evaluation_sheet.co_app2_residence_physical 
+  = @evaluation_sheet.co_app2_business_physical
+  = @evaluation_sheet.co_app2_telephone_verify_residence 
+  = @evaluation_sheet.co_app2_telephone_verify_office 
+  = @evaluation_sheet.co_app2_doc_verified_original
+  = @evaluation_sheet.co_app2_dob_signature_proof 
+  = @evaluation_sheet.co_app2_id_proof
+  = @evaluation_sheet.co_app2_pay_slips 
+  = @evaluation_sheet.co_app2_bank_statement
+  = @evaluation_sheet.co_app2_IT_return
+  = @evaluation_sheet.co_app2_ITR_check_status    
+
+%h3 Particulars of References made: At least two references shall be obtained to confirm the identification of the Applicant:
+%p  
+  %b Remarks:
+  = @evaluation_sheet.app_remarks
+  
 = link_to 'Edit', edit_evaluation_sheet_path(@evaluation_sheet)
 \|
 = link_to 'Back', evaluation_sheets_path

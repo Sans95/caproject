@@ -1,0 +1,18 @@
+%h1 Listing telephone_verifications
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @telephone_verifications.each do |telephone_verification|
+    %tr
+      %td= telephone_verification.borrowers_name
+      %td= link_to 'Show', telephone_verification
+      %td= link_to 'Edit', edit_telephone_verification_path(telephone_verification)
+      %td= link_to 'Destroy', telephone_verification, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Telephone verification', new_telephone_verification_path

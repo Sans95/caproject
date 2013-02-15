@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+ 
+ .applicant_1 {
+    width:980px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    height:auto;
+    margin-bottom:5px;
+    border:none;
+    /*border-bottom: 1px solid black;*/
+}
+.applicant_1 h2{margin-left:5px;font-size::17px;text-decoration:underline;}

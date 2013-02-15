@@ -5,10 +5,10 @@
       %ul
         - @evaluation_sheet.errors.full_messages.each do |msg|
           %li= msg
-  = f.label :date_of_receipt, 'Date Of The Receipt Of The File:'       
+  = f.label :date_of_receipt, 'DATE OF RECEIPT OF THE FILE:'       
   = f.date_select :date_of_receipt, :start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true  
   %br
-  = f.label :date_of_report, 'Date Of The Report:'       
+  = f.label :date_of_report, 'DATE OF THE REPORT:'       
   = f.date_select :date_of_report,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
   %br
   %h2 A. APPLICANT
@@ -16,7 +16,7 @@
   = f.text_area :app_res_address, :rows => '5'
   %br
   =f.label :app_residence_phone, 'Ph'
-  = f.text_field :app_res_address
+  = f.text_field :app_residence_phone
   %br
   =f.label :app_mobile, 'Mobile'
   = f.text_field :app_mobile
@@ -130,6 +130,9 @@
   %h4 Office Premises
   = f.label :office_premises, 'Rent/Own/Lease'
   = f.select :office_premises, [['Rent','rent'],['Own','own'], ['Lease','lease']] 
+  %br
+  = f.label :employee_details , 'Employee Details:'
+  = f.text_field :employee_details    
   %br
   = f.label :main_clients, 'Main Clients'
   = f.text_field :main_clients 

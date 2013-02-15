@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b BORROWERS NAME:
+  = @telephone_verification.borrowers_name 
+
+= link_to 'Edit', edit_telephone_verification_path(@telephone_verification)
+\|
+= link_to 'Back', telephone_verifications_path
