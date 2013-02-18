@@ -1,5 +1,5 @@
 %p#notice= notice
-  
+   
 %p  
   %b DATE OF RECEIPT OF THE FILE:
   = @evaluation_sheet.date_of_receipt 
@@ -8,38 +8,69 @@
   %b DATE OF THE REPORT:
   = @evaluation_sheet.date_of_report
 
-%h2 A.APPLICANT  
-%p  
-  %b RESIDENCE ADDRESS:
-  = @evaluation_sheet.app_res_address
+%table.table.table-bordered
+  %thead
+    %tr
+      %th A.APPLICANT
+
+  %tbody
+    %tr
+      %td RESIDENCE ADDRESS
+      %td OFFICE ADDRESS
+     
   
-%p  
-  %b Ph:
-  = @evaluation_sheet.app_residence_phone
+
+
+    %tr
+      %td{:rowspan => "2"} &nbsp; 
+      %td{:rowspan => "2"} &nbsp;
+    %tr
+    %tr 
+      %td{:rowspan => "2"} Ph:
+      %td{:rowspan => "2"} Ph:
+    %tr
+    %tr
+      %td Mobile:
+      %td Design:
+    %tr
+      %td E-Mail Id:
+      %td
+    %tr
+      %td{:colspan => "2"} Date of Birth:
+
+%br
+%table.table.table-bordered
+  %thead
+    %tr
+      %th CO-APPLICANT
+
+  %tbody
+    %tr
+      %td RESIDENCE ADDRESS
+      %td OFFICE ADDRESS
+     
   
-%p 
-  %b Mobile:
-  = @evaluation_sheet.app_mobile
+
+
+    %tr
+      %td{:rowspan => "2"} &nbsp; 
+      %td{:rowspan => "2"} &nbsp;
+    %tr
+    %tr 
+      %td{:rowspan => "2"} Ph:
+      %td{:rowspan => "2"} Ph:
+    %tr
+    %tr
+      %td Mobile:
+      %td Design:
+    %tr
+      %td E-Mail Id:
+      %td
+    %tr
+      %td{:colspan => "2"} Date of Birth:
       
-%p  
-  %b E-Mail Id:
-  = @evaluation_sheet.app_email_id    
-  
-%p  
-  %b OFFICE ADDRESS:
-  = @evaluation_sheet.app_office_address 
-  
-%p  
-  %b Ph:
-  = @evaluation_sheet.app_office_phone 
-  
-%p  
-  %b Design:
-  = @evaluation_sheet.app_designation 
-        
-%p  
-  %b Date Of Birth:
-  = @evaluation_sheet.app_dob
+      
+      
 
 %h2 CO-APPLICANT
 %p  
@@ -367,3 +398,7 @@
 = link_to 'Edit', edit_evaluation_sheet_path(@evaluation_sheet)
 \|
 = link_to 'Back', evaluation_sheets_path
+
+
+
+   
