@@ -1,0 +1,17 @@
+%h1 Listing residence_verification_reports
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @residence_verification_reports.each do |residence_verification_report|
+    %tr
+      %td= link_to 'Show', residence_verification_report
+      %td= link_to 'Edit', edit_residence_verification_report_path(residence_verification_report)
+      %td= link_to 'Destroy', residence_verification_report, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Residence verification report', new_residence_verification_report_path

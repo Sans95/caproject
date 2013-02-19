@@ -1,0 +1,278 @@
+= form_for @residence_verification_report do |f|
+  - if @residence_verification_report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@residence_verification_report.errors.count, "error")} prohibited this residence_verification_report from being saved:"
+      %ul
+        - @residence_verification_report.errors.full_messages.each do |msg|
+          %li= msg
+  =f.label :name, 'NAME:'
+  =f.text_field :name
+  %br
+  =f.label :address, 'ADDRESS:'
+  =f.text_area :address,:rows=>5
+  %table{:style => "width:700px;"}
+    %tr
+      %td
+        =f.check_box :home_loan
+        HOME LOAN
+      %td
+        =f.check_box :plot_loan
+        PLOT LOAN
+      %td  
+        =f.check_box :others
+        =f.label :others, 'OTHERS'
+        .hide
+          =f.text_field :other_loan
+ 
+    %tr
+      %td
+        =f.radio_button :salaried,:value =>'SALARIED'
+        =f.label :salaried,'SALARIED'
+      %td
+        =f.radio_button :salaried,:value =>'SELF EMPLOYED'
+        =f.label :salaried,'SELF EMPLOYED'
+      %td
+        =f.radio_button :salaried,:value =>'OTHERS'
+        =f.label :salaried,'OTHERS'
+        =f.text_field :other_sal
+  =f.label :loan_amount, 'Loan Amount:Rs.'
+  =f.text_field :loan_amount
+   
+  %h4 FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
+  
+  =f.label :locality,'Locality:'
+  =f.check_box :locality
+  =f.label :locality,'Slum Area'
+  =f.check_box :locality
+  =f.label :locality,'Chawl Area'
+  %br
+  %br
+  
+  =f.label :surroundings,'Surroundings:'
+  =f.check_box :surroundings
+  =f.label :surroundings,'Underdeveloped Area'
+  =f.check_box :surroundings
+  =f.label :surroundings,'Big Housing Complex'
+  =f.check_box :surroundings
+  =f.label :surroundings,'Residential Building'
+  =f.check_box :surroundings
+  =f.label :surroundings,'Commercial Buildings'
+  =f.check_box :surroundings
+  =f.label :surroundings,'Small/Mediam Size Shops'
+  
+  %br
+  %br
+  
+  =f.label :accessibility,'Accessibility:'
+  =f.check_box :accessibility
+  =f.label :accessibility,'Easy to Locate and Acsess'
+  =f.check_box :accessibility
+  =f.label :accessibility,'Difficult to Locate'
+  =f.check_box :accessibility
+  =f.label :accessibility,'Untraceable'
+  =f.check_box :accessibility
+  =f.label :accessibility,'Gulli (Verry Narrow Road-Less Than 6Ft.Wide)'
+  %br
+  %br
+  
+  =f.label :entrance_motorable,'Entrance Motorable'
+  =f.radio_button :entrance_motorable,:value =>'Yes'
+  =f.label :entrance_motorable,'Yes'
+  =f.radio_button :entrance_motorable,:value =>'No'
+  =f.label :entrance_motorable,'No'
+  %br
+  
+  =f.label :add_conf, 'Is The Address Confirmed'
+  =f.radio_button :add_conf,:value =>'Yes'
+  =f.label :add_conf,'Yes'
+  =f.radio_button :add_conf,:value =>'No'
+  =f.label :add_conf,'No'
+  %br
+  
+  
+  =f.label :correct_pin, 'Correct Pincode'
+  = f.text_field :correct_pin
+  %br
+  =f.label :prominent_landmark , 'Prominent Landmark '
+  = f.text_field :prominent_landmark 
+  %br
+  
+  =f.label :type_off, 'Type of:'
+  =f.radio_button :type_off,:value =>'Chawl'
+  =f.label :type_off, 'Chawl'
+  =f.radio_button :type_off,:value =>'Slum'
+  =f.label :type_off, 'Slum'
+  =f.radio_button :type_off,:value =>'Flat'
+  =f.label :type_off, 'Flat'
+  =f.radio_button :type_off,:value =>'Hotel/Lodge/Mansion'
+  =f.label :type_off, 'Hotel/Lodge/Mansion'
+  %br
+  %br
+  
+  =f.label :accomodation, 'Accomodation:'
+  =f.radio_button :accomodation,:value =>'Small Independent House'
+  =f.label :accomodation, 'Small Independent House'
+  =f.radio_button :accomodation,:value =>'Large Independent House'
+  =f.label :accomodation, 'Large Independent House'
+  =f.radio_button :accomodation,:value =>'Hostel'
+  =f.label :accomodation, 'Hostel'
+  =f.radio_button :accomodation,:value =>'Bachelor/Shared Accomodation'
+  =f.label :accomodation, 'Bachelor/Shared Accomodation'
+  =f.radio_button :accomodation,:value =>'Small Unit Within a House (Garage/Varsati etc)'
+  =f.label :accomodation, 'Small Unit Within a House (Garage/Varsati etc)'
+  =f.radio_button :accomodation,:value =>'Block'
+  =f.label :accomodation, 'Block'
+  =f.radio_button :accomodation,:value =>'Others(PI .Specify)'
+  =f.label :accomodation, 'Others(PI .Specify)'
+  = f.text_field :accom_others
+  %br
+  %br
+  
+  =f.label :no_of_stories, 'Residence:'
+  =f.label :no_of_stories, 'No of Stories'
+  = f.text_field :no_of_stories
+  =f.label :watchman, 'Watchman:'
+  =f.radio_button :watchman,:value =>'Yes'
+  =f.label :watchman, 'Yes'
+  =f.radio_button :watchman,:value =>'No'
+  =f.label :watchman, 'No'
+  %br
+  
+  =f.label :lift, 'Lift'
+  =f.radio_button :lift,:value =>'Yes'
+  =f.label :lift, 'Yes'
+  =f.radio_button :lift,:value =>'No'
+  =f.label :lift, 'No'
+  %br
+  
+  =f.label :security_board, 'Security Board'
+  =f.radio_button :security_board,:value =>'Yes'
+  =f.label :security_board, 'Yes'
+  =f.radio_button :security_board,:value =>'No'
+  =f.label :security_board, 'No'
+  %br
+  
+  =f.label :app_name_outside_door, 'Applicant name outside door/gate'
+  =f.radio_button :app_name_outside_door,:value =>'Yes'
+  =f.label :app_name_outside_door, 'Yes'
+  =f.radio_button :app_name_outside_door,:value =>'No'
+  =f.label :app_name_outside_door, 'No'
+  %br
+  
+  =f.label :cars_seen_in_around_res, 'No of Cars Seen in and around residence'
+  = f.text_field :cars_seen_in_around_res
+  =f.label :make, 'make'
+  = f.text_field :make
+  %br
+  
+  %br
+  %br
+  =f.label :ext_appearence_of_build, 'External appearance of the building/society'
+  =f.radio_button :ext_appearence_of_build,:value => 'Excellent'
+  =f.label :ext_appearence_of_build, 'Excellent'
+  =f.radio_button :ext_appearence_of_build,:value =>'Good'
+  =f.label :ext_appearence_of_build, 'Good'
+  =f.radio_button :ext_appearence_of_build,:value =>'Fair'
+  =f.label :ext_appearence_of_build, 'Fair'
+  =f.radio_button :ext_appearence_of_build,:value =>'Poor'
+  =f.label :ext_appearence_of_build, 'Poor'
+  %br
+  %br
+  =f.label :car_park, 'Seperate Car Parking Slot'
+  =f.radio_button :car_park,:value =>'Yes'
+  =f.label :car_park, 'Yes'
+  =f.radio_button :security_board,:value =>'No'
+  =f.label :car_park, 'No'
+  %br
+  %br
+  =f.label :entry_into_res_permited, 'Entry Into Residence Permited'
+  =f.radio_button :entry_into_res_permited,:value =>'Yes'
+  =f.label :entry_into_res_permited, 'Yes'
+  =f.radio_button :entry_into_res_permited,:value =>'No'
+  =f.label :entry_into_res_permited, 'No'
+  =f.radio_button :entry_into_res_permited,:value =>'Door Locked'
+  =f.label :entry_into_res_permited, 'Door Locked'
+  %br
+  %br
+  
+  =f.label :person_cont_name, 'Person Contacted (Name):'
+  = f.text_field :person_cont_name
+  %br
+  
+  =f.label :relationship, 'Relationship:'
+  = f.text_field :relationship
+  %br
+  
+  =f.label :res_internal_furni, 'Residence Internal furnishing'
+  =f.radio_button :res_internal_furni,:value =>'Plush Interior'
+  =f.label :res_internal_furni, 'Plush Interior'
+  =f.radio_button :res_internal_furni,:value =>'Good/Fair Interior'
+  =f.label :res_internal_furni, 'Good/Fair Interior'
+  =f.radio_button :res_internal_furni,:value =>'Poor Interior'
+  =f.label :res_internal_furni, 'Poor Interior'
+  %br
+  %br
+  %h4 Assets seen
+  = check_box_tag("residence_verification_report[assets_seen][wallunit]","1", ((@residence_verification_report.assets_seen['wallunit'] == "1")? true : false) )
+  wallunit
+  = check_box_tag("residence_verification_report[assets_seen][sofaset]","1", ((@residence_verification_report.assets_seen['sofaset'] == "1")? true : false) )
+  sofaset
+  = check_box_tag("residence_verification_report[assets_seen][carpet]","1", ((@residence_verification_report.assets_seen['carpet'] == "1")? true : false) )
+  carpet
+  = check_box_tag("residence_verification_report[assets_seen][fridge]","1", ((@residence_verification_report.assets_seen['fridge'] == "1")? true : false) )
+  fridge
+  = check_box_tag("residence_verification_report[assets_seen][phone]","1", ((@residence_verification_report.assets_seen['phone'] == "1")? true : false) )
+  phone
+  = check_box_tag("residence_verification_report[assets_seen][tv]","1", ((@residence_verification_report.assets_seen['tv'] == "1")? true : false) )
+  tv
+  = check_box_tag("residence_verification_report[assets_seen][dining_table]","1", ((@residence_verification_report.assets_seen['dining_table'] == "1")? true : false) )
+  dining_table
+  = check_box_tag("residence_verification_report[assets_seen][music_system]","1", ((@residence_verification_report.assets_seen['music_system'] == "1")? true : false) )
+  music System
+  = check_box_tag("residence_verification_report[assets_seen][others]","1", ((@residence_verification_report.assets_seen['others'] == "1")? true : false) )
+  Others
+  %br
+  %br
+  
+  =f.label :res_appear_to_be,'Does the residence appear to be'
+  =f.check_box :res_appear_to_be
+  =f.label :res_appear_to_be, 'Single Room Unit'
+  =f.check_box  :res_appear_to_be
+  =f.label :res_appear_to_be, '04 BR Unit'
+  =f.check_box  :res_appear_to_be
+  =f.label :res_appear_to_be, 'More than 1 Bed Room'
+  %br
+  %br
+  
+  =f.label :appro_size_flat_sqft,'Approximate Size of Flat/House Sq.ft'
+  =f.text_field :appro_size_flat_sqft
+  =f.label :sq_yards,'OR Sq.yards'
+  =f.text_field :sq_yards
+  =f.label :ground,' OR Ground'
+  =f.text_field :ground
+  %br
+  %br
+  
+  =f.label :domestic_help,'Domestic Help Seen'
+  =f.radio_button :domestic_help,:value =>'Yes'
+  =f.label :domestic_help,'Yes'
+  =f.radio_button :domestic_help,:value =>'No'
+  =f.label :domestic_help,'No'
+  %br
+  
+  =f.label :date_1,'Date:'
+  = f.date_select :date_1,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br
+  
+  =f.label:remarks,'Remarks'
+  =f.text_area:remarks,:rows => 5
+  %br
+  
+  
+  =f.label:date_2,'Date:'
+  = f.date_select :date_2,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true  
+  
+   
+  
+  .actions
+    = f.submit 'Save'

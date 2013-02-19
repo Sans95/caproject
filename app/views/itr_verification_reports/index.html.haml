@@ -1,0 +1,17 @@
+%h1 Listing itr_verification_reports
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @itr_verification_reports.each do |itr_verification_report|
+    %tr
+      %td= link_to 'Show', itr_verification_report
+      %td= link_to 'Edit', edit_itr_verification_report_path(itr_verification_report)
+      %td= link_to 'Destroy', itr_verification_report, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Itr verification report', new_itr_verification_report_path

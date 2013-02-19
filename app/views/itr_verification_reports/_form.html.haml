@@ -1,0 +1,81 @@
+= form_for @itr_verification_report do |f|
+  - if @itr_verification_report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@itr_verification_report.errors.count, "error")} prohibited this itr_verification_report from being saved:"
+      %ul
+        - @itr_verification_report.errors.full_messages.each do |msg|
+          %li= msg
+  %h2 ITR VERIFICATION REPORT        
+  = f.label :branch, 'BRANCH:'       
+  = f.text_field :branch
+  %br
+  =f.label :customer_name ,'CUSTOMER NAME: '
+  = f.text_field :customer_name
+  %br
+  =f.label :co_applicant_name, 'CO-APPLICANT NAME:'
+  = f.text_field:co_applicant_name
+  
+  
+  %h4 APPLICANT
+  %h5 AY
+  %h5 AY
+  %h5 AY
+  %h4 CO OBLIGANT
+  %h5 AY
+  %h5 AY
+  %h5 AY
+  %br
+  =f.label :app_acknowledge_no_1 ,'Acknowledgement No'
+  = f.text_field:app_acknowledge_no_1  
+  = f.text_field:app_acknowledge_no_2
+  = f.text_field:app_acknowledge_no_3  
+  %br
+  = f.text_field:co_obligant_acknowledge_no_1  
+  = f.text_field:co_obligant_acknowledge_no_2
+  = f.text_field:co_obligant_acknowledge_no_3 
+  
+  =f.label :app_date_IT_return_no_1 ,'Date of Filling I.T.Return'
+  = f.date_select :app_date_IT_return_no_1 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br  
+  = f.date_select :app_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br
+  = f.date_select :app_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br
+  = f.date_select :co_obligant_date_IT_return_no_1,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %br
+  = f.date_select :co_obligant_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+  %br
+  = f.date_select :co_obligant_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+             
+  =f.label :app_return_income_1,'Returned income (Rs)'
+  = f.text_field:app_return_income_1  
+  = f.text_field:app_return_income_2
+  = f.text_field:app_return_income_3
+  %br
+  = f.text_field:co_obligant_return_income_1
+  = f.text_field:co_obligant_return_income_2
+  = f.text_field:co_obligant_return_income_3
+  
+  =f.label :app_income_tax_1,'Income Tax Paid (Rs)'
+  = f.text_field:app_income_tax_1  
+  = f.text_field:app_income_tax_2
+  = f.text_field:app_income_tax_3
+  %br
+  = f.text_field:co_obligant_income_tax_1
+  = f.text_field:co_obligant_income_tax_2
+  = f.text_field:co_obligant_income_tax_3
+  
+  %br
+  =f.label :remarks,'REMARKS'
+  = f.text_area :remarks,:rows=>5
+        
+  %br
+  =f.label :date,'DATE'
+  = f.date_select :date ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :class => 'span2', :include_blank => true           
+  %br
+  =f.label :place,'PLACE'
+  = f.text_field:place                           
+ 
+                
+  .actions
+    = f.submit 'Save'

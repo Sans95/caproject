@@ -15,5 +15,5 @@
   = f.text_field :date_of_loan,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
 
   = f.label :emi, 'EMI'
-  = f.date_select :emi 
+  = f.text_field :emi 
   

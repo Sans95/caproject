@@ -1,5 +1,44 @@
 %p#notice= notice
-
+%p
+%h2 TELEPHONE VERIFICATION REPORT
+%p
+  %b BRANCH::
+  = @site_inspection.branch
+  %br
+%p
+  %b CUSTOMER NAME:
+  = @site_inspection.name
+%p
+  %b ADDRESS(SITE):
+  = @site_inspection.address
+%p
+  %b TEL NO:
+  = @site_inspection.phone
+%p
+  %b Date of Site Visit:
+  = @site_inspection.date_site_visit
+%p
+  %b Name of the Verifier:
+  = @site_inspection.verifier_name
+%p
+  %b Contact Person/Designation:
+  = @site_inspection.contact_person
+  = @site_inspection.designation
+%p
+  %b Land Mark
+  = @site_inspection.landmark
+%p
+  %b Remarks
+  = @site_inspection.remarks
+%p
+  %b Verifier Name:
+  = @site_inspection.verifier_name2
+%p
+  %b Date of Verification:
+  = @site_inspection.date_of_verification
+%p
+  %b Date:
+  = @site_inspection.date 
 
 = link_to 'Edit', edit_site_inspection_path(@site_inspection)
 \|

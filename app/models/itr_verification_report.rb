@@ -1,0 +1,3 @@
+class ItrVerificationReport < ActiveRecord::Base
+  # attr_accessible :title, :body
+end

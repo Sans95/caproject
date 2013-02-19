@@ -1,5 +1,14 @@
 CA::Application.routes.draw do
   
+  resources :business_verification_reports
+
+
+  resources :residence_verification_reports
+
+
+  resources :itr_verification_reports
+
+
   resources :site_inspections
 
 
