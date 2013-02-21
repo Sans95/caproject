@@ -27,13 +27,13 @@
   %p
   %tr
   %td
-  =radio_button_tag :salaried,checked = false
+  =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SALARIED')?  true : false) 
   %b SALARIED
   %td
-  =radio_button_tag :salaried,checked = false
+  =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
   %b SELF EMPLOYED
   %td
-  =radio_button_tag :salaried,checked = false
+  =check_box_tag 'salaried', "",((@residence_verification_report.salaried =='OTHERS')?  true : false) 
   %b OTHERS
   
 %p
@@ -43,223 +43,335 @@
 %p
   %h4 FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
   
-%p
 %table
   %tr
-  %td
-  %b Locality/ :
-  =check_box_tag 'locality',checked=false
-  %b Slum Area
-  =check_box_tag 'locality',checked=false 
-  %b Chawl Area
+    %th
+      %b Locality/ :
+    %td
+      =check_box_tag 'locality',"",((@residence_verification_report.locality == 'Slum Area')?  true : false) 
+      %b Slum Area
+    %td
+      =check_box_tag 'locality',"",((@residence_verification_report.locality == 'Chawl Area')?  true : false) 
+      %b Chawl Area
   
-%p
-  %b Surroundings :
-  =check_box_tag 'locality',checked=false 
-  %b Underdeveloped Area
-  =check_box_tag 'locality',checked=false 
-  %b Big Housing Complex
-  =check_box_tag 'locality',checked=false 
-  %b Residential Building
-  =check_box_tag 'locality',checked=false 
-  %b Commercial Buildings
-  =check_box_tag 'locality',checked=false 
-  %b Small/Mediam Size Shops
+  %tr
+    %th
+      %b Surroundings :
+    %td
+      =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Underdeveloped Area')?  true : false)
+      %b Underdeveloped Area
+    %td  
+      =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Big Housing Complex')?  true : false)
+      %b Big Housing Complex
+  %tr
+    %th    
+    %td
+      =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Residential Building')?  true : false)
+      %b Residential Building
+    %td
+      =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Commercial Buildings')?  true : false)
+      %b Commercial Buildings
+  %tr
+    %th        
+    %td 
+      =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Small/Mediam Size Shops')?  true : false)
+      %b Small/Mediam Size Shops
   
-%p
-  %b Accessibility :
-  =check_box_tag 'locality',checked=false 
-  %b Easy to Locate and Acsess
-  =check_box_tag 'locality',checked=false  
-  %b Difficult to Locate
-  =check_box_tag 'locality',checked=false 
-  %b Untraceable
-  =check_box_tag 'locality',checked=false 
-  %b Gulli (Verry Narrow Road-Less Than 6Ft.Wide)
+  %tr
+    %th
+      %b Accessibility :
+    %td
+      =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Easy to Locate and Access')?  true : false)
+      %b Easy to Locate and Access
+  %tr
+    %th      
+    %td
+      =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Difficult to Locate')?  true : false)
+      %b Difficult to Locate   
+    %td
+      =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Untraceable')?  true : false)
+      %b Untraceable
+  %tr
+    %th      
+    %td   
+      =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Gulli (Verry Narrow Road-Less Than 6Ft.Wide)')?  true : false)
+      %b Gulli (Verry Narrow Road-Less Than 6Ft.Wide)
   
-%p
-  %b Entrance Motorable :
-  =radio_button_tag :entrance_motorable,checked = false
-  %b Yes
-  =radio_button_tag :entrance_motorable,checked = false
-  %b No
+  %tr
+    %th
+      %b Is the entrance motorable :
+    %td
+    %td  
+      =check_box_tag 'entrance_motorable',"", (@residence_verification_report.entrance_motorable)
+      %b Yes
+    %td  
+      =check_box_tag 'entrance_motorable',"", !(@residence_verification_report.entrance_motorable)
+      %b No
+  %tr
+    %th
+      %b Is The Address Confirmed :
+    %td
+    %td    
+      =check_box_tag 'add_conf',"", (@residence_verification_report.add_conf)
+      %b Yes
+    %td  
+      =check_box_tag 'add_conf',"", !(@residence_verification_report.add_conf)
+      %b No
   
-%p
-  %b Is The Address Confirmed :
-  =radio_button_tag :add_conf,checked = false
-  %b Yes
-  =radio_button_tag :add_conf,checked = false
-  %b No
+  %tr
+    %th
+      %b Correct Pincode:
+    %td   
+      = @residence_verification_report.correct_pin
+      %b Prominent Landmark: 
+    %td  
+      = @residence_verification_report.prominent_landmark 
   
-%p
-  %b Correct Pincode
-  = @residence_verification_report.correct_pin
-  %b Prominent Landmark 
-  = @residence_verification_report.prominent_landmark 
+  %tr
+    %th
+      %b Type of
+    %td  
+      =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Chawl')?  true : false)
+      %b Chawl
+    %td   
+      =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Slum')?  true : false)
+      %b Slum
+    %td   
+      =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Flat')?  true : false)
+      %b Flat  
+    %td
+      =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Hotel/Lodge/Mansion')?  true : false)
+      %b Hotel/Lodge/Mansion
   
-%p
-  %b Type of:
-  =check_box_tag 'type_off',checked=false 
-  %b Chawl
-  =check_box_tag 'type_off',checked=false  
-  %b Slum
-  =check_box_tag 'type_off',checked=false 
-  %b Flat
-  =check_box_tag 'type_off',checked=false 
-  %b Hotel/Lodge/Mansion
+  %tr
+    %th
+      %b Accomodation:
+    %td  
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Small Independent House')?  true : false)
+      %b Small Independent House
+    %td  
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Large Independent House')?  true : false)
+      %b Large Independent House
+  %tr
+    %th
+    %td    
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Hostel')?  true : false)
+      %b Hostel
+    %td  
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Bachelor/Shared Accomodation')?  true : false)
+      %b Bachelor/Shared Accomodation
+  %tr
+    %th
+    %td    
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Small Unit Within a House (Garage/Varsati etc)')?  true : false)
+      %b Small Unit Within a House (Garage/Varsati etc)
+  %tr
+    %th
+    %td  
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Block')?  true : false)
+      %b Block
+    %td  
+      =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Others(PI.Specify)')?  true : false)
+      %b Others(PI.Specify)
+    %td  
+      = @residence_verification_report.accom_others
   
-%p
-  %b Accomodation:
-  =check_box_tag 'accomodation',checked=false 
-  %b Small Independent House
-  =check_box_tag 'accomodation',checked=false  
-  %b Large Independent House
-  =check_box_tag 'accomodation',checked=false 
-  %b Hostel
-  =check_box_tag 'accomodation',checked=false 
-  %b Bachelor/Shared Accomodation
-  =check_box_tag 'accomodation',checked=false 
-  %b Small Unit Within a House (Garage/Varsati etc)
-  =check_box_tag 'accomodation',checked=false 
-  %b Block
-  =check_box_tag 'accomodation',checked=false 
-  %b Others(PI.Specify)
-  = @residence_verification_report.accom_others
+  %tr
+    %th
+      %b Residence:
+    %td  
+      %b No of Stories:
+      = @residence_verification_report.no_of_stories
+    %td  
+      %b Watchman:
+      =check_box_tag 'watchman',"", (@residence_verification_report.watchman)
+      %b Yes
+      =check_box_tag 'watchman',"", !(@residence_verification_report.watchman)
+      %b No
+    %td  
+      %b Lift:
+      =check_box_tag 'lift',"", (@residence_verification_report.lift)
+      %b Yes
+      =check_box_tag 'lift',"", !(@residence_verification_report.lift)
+      %b No
   
-%p
-  %h5 Residence:
-  %b No of Stories
-  = @residence_verification_report.no_of_stories
-  %b Watchman
-  =radio_button_tag :watchman,checked = false
-  %b Yes
-  =radio_button_tag :watchman,checked = false
-  %b No
-  %b Lift
-  =radio_button_tag :lift,checked = false
-  %b Yes
-  =radio_button_tag :lift,checked = false
-  %b No
+  %tr
+    %th
+    %td
+      %b Security Board:
+    %td  
+      =check_box_tag 'security_board',"", (@residence_verification_report.security_board)
+      %b Yes
+      =check_box_tag 'security_board',"", !(@residence_verification_report.security_board)
+      %b No 
   
-%p
-  %b Security Board
-  =radio_button_tag :security_board,checked = false
-  %b Yes
-  =radio_button_tag :security_board,checked = false
-  %b No 
+  %tr
+    %th
+    %td
+      %b Applicant name outside door/gate
+    %td  
+      =check_box_tag 'app_name_outside_door',"", (@residence_verification_report.app_name_outside_door)
+      %b Yes
+      =check_box_tag 'app_name_outside_door',"", !(@residence_verification_report.app_name_outside_door)
+      %b No   
   
-%p
-  %b Applicant name outside door/gate
-  =radio_button_tag :app_name_outside_door,checked = false
-  %b Yes
-  =radio_button_tag :app_name_outside_door,checked = false
-  %b No   
+  %tr
+    %th
+    %td
+      %b No of Cars Seen in and around residence
+    %td  
+      = @residence_verification_report.cars_seen_in_around_res
+      %b make
+      = @residence_verification_report.make
   
-%p
-  %b No of Cars Seen in and around residence
-  = @residence_verification_report.cars_seen_in_around_res
-  %b make
-  = @residence_verification_report.make
+  %tr
+    %th
+    %td
+      %b External appearance of the building/society
+  %tr
+    %th
+    %td
+      =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Excellent')?  true : false)
+      %b Excellent 
+    %td  
+      =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Good')?  true : false)
+      %b Good
+      =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Fair')?  true : false)
+      %b Fair 
+      =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Fair')?  true : false)
+      %b Poor
   
-%p
-  %b External appearance of the building/society\
-  =radio_button_tag :ext_appearence_of_build,checked = false
-  %b Excellent 
-  =radio_button_tag :ext_appearence_of_build,checked = false 
-  %b Good
-  =radio_button_tag :ext_appearence_of_build,checked = false
-  %b Fair 
-  =radio_button_tag :ext_appearence_of_build,checked = false 
-  %b Poor
-  
-%p 
-  %b Seperate Car Parking Slot
-  =radio_button_tag :car_park,checked = false
-  %b Yes
-  =radio_button_tag :car_park,checked = false
-  %b No
+  %tr
+    %th
+    %td
+      %b Seperate Car Parking Slot
+    %td  
+      =check_box_tag 'car_park',"", (@residence_verification_report.car_park)
+      %b Yes
+      =check_box_tag 'car_park',"", !(@residence_verification_report.car_park)
+      %b No
    
-%p
-  %b Entry Into Residence Permited
-  =radio_button_tag :entry_into_res_permited,checked = false
-  %b Yes
-  =radio_button_tag :entry_into_res_permited,checked = false
-  %b No
-  =radio_button_tag :entry_into_res_permited,checked = false
-  %b Door Locked
+  %tr
+    %th
+    %td
+      %b Entry Into Residence Permited:
+    %td  
+      =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'Yes')?  true : false)
+      %b Yes
+      =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'No')?  true : false)
+      %b No
+      =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'Door Locked')?  true : false)
+      %b Door Locked
   
-%p
-  %b Person Contacted (Name):
-  = @residence_verification_report.person_cont_name  
+  %tr
+    %th
+      %b Person Contacted (Name):
+      = @residence_verification_report.person_cont_name  
   
-%p
-  %b Relationship:
-  = @residence_verification_report.relationship 
+  %tr
+    %th
+      %b Relationship: 
+      = @residence_verification_report.relationship 
   
-%p
-  %b Residence Internal furnishing
-  =radio_button_tag :res_internal_furni,checked = false
-  %b Plush Interior
-  =radio_button_tag :res_internal_furni,checked = false
-  %b Good/Fair Interior
-  =radio_button_tag :res_internal_furni,checked = false
-  %b Poor Interior
+  %tr
+    %th
+      %b Residence Internal furnishing:
+    %td 
+      =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Plush Interior')?  true : false)
+      %b Plush Interior
+      =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Good/Fair Interior')?  true : false)
+      %b Good/Fair Interior
+      =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Poor Interior')?  true : false)
+      %b Poor Interior
   
-%p
-  %h5 Assets seen 
-  =check_box_tag 'assets_seen_wallunit', "", @residence_verification_report.assets_seen['wallunit']
-  %b Wall Unit
-  =check_box_tag 'assets_seen_sofaset', "", @residence_verification_report.assets_seen['sofaset']
-  %b Sofa Set
-  =check_box_tag 'assets_seen_carpet', "", @residence_verification_report.assets_seen['carpet']
-  %b Carpet
-  =check_box_tag 'assets_seen_Fridge', "", @residence_verification_report.assets_seen['Fridge']
-  %b Fridge
-  =check_box_tag 'assets_seen_Phone', "", @residence_verification_report.assets_seen['Phone']
-  %b Phone
-  =check_box_tag 'assets_seen_TV', "", @residence_verification_report.assets_seen['TV']
-  %b TV
-  =check_box_tag 'assets_seen_Dining_Table', "", @residence_verification_report.assets_seen['Dining Table']
-  %b Dining Table
-  =check_box_tag 'assets_seen_Music_System', "", @residence_verification_report.assets_seen['Music System']
-  %b Music System
-  =check_box_tag 'assets_seen_Others', "", @residence_verification_report.assets_seen['Others']
-  %b Others
+  %tr
+    %th
+      %b Assets seen:
+    %td 
+      =check_box_tag 'assets_seen_wallunit', "", @residence_verification_report.assets_seen['wallunit']
+      %b Wall Unit
+      =check_box_tag 'assets_seen_sofaset', "", @residence_verification_report.assets_seen['sofaset']
+      %b Sofa Set
+      =check_box_tag 'assets_seen_carpet', "", @residence_verification_report.assets_seen['carpet']
+      %b Carpet
+  %tr 
+    %th   
+    %td   
+      =check_box_tag 'assets_seen_Fridge', "", @residence_verification_report.assets_seen['Fridge']
+      %b Fridge
+      =check_box_tag 'assets_seen_Phone', "", @residence_verification_report.assets_seen['Phone']
+      %b Phone
+      =check_box_tag 'assets_seen_TV', "", @residence_verification_report.assets_seen['TV']
+      %b TV
+  %tr
+    %th    
+    %td        
+      =check_box_tag 'assets_seen_Dining_Table', "", @residence_verification_report.assets_seen['Dining Table']
+      %b Dining Table
+      =check_box_tag 'assets_seen_Music_System', "", @residence_verification_report.assets_seen['Music System']
+      %b Music System
+      =check_box_tag 'assets_seen_Others', "", @residence_verification_report.assets_seen['Others']
+      %b Others
   
-  %p
-  %h5 Does the residence appear to be
-  =check_box_tag 'res_appear_to_be', "", (@residence_verification_report.res_appear_to_be)
-  %b Single Room Unit
-  =check_box_tag 'res_appear_to_be', "", (@residence_verification_report.res_appear_to_be)
-  %b '04 BR Unit'
-  =check_box_tag 'res_appear_to_be', "", (@residence_verification_report.res_appear_to_be)
-  %b 'More than 1 Bed Room'
+  %tr
+    %th
+      %b Does the residence appear to be:
+    %td 
+      =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == 'Single Room Unit')?  true : false)
+      %b Single Room Unit
+      =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == '04 BR Unit')?  true : false)
+      %b '04 BR Unit'
+  %tr
+    %th
+    %td    
+      =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == 'More than 1 Bed Room')?  true : false)
+      %b 'More than 1 Bed Room'
  
-  %p
-  %b Approximate Size of Flat/House Sq.ft
-  = @residence_verification_report.appro_size_flat_sqft
-  %b OR Sq.yards
-  = @residence_verification_report.sq_yards
-  %b  OR Ground
-  = @residence_verification_report.ground
+  %tr
+    %th
+      %b Approximate Size of Flat/House Sq.ft__________
+      = @residence_verification_report.appro_size_flat_sqft
+    %td  
+      %b OR Sq.yards__________
+    %td  
+      = @residence_verification_report.sq_yards
+  %tr
+    %th
+    %td     
+      %b  OR Ground__________
+  %tr
+    %th
+    %td
+    %td    
+      = @residence_verification_report.ground
   
-  %p
-  %b Domestic Help Seen
-  =radio_button_tag :domestic_help,checked = false
-  %b Yes
-  =radio_button_tag :domestic_help,checked = false
-  %b No
+  %tr
+    %th
+      %b Domestic Help Seen:
+    %td 
+      =check_box_tag 'domestic_help',"", (@residence_verification_report.domestic_help)
+      %b Yes
+      =check_box_tag 'domestic_help',"", !(@residence_verification_report.domestic_help)
+      %b No
   
-  %p
-  %b Date:
-  = @residence_verification_report.date_1
-  
-  %p
-  %b Remarks:
-  = @residence_verification_report.remarks
-  
-  %p
-  %b Date:
+  %tr
+    %th
+      %b Date:
+    %td 
+      = @residence_verification_report.date_1
+ 
+%table    
+  %tr
+    %th
+      %b Remarks:
+    %td
+      = @residence_verification_report.remarks
+
+
+  %tr
+    %th
+      %b Date:
+    %td 
   = @residence_verification_report.date_2
  
 = link_to 'Edit', edit_residence_verification_report_path(@residence_verification_report)

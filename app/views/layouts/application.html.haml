@@ -33,10 +33,10 @@
               = link_to "RESIDENCE VERIFICATION REPORT", residence_verification_reports_path
             %li{:class => ('active' if request.fullpath =~ /business_verification_reports/)}
               = link_to "BUSINESS VERIFICATION REPORT",  business_verification_reports_path
-        .container
-          .content
-            .row
-              .span12
-                = render 'shared/alert'
-                = yield :breadcrumb
-                = yield
+    .container
+      .content
+        .row
+          .span12
+            = render 'shared/alert'
+            = yield :breadcrumb
+            = yield

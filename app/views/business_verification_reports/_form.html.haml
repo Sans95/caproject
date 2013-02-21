@@ -5,6 +5,161 @@
       %ul
         - @business_verification_report.errors.full_messages.each do |msg|
           %li= msg
-
+  %table.table.table-bordered
+    %tr
+      %th NAME:         
+      %td
+        =f.text_field :name
+    %tr
+      %th ADDRESS: 
+      %td
+        =f.text_area :address,:rows=>5
+  %table        
+    %tr
+      %td
+        =f.check_box :home_loan
+        HOME LOAN
+      %td
+      %td
+        =f.check_box :vehicle_loan
+        VEHICLE LOAN
+      %td 
+      %td 
+        =f.check_box :others
+        =f.label :others, 'OTHERS'
+      %td
+        %b (Specify):  
+        =f.text_field :other_loan
+    %tr
+      %td
+        =f.radio_button :salaried, 'SALARIED'
+        SALARIED
+      %td
+      %td
+        =f.radio_button :salaried, 'SELF EMPLOYED'
+        SELF EMPLOYED
+      %td 
+      %td 
+        =f.check_box :others
+        =f.label :others, 'OTHERS'
+      %td
+        %b (Specify):  
+        =f.text_field :other_sal
+    %tr
+      %th Loan Amount:Rs
+      %td{:colspan=>4}
+        =f.text_field :loan_amount 
+  %table.table.table-bordered
+    %tr
+      %th{:colspan=>2} FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION:
+    %tr
+      %th Landmark:
+      %td 
+        =f.text_field:landmark 
+      %td
+        %b Working Hours:
+        =f.text_field:work_hrs
+  %table.table.table-bordered        
+    %tr
+      %th Locality of Office:
+      %td 
+        =f.radio_button :locality_of_off, 'Commericial'
+        Commericial
+      %td 
+        %b (Specify Quality):   
+        =f.text_field:quality_of_off 
+    %tr
+      %th   
+      %td{:colspan=>2}
+        =f.radio_button :locality_of_off,'Industry/Factory/Workshop'
+        Industry/Factory/Workshop
+    %tr
+      %th
+      %td{:colspan=>2}
+        =f.radio_button :locality_of_off,'Small Producation Units'  
+        Small Producation Units  
+    %tr
+      %th
+      %td
+        =f.radio_button :locality_of_off,'Slum Chawl'  
+        Slum Chawl             
+      %td  
+        =f.radio_button :locality_of_off,'Underdeveloped'  
+        Underdeveloped            
+    %tr
+      %th
+      %td
+        =f.radio_button :locality_of_off,'Residential'  
+        Residential             
+      %td  
+        =f.radio_button :locality_of_off,'Residential-cum-Commericial'  
+        Residential-cum-Commericial  
+    %tr
+      %th Describe the building where the office is located:
+      %td
+        =f.radio_button :where_off_loc,'Shop'  
+        Shop
+      %td
+        =f.text_field:quality_of_build 
+        P(osh) (G)ood (A)verage (p)oor
+    %tr
+      %th 
+      %td
+        =f.radio_button :where_off_loc,'Business Centre'  
+        'Business Centre' 
+      %td
+        =f.radio_button :where_off_loc,'Own Residence'  
+        Own Residence
+    %tr
+      %th 
+      %td
+        =f.radio_button :where_off_loc,'Residential Building'  
+        Residential Building 
+      %td
+        =f.radio_button :where_off_loc,'Applicants Co-Owned Building'  
+        Applicants Co-Owned Building
+ 
+  %table.table.table-bordered 
+    %tr
+      %th Describe the type of office:
+      %td 
+        =f.radio_button :type_of_off,'Commericial Office'
+        Commericial Office      
+      %td 
+        =f.radio_button :type_of_off,'Shop'
+        Shop             
+      %td 
+        =f.radio_button :type_of_off,'Poor'
+        Poor
+    %tr
+      %th If business is conducated in own residence is there any seperate area earmarked:
+      %td 
+        =f.radio_button :bus_cond,'Yes'
+        Yes
+      %td 
+        =f.radio_button :bus_cond,'No'
+        No             
+      %td 
+        =f.radio_button :bus_cond,'Not Applicable'
+        Not Applicable
+    %tr
+      %th Company's Name Plate seen outside premises:
+      %td 
+        =f.radio_button :com_name_plate,'Yes'
+        Yes
+      %td{:colspan=>2} 
+        =f.radio_button :com_name_plate,'No'
+        No                    
+    %tr
+      %th Status of premises
+      %td 
+        =f.radio_button :bus_cond,'Yes'
+        Yes
+      %td 
+        =f.radio_button :bus_cond,'No'
+        No             
+      %td 
+        =f.radio_button :bus_cond,'Not Applicable'
+        Not Applicable                      
   .actions
     = f.submit 'Save'

@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap_and_overrides.css.less
  *= require_self
  *= require_tree .
  */
@@ -23,3 +24,8 @@
     /*border-bottom: 1px solid black;*/
 }
 .applicant_1 h2{margin-left:5px;font-size::17px;text-decoration:underline;}
+
+label {
+    display: inline;
+    margin: 10px 0px 0px 0px;
+}
