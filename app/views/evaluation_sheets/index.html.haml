@@ -1,19 +1,41 @@
-%h1 Listing Evaluation Sheets
+%h1 Evaluation Sheets
 
-%table
-  %tr
-    %th
-    %th
-    %th
+.form-search.form-search_factory
+  = form_for @search, :url => evaluation_sheets_path do |f|
+    %table.search_factory
+      %tr
+        %td
+          = f.label :date_of_receipt_greater_than_or_equal_to, "Date Of Receipt Of The File"      
+        %td
+          = f.date_select :date_of_receipt_greater_than_or_equal_to, :include_blank => "true", :class => "span2"
+        %td   
+          = f.label :date_of_report_greater_than_or_equal_to, "Date Of The Report" 
+        %td
+          = f.date_select :date_of_report_greater_than_or_equal_to, :include_blank => "true"
+        %td    
+          = f.submit "Search",:class => "btn btn-inverse"  
+.clearfix  
 
-  - @evaluation_sheets.each do |evaluation_sheet|
-    %tr
-      %td= evaluation_sheet.date_of_receipt
-      %td= evaluation_sheet.residence_detials
-      %td= link_to 'Show', evaluation_sheet
-      %td= link_to 'Edit', edit_evaluation_sheet_path(evaluation_sheet)
-      %td= link_to 'Destroy', evaluation_sheet, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
 
-= link_to 'New Evaluation sheet', new_evaluation_sheet_path
+.section  
+  .section-header.clearfix
+    %h3.left Evaluation Sheet
+    = link_to '<i class="icon-plus-sign"></i> New Evaluation sheet'.html_safe, new_evaluation_sheet_path, class: 'right btn'
+  .section-body
+    %table.table.table-bordered
+      %tr
+        %th Date Of Receipt Of The File
+        %th Date Of The Report
+        %th
+
+      - @evaluation_sheets.each do |evaluation_sheet|
+        %tr
+          %td= evaluation_sheet.date_of_receipt
+          %td= evaluation_sheet.date_of_report
+          %td= link_to 'Show', evaluation_sheet
+          %td= link_to 'Edit', edit_evaluation_sheet_path(evaluation_sheet)
+          %td= link_to 'Destroy', evaluation_sheet, method: :delete, data: { confirm: 'Are you sure?' }  
+          
+          
+= will_paginate(@evaluation_sheets)	               

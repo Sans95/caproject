@@ -5,76 +5,120 @@
       %ul
         - @itr_verification_report.errors.full_messages.each do |msg|
           %li= msg
-  %h2 ITR VERIFICATION REPORT        
-  = f.label :branch, 'BRANCH:'       
-  = f.text_field :branch
-  %br
-  =f.label :customer_name ,'CUSTOMER NAME: '
-  = f.text_field :customer_name
-  %br
-  =f.label :co_applicant_name, 'CO-APPLICANT NAME:'
-  = f.text_field:co_applicant_name
-  
-  
-  %h4 APPLICANT
-  %h5 AY
-  %h5 AY
-  %h5 AY
-  %h4 CO OBLIGANT
-  %h5 AY
-  %h5 AY
-  %h5 AY
-  %br
-  =f.label :app_acknowledge_no_1 ,'Acknowledgement No'
-  = f.text_field:app_acknowledge_no_1  
-  = f.text_field:app_acknowledge_no_2
-  = f.text_field:app_acknowledge_no_3  
-  %br
-  = f.text_field:co_obligant_acknowledge_no_1  
-  = f.text_field:co_obligant_acknowledge_no_2
-  = f.text_field:co_obligant_acknowledge_no_3 
-  
-  =f.label :app_date_IT_return_no_1 ,'Date of Filling I.T.Return'
-  = f.date_select :app_date_IT_return_no_1 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
-  %br  
-  = f.date_select :app_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
-  %br
-  = f.date_select :app_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
-  %br
-  = f.date_select :co_obligant_date_IT_return_no_1,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
-  %br
-  = f.date_select :co_obligant_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
-  %br
-  = f.date_select :co_obligant_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
-             
-  =f.label :app_return_income_1,'Returned income (Rs)'
-  = f.text_field:app_return_income_1  
-  = f.text_field:app_return_income_2
-  = f.text_field:app_return_income_3
-  %br
-  = f.text_field:co_obligant_return_income_1
-  = f.text_field:co_obligant_return_income_2
-  = f.text_field:co_obligant_return_income_3
-  
-  =f.label :app_income_tax_1,'Income Tax Paid (Rs)'
-  = f.text_field:app_income_tax_1  
-  = f.text_field:app_income_tax_2
-  = f.text_field:app_income_tax_3
-  %br
-  = f.text_field:co_obligant_income_tax_1
-  = f.text_field:co_obligant_income_tax_2
-  = f.text_field:co_obligant_income_tax_3
-  
-  %br
-  =f.label :remarks,'REMARKS'
-  = f.text_area :remarks,:rows=>5
+  %table.table.table-bordered
+    %tr
+      %td      
+        =f.label :branch, 'BRANCH:'
+      %td       
+        =f.text_field :branch
+    %tr
+      %td
+        =f.label :customer_name ,'CUSTOMER NAME: '
+      %td  
+        =f.text_field :customer_name
+    %tr
+      %td
+        =f.label :co_applicant_name, 'CO-APPLICANT NAME:'
+      %td  
+        =f.text_field:co_applicant_name
         
-  %br
-  =f.label :date,'DATE'
-  = f.date_select :date ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :class => 'span2', :include_blank => true           
-  %br
-  =f.label :place,'PLACE'
-  = f.text_field:place                           
+  %table.table.table-bordered
+    %tr
+      %th{:rowspan=>2}
+      %td{:colspan=>3}
+        %b APPLICANT
+      %td{:colspan=>3}
+        %b CO-APPLICANT  
+    %tr
+      %td
+        %b AY
+      %td
+        %b AY
+      %td
+        %b AY
+      %td
+        %b AY 
+      %td
+        %b AY
+      %td
+        %b AY
+    %tr
+      %th Acknowledgement No
+      %td
+        =f.text_field:app_acknowledge_no_1
+      %td    
+        =f.text_field:app_acknowledge_no_2
+      %td
+        =f.text_field:app_acknowledge_no_3  
+      %td
+        =f.text_field:co_obligant_acknowledge_no_1
+      %td
+        =f.text_field:co_obligant_acknowledge_no_2
+      %td
+        =f.text_field:co_obligant_acknowledge_no_3
+    %tr
+      %th{:rowspan=>3} Date of Filling I.T.Return
+      %td{:rowspan=>3}
+        =f.date_select :app_date_IT_return_no_1 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+      %td{:rowspan=>3}    
+        =f.date_select :app_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+      %td{:rowspan=>3}
+        =f.date_select :app_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true  
+      %td{:rowspan=>3}     
+        =f.date_select :co_obligant_date_IT_return_no_1 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+      %td{:rowspan=>3}     
+        =f.date_select :co_obligant_date_IT_return_no_2 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+      %td{:rowspan=>3}     
+        =f.date_select :co_obligant_date_IT_return_no_3 ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+        
+  %table.table.table-bordered           
+    %tr
+      %td 
+        %b Returned income (Rs)
+      %td
+        =f.text_field:app_return_income_1
+      %td    
+        =f.text_field:app_return_income_2
+      %td
+        =f.text_field:app_return_income_3  
+      %td
+        =f.text_field:co_obligant_return_income_1
+      %td
+        =f.text_field:co_obligant_return_income_2
+      %td
+        =f.text_field:co_obligant_return_income_3 
+    %tr
+      %td 
+        %b Income Tax Paid (Rs)
+      %td
+        =f.text_field :app_income_tax_1 
+      %td    
+        =f.text_field :app_income_tax_2
+      %td
+        =f.text_field :app_income_tax_3  
+      %td
+        =f.text_field :co_obligant_income_tax_1
+      %td
+        =f.text_field :co_obligant_income_tax_2
+      %td
+        =f.text_field :co_obligant_income_tax_3 
+    %tr      
+      %td
+        %b REMARKS
+      %td{:colspan=>6}  
+        =f.text_area :remarks,:rows=>5
+    %tr   
+      %td
+        %b DATE
+      %td{:colspan=>6} 
+        =f.date_select :date ,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :class => 'span2', :include_blank => true           
+    %tr   
+      %td
+        %b PLACE
+      %td{:colspan=>6} 
+        =f.text_field:place        
+ 
+                            
  
                 
   .actions

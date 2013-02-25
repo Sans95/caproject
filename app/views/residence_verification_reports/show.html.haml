@@ -10,38 +10,36 @@
   = @residence_verification_report.address
   %br
   %table
-  %tr
-  %td
-  =check_box_tag 'home_loan', "", (@residence_verification_report.home_loan)
-  %b HOME LOAN
-  %td
-  =check_box_tag 'plot_loan', "", (@residence_verification_report.plot_loan) 
-  %b PLOT LOAN
-  %td
-  =check_box_tag 'others' , "", (@residence_verification_report.others)
-  %b OTHERS
-  %td
-  %b OTHER LOAN:
-  = @residence_verification_report.other_loan
-  
-  %p
-  %tr
-  %td
-  =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SALARIED')?  true : false) 
-  %b SALARIED
-  %td
-  =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
-  %b SELF EMPLOYED
-  %td
-  =check_box_tag 'salaried', "",((@residence_verification_report.salaried =='OTHERS')?  true : false) 
-  %b OTHERS
-  
-%p
-  %b Loan Amount : Rs.
-  = @residence_verification_report.loan_amount
- 
-%p
-  %h4 FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
+    %tr
+      %td
+        =check_box_tag 'home_loan', "", (@residence_verification_report.home_loan)
+        %b HOME LOAN
+      %td
+        =check_box_tag 'plot_loan', "", (@residence_verification_report.plot_loan) 
+        %b PLOT LOAN
+      %td
+        =check_box_tag 'oth_loan' , "", (@residence_verification_report.oth_loan)
+        %b OTHERS-->
+      %td
+        %b OTHER LOAN:
+        =@residence_verification_report.other_loan
+    %tr
+      %td
+        =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SALARIED')?  true : false) 
+        %b SALARIED
+      %td
+        =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
+      %b SELF EMPLOYED
+      %td{:colspan=>2}
+        =check_box_tag 'salaried', "",((@residence_verification_report.salaried =='OTHERS')?  true : false) 
+        %b OTHERS
+    %tr
+      %td{:colspan=>4}
+        %b Loan Amount : Rs.
+        =@residence_verification_report.loan_amount
+    %tr
+      %td{:colspan=>4}
+        %b FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
   
 %table
   %tr

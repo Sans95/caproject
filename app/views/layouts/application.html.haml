@@ -24,15 +24,15 @@
             %li{:class => ('active' if request.fullpath =~ /evaluation_sheets/)} 
               = link_to "EVALUATION SHEET", evaluation_sheets_path, :class=>"first active"
             %li{:class => ('active' if request.fullpath =~ /telephone_verifications/)}
-              = link_to "TELEPHONE VERIFICATION REPORT", telephone_verifications_path
+              = link_to "TELEPHONE VERIFICATION", telephone_verifications_path
             %li{:class => ('active' if request.fullpath =~ /itr_verification_reports/)}
-              = link_to "ITR VERIFICATION REPORT", itr_verification_reports_path
+              = link_to "ITR VERIFICATION", itr_verification_reports_path
             %li{:class => ('active' if request.fullpath =~ /site_inspections/)}
-              = link_to "SITE INSPECTION REPORT", site_inspections_path
+              = link_to "SITE INSPECTION", site_inspections_path
             %li{:class => ('active' if request.fullpath =~ /residence_verification_reports/)}
-              = link_to "RESIDENCE VERIFICATION REPORT", residence_verification_reports_path
+              = link_to "RESIDENCE VERIFICATION", residence_verification_reports_path
             %li{:class => ('active' if request.fullpath =~ /business_verification_reports/)}
-              = link_to "BUSINESS VERIFICATION REPORT",  business_verification_reports_path
+              = link_to "BUSINESS VERIFICATION",  business_verification_reports_path
     .container
       .content
         .row

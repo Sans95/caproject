@@ -1,6 +1,397 @@
 %p#notice= notice
+%h2 
+%p
+  %b NAME:
+  =@business_verification_report.name
+  %br  
 
-
+%p
+  %b ADDRESS:
+  = @business_verification_report.address
+  %br
+  %table
+    %tr
+      %td
+        =check_box_tag 'home_loan', "", (@business_verification_report.home_loan)
+        HOME LOAN
+      %td
+        =check_box_tag 'vehicle_loan', "", (@business_verification_report.vehicle_loan) 
+        VEHICLE LOAN
+      %td
+        =check_box_tag 'other_loan1', "", (@business_verification_report.other_loan1)
+        OTHERS  
+      %td
+        OTHER LOAN (Specify):
+        =@business_verification_report.other_loan2 
+    %tr
+      %td
+        =check_box_tag 'salaried', "",((@business_verification_report.salaried == 'SALARIED')?  true : false) 
+        SALARIED
+      %td
+        =check_box_tag 'salaried', "",((@business_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
+        SELF EMPLOYED
+      %td
+        =check_box_tag 'salaried', "",((@business_verification_report.salaried =='OTHERS')?  true : false) 
+        OTHERS
+      %td
+        OTHERS(Specify):
+        =@business_verification_report.other_sal 
+    %tr   
+      %td{:colspan=>5}
+        Loan Amount : Rs.
+        =@business_verification_report.loan_amount
+    %tr
+      %td{:colspan=>4}
+        %b FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION:
+    %tr
+      %td 
+        %b Landmark:
+      %td 
+        =@business_verification_report.landmark 
+      %td
+        %b Working Hours:
+      %td
+        =@business_verification_report.work_hrs
+  %table         
+    %tr
+      %th Locality of Office
+      %td
+        %b :
+      %td
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Commericial')?  true : false)
+        Commericial-
+      %td
+        =@business_verification_report.quality_of_off 
+        (P)osh (G)ood (A)verage (P)oor:
+    %tr
+      %th
+      %td   
+      %td{:colspan=>2}
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Industry/Factory/Workshop')?  true : false)   
+        Industry/Factory/Workshop      
+    %tr
+      %th
+      %td   
+      %td{:colspan=>2}
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Small Producation Units')?  true : false)   
+        Small Producation Units    
+    %tr
+      %th
+      %td   
+      %td
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Slum Chawl ')?  true : false)   
+        Slum Chawl             
+      %td
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Underdeveloped')?  true : false)   
+        Underdeveloped
+    %tr
+      %th
+      %td   
+      %td
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Residential')?  true : false)   
+        Residential             
+      %td
+        =check_box_tag 'locality_of_off', "",((@business_verification_report.locality_of_off == 'Residential-cum-Commericial')?  true : false)   
+        Residential-cum-Commericial
+    %tr
+      %th Describe the building where the office is located
+      %td
+        %b :   
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Shop')?  true : false)   
+        Shop             
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Office Complex')?  true : false)   
+        Office Complex    
+    %tr
+      %th 
+      %td    
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Factory')?  true : false)   
+        Factory             
+      %td
+        =@business_verification_report.quality_of_build
+        (P)osh (G)ood (A)verage (P)oor:
+    %tr
+      %th 
+      %td    
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Business Centre')?  true : false)   
+        Business Centre             
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Own Residence')?  true : false)   
+        Own Residence 
+    %tr
+      %th 
+      %td    
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Residential Building')?  true : false)   
+        Residential Building             
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Applicants Co-Owned Building')?  true : false)   
+        Applicants Co-Owned Building
+    %tr
+      %th 
+      %td    
+      %td
+        =check_box_tag 'where_off_loc', "",((@business_verification_report.where_off_loc == 'Others(Please Specify)')?  true : false)   
+        Others(Please Specify)            
+      %td
+        =@business_verification_report.others
+  %table      
+    %tr
+      %th Describe the type of office :  
+      %td
+        =check_box_tag 'type_of_off', "",((@business_verification_report.type_of_off == 'Commericial Office')?  true : false)   
+        Commericial Office           
+      %td
+        =check_box_tag 'type_of_off', "",((@business_verification_report.type_of_off == 'Shop')?  true : false)
+        Shop                      
+      %td
+        =check_box_tag 'type_of_off', "",((@business_verification_report.type_of_off == 'Poor')?  true : false)
+        Poor                   
+    %tr
+      %th If business is conducated in own residence is there any seperate area earmarked:  
+      %td
+        =check_box_tag 'bus_cond', "",((@business_verification_report.bus_cond == 'Yes')?  true : false)   
+        Yes           
+      %td
+        =check_box_tag 'bus_cond', "",((@business_verification_report.bus_cond == 'No')?  true : false)
+        No                     
+      %td
+        =check_box_tag 'bus_cond', "",((@business_verification_report.bus_cond == 'Not Applicable')?  true : false)
+        Not Applicable 
+    %tr
+      %th Company's Name Plate seen outside premises:  
+      %td
+        =check_box_tag 'com_name_plate', "",(@business_verification_report.com_name_plate)   
+        Yes           
+      %td{:colspan=>2}
+        =check_box_tag 'com_name_plate', "",!(@business_verification_report.com_name_plate)
+        No  
+  %table                         
+    %tr
+      %th Status of premises 
+      %td
+        %b Residence Area 
+        =check_box_tag 'reception_area', "",(@business_verification_report.reception_area)   
+        Yes          
+        =check_box_tag 'reception_area', "",!(@business_verification_report.reception_area)
+        No                     
+      %th Security Guard:
+      %td
+        =check_box_tag 'security_guard', "",(@business_verification_report.security_guard)
+        Yes               
+        =check_box_tag 'security_guard', "",!(@business_verification_report.security_guard)
+        No
+    %tr
+      %th 
+      %td
+        %b Cabin:
+        =check_box_tag 'cabin', "",(@business_verification_report.cabin)  
+        Yes          
+        =check_box_tag 'cabin', "",!(@business_verification_report.cabin)
+        No                     
+      %th Secretary/Typist:
+      %td
+        =check_box_tag 'sec_or_type', "",(@business_verification_report.sec_or_type) 
+        Yes               
+        =check_box_tag 'sec_or_type', "",!(@business_verification_report.sec_or_type)
+        No
+    %tr
+      %th Equipments seen:
+      %td
+        %b Air Conditioner 
+        =check_box_tag 'air_condition', "",(@business_verification_report.air_condition)  
+        Yes          
+        =check_box_tag 'air_condition', "",!(@business_verification_report.air_condition)
+        No                     
+      %th Xerox:
+      %td
+        =check_box_tag 'xerox', "",(@business_verification_report.xerox)
+        Yes               
+        =check_box_tag 'xerox', "",!(@business_verification_report.xerox)
+        No 
+    %tr
+      %th 
+      %td{:colspan=>2}
+        %b Computer
+        =check_box_tag 'Computer', "",(@business_verification_report.computer)   
+        Yes          
+        =check_box_tag 'Computer', "",!(@business_verification_report.computer)
+        No              
+    %tr
+      %th Furnishing seen: 
+      %td{:colspan=>2}
+        %b Computer
+        =check_box_tag 'furni_seen', "",((@business_verification_report.furni_seen == 'Posh')?  true : false)   
+        Posh          
+        =check_box_tag 'furni_seen', "",((@business_verification_report.furni_seen== 'Good')?  true : false)
+        Good 
+        =check_box_tag 'furni_seen', "",((@business_verification_report.furni_seen== 'Fair')?  true : false)
+        Fair 
+        =check_box_tag 'furni_seen', "",((@business_verification_report.furni_seen== 'Poor')?  true : false)
+        Poor 
+    %tr
+      %th Business Activities seen:
+      %td{:colspan=>2} 
+        =check_box_tag 'busi_act_seen', "",(@business_verification_report.busi_act_seen) 
+        Yes          
+        =check_box_tag 'busi_act_seen', "",!(@business_verification_report.busi_act_seen)
+        No 
+    %tr
+      %th Approximate size of office:
+      %td
+        =@business_verification_report.size_of_off
+        Sq.ft                  
+      %th No of people:
+      %td
+        =@business_verification_report.no_of_people
+    %tr
+      %th Amount of Business:
+      %td{:colspan=>2} 
+        =check_box_tag 'amount', "",((@business_verification_report.amount== 'Active')?  true : false)   
+        Active         
+        =check_box_tag 'amount', "",((@business_verification_report.amount== 'Inactive')?  true : false)
+        Inactive  
+    %tr
+      %th Briefly describe the nature of Business:
+      %td{:colspan=>2} 
+        =@business_verification_report.des_of_business
+        
+  %table
+    %tr
+      %th FOLLOWING ARE BASED ON INFORMATION FROM PERSON CONTACTED: 
+    %tr
+      %td
+        %b person contacted(Name):
+        =@business_verification_report.person_contacted1                          
+    %tr
+      %td
+        %b Designation/Relation:
+        =@business_verification_report.des_or_rel
+    %tr
+      %td
+        %b If applicant was met was he met at 
+        =check_box_tag 'app_met', "",((@business_verification_report.app_met=='His Desk')?  true : false)
+        His Desk  
+        =check_box_tag 'app_met', "",((@business_verification_report.app_met=='Reception Area')?  true : false) 
+        Reception Area 
+        =check_box_tag 'app_met', "",((@business_verification_report.app_met=='Not Applicable')?  true : false)
+        Not Applicable
+    %tr
+      %td
+        %b If met at his desk,Was there a phone on his desk:
+        =check_box_tag 'app_met', "",(@business_verification_report.met_disk)
+        Yes 
+        =check_box_tag 'app_met', "",!(@business_verification_report.met_disk)
+        No  
+    %tr
+      %td
+        %b Number of years at business(Self Employed)/at work(salaried)
+        =@business_verification_report.years_business
+    %tr
+      %td
+        %b Office Phone Nos:
+        =@business_verification_report.off_phone
+    %tr
+      %td
+        %b Applicants DOB
+        =@business_verification_report.app_dob                                
+    %tr
+      %td
+        %b FOR SELF EMPLOYED APPLICANTS ONLY:
+    %tr
+      %td
+        %b Ownership status of business premises(for self-employed applications only) 
+        =check_box_tag 'ownership_stat', "",((@business_verification_report.ownership_stat== 'Owned')?  true : false) 
+        Owned
+        =check_box_tag 'ownership_stat', "",((@business_verification_report.ownership_stat== 'Rented')?  true : false) 
+        Rented
+    %tr
+      %td
+        %b BUSINESS ORGANIZATION: 
+        =check_box_tag 'bus_org', "",((@business_verification_report.bus_org== 'Proprietorship')?  true : false) 
+        Proprietorship
+        =check_box_tag 'bus_org', "",((@business_verification_report.bus_org== 'Partnership')?  true : false) 
+        Partnership   
+        =check_box_tag 'bus_org', "",((@business_verification_report.bus_org== 'Family Business')?  true : false) 
+        Family Business
+    %tr
+      %td
+        =check_box_tag 'bus_org', "",((@business_verification_report.bus_org== 'Private Ltd')?  true : false) 
+        Private Ltd
+        =check_box_tag 'bus_org', "",((@business_verification_report.bus_org== 'Public Ltd.Company')?  true : false) 
+        Public Ltd.Company
+  %table    
+    %tr
+      %td
+        %b No.of years of existence of Company/Firm:
+        =@business_verification_report.exist_of_firm    
+    %tr
+      %td
+        %b Company/Firm's DOI:
+        =@business_verification_report.firms_doi                              
+    %tr
+      %td
+        %b Number of Branches /Locations:
+        =@business_verification_report.no_of_branch 
+    %tr
+      %td
+        %b Number of Employees:
+        =@business_verification_report.no_of_emp 
+        
+    %tr
+      %td
+        %b NEIGHBOURHOOD CHECK:
+        =@business_verification_report.neighbour_check 
+    %tr
+      %td
+        %b Person Contacted:
+        =@business_verification_report.person_contacted2 
+    %tr
+      %td
+        %b Years of operation at this address
+        =@business_verification_report.years_op_addr 
+    %tr
+      %td
+        %b Nature of Business:
+        =@business_verification_report.nat_of_business
+    %tr
+      %td
+        %b Verifiers Comments:
+        =@business_verification_report.verifiers_comm 
+        
+  %table
+    %tr
+      %td
+        %b Date of verification:
+        =@business_verification_report.date_verify       
+      %td
+        %b Time of verification:
+        =@business_verification_report.time  
+    %tr
+      %td{:colspan=>2}
+        %b Verifiers Name:                             
+        =@business_verification_report.verifiers_name
+    %tr
+      %td{:colspan=>2}
+        %b Status:                            
+        =check_box_tag 'status', "",((@business_verification_report.status== 'Accept')?  true : false) 
+        Accept  
+        =check_box_tag 'status', "",((@business_verification_report.status== 'Reject')?  true : false)
+        Reject
+        =check_box_tag 'status', "",((@business_verification_report.status== 'Refer')?  true : false) 
+        Refer
+    %tr
+      %td{:colspan=>2}
+        %b If Reject of Refer Please state reason:                             
+        =@business_verification_report.reason
+    %tr   
+      %td{:colspan=>2}
+        %b Date:                              
+        =@business_verification_report.date2
+                      
 = link_to 'Edit', edit_business_verification_report_path(@business_verification_report)
 \|
 = link_to 'Back', business_verification_reports_path

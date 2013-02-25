@@ -1,79 +1,143 @@
 %p#notice= notice
-%h2 TELEPHONE VERIFICATION REPORT
-%p
-  %b BORROWERS NAME:
-  = @telephone_verification.borrowers_name
-  %br
-%p
-  %b DATE OF RECEIPT:
-  = @telephone_verification.date_of_receipt
-%p
-  %b RESIDENCE CONTACT PHONE NO:
-  = @telephone_verification.Res_phone_no
-%p
-  %b PERSON CONTACTED/RELATIONSHIP:
-  = @telephone_verification.person_contacted
-%p
-  %b RESIDENCE ADDRESS:
-  = @telephone_verification.res_addr
-%p
-  %b PHONE NUMBER:
-  = @telephone_verification.phone_no_borrower1
-%p
-  %b BORROWERS DATE OF BIRTH:
-  = @telephone_verification.borrowers_dob
-%p
-  %b YEARS AT RESIDENCE:
-  = @telephone_verification.years_at_res
-%p
-  %b PREMISES:
-  = @telephone_verification.premises
-%p
-  %b CELLULAR NUMBER:
-  = @telephone_verification.cell_no 
-%p
-  %b COMMENTS::
-  = @telephone_verification.comments1 
-%p
-  %b BUSINESS CONTACT PHONE NO:
-  = @telephone_verification.business_contact_no
-%p
-  %b PERSON CONTACTED/DESIGNATION:
-  = @telephone_verification.person_contacted_des 
-%p
-  %b BUSINESS ADDRESS:
-  = @telephone_verification.business_addr
+%table
+  %tr
+    %td
+      %b BORROWERS NAME
+    %td
+      =@telephone_verification.borrowers_name
+  %tr
+    %td
+      %b DATE OF RECEIPT
+    %td
+      =@telephone_verification.date_of_receipt
+  %tr
+    %td
+      %b RESIDENCE CONTACT PHONE NO
+    %td
+      =@telephone_verification.Res_phone_no
+  %tr
+    %td
+      %b PERSON CONTACTED/RELATIONSHIP:
+    %td
+      =@telephone_verification.person_contacted
+  %tr
+    %td
+      %b RESIDENCE ADDRESS:
+    %td 
+      =@telephone_verification.res_addr
+%br
+%br
+%br
  
-%p
-  %b DESIGNATION OF BORROWER:
-  = @telephone_verification.designation_borrower
-%p
-  %b NATURE OF BUSINESS:
-  = @telephone_verification.nature_of_business
-%p
-  %b PHONE NUMBER:
-  = @telephone_verification.phone_no_borrower2
-%p
-  %b COMMENTS:
-  = @telephone_verification.comments2
-%p
-  %b CALL ATTEMPTS:
-  = @telephone_verification.call_attempts
-%p
-  %b RESIDENCE:
-  = @telephone_verification.residence
-%p
-  %b OFFICE:
-  = @telephone_verification.office
-%p
-  %b VERIFIERS NAME:
-  = @telephone_verification.verifiers_name
-%p
-  %b DATE OF CONTACT:
-  = @telephone_verification.date_of_contact
-%p
-  %b DATE:
-  = @telephone_verification.date
+%table   
+  %tr
+    %td
+      %b PHONE NUMBER:
+    %td 
+      =@telephone_verification.phone_no_borrower1
+  %tr
+    %td
+      %b BORROWERS DATE OF BIRTH:
+    %td
+      =@telephone_verification.borrowers_dob
+  %tr
+    %td
+      %b YEARS AT RESIDENCE:
+    %td 
+      =@telephone_verification.years_at_res
+  %tr
+    %td
+      %b  PREMISES:
+    %td
+      =@telephone_verification.premises
+  %tr
+    %td
+      %b CELLULAR NUMBER:
+    %td
+      =@telephone_verification.cell_no 
+  %tr
+    %td
+      %b COMMENTS:
+    %td
+      =@telephone_verification.comments1
+%br
+%br
+%br      
+%table      
+  %tr
+    %td
+      %b BUSINESS CONTACT PHONE NO:
+    %td 
+      =@telephone_verification.business_contact_no
+    %tr
+      %td  
+        %b PERSON CONTACTED/DESIGNATION:
+      %td
+        =@telephone_verification.person_contacted_des 
+  %tr
+    %td
+      %b BUSINESS ADDRESS:
+    %td
+      =@telephone_verification.business_addr
+%br
+%br
+%br
+%table      
+  %tr
+    %td
+      %b DESIGNATION OF BORROWER:
+    %td
+      =@telephone_verification.designation_borrower
+  %tr
+    %td
+      %b NATURE OF BUSINESS:
+    %td
+      =@telephone_verification.nature_of_business
+  %tr
+    %td
+      %b PHONE NUMBER:
+    %td
+      =@telephone_verification.phone_no_borrower2
+  %tr
+    %td
+      %b COMMENTS:
+    %td
+      =@telephone_verification.comments2
+%br
+%br
+%br 
+     
+%table      
+  %tr
+    %td
+      %b CALL ATTEMPTS:
+    %td
+      =@telephone_verification.call_attempts
+    %td
+      %b RESIDENCE:
+    %td
+      =@telephone_verification.residence
+    %td
+      %b OFFICE:
+    %td
+      =@telephone_verification.office
+  %tr
+    %td
+      %b VERIFIERS NAME:
+    %td{:colspan=>5}
+      =@telephone_verification.verifiers_name
+  %tr
+    %td
+      %b DATE OF CONTACT:
+    %td{:colspan=>5}
+      =@telephone_verification.date_of_contact
+  %tr
+    %td
+      %b DATE:
+    %td
+      =@telephone_verification.date
+    %td{:colspan=>4}
+      %b Authorised signatory  
  
 = link_to 'Edit', edit_telephone_verification_path(@telephone_verification)
 \|

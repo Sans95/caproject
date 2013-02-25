@@ -5,7 +5,7 @@ class CreateResidenceVerificationReports < ActiveRecord::Migration
       t.text :address
       t.boolean :home_loan
       t.boolean :plot_loan
-      t.boolean :others
+      t.boolean :oth_loan
       t.string :other_loan
       t.string :salaried
       t.string :other_sal

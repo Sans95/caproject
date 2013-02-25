@@ -2,7 +2,8 @@ class EvaluationSheetsController < ApplicationController
   # GET /evaluation_sheets
   # GET /evaluation_sheets.json
   def index
-    @evaluation_sheets = EvaluationSheet.all
+    @search = EvaluationSheet.search(params[:search])
+    @evaluation_sheets = @search.paginate(:per_page => 20, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

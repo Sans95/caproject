@@ -25,23 +25,23 @@
         VEHICLE LOAN
       %td 
       %td 
-        =f.check_box :others
-        =f.label :others, 'OTHERS'
+        =f.check_box :other_loan1
+        OTHERS
       %td
         %b (Specify):  
-        =f.text_field :other_loan
+        =f.text_field :other_loan2
     %tr
       %td
-        =f.radio_button :salaried, 'SALARIED'
+        =f.radio_button :salaried,'SALARIED'
         SALARIED
       %td
       %td
-        =f.radio_button :salaried, 'SELF EMPLOYED'
+        =f.radio_button :salaried,'SELF EMPLOYED'
         SELF EMPLOYED
       %td 
       %td 
-        =f.check_box :others
-        =f.label :others, 'OTHERS'
+        =f.radio_button :salaried,'OTHERS'
+        OTHERS
       %td
         %b (Specify):  
         =f.text_field :other_sal
@@ -100,8 +100,16 @@
         =f.radio_button :where_off_loc,'Shop'  
         Shop
       %td
-        =f.text_field:quality_of_build 
-        P(osh) (G)ood (A)verage (p)oor
+        =f.radio_button :where_off_loc,'Office Complex'
+        Office Complex
+    %tr
+      %th 
+      %td
+        =f.radio_button :where_off_loc,'Factory'  
+        Factory
+      %td
+        =f.text_field :quality_of_off
+        (P)osh (G)ood (A)verage (P)oor:
     %tr
       %th 
       %td
@@ -118,6 +126,14 @@
       %td
         =f.radio_button :where_off_loc,'Applicants Co-Owned Building'  
         Applicants Co-Owned Building
+    %tr
+      %th 
+      %td
+        =f.radio_button :where_off_loc,'Others(Please Specify)'  
+        Others(Please Specify) 
+      %td
+        =f.text_field :others
+          
  
   %table.table.table-bordered 
     %tr
@@ -145,21 +161,235 @@
     %tr
       %th Company's Name Plate seen outside premises:
       %td 
-        =f.radio_button :com_name_plate,'Yes'
+        =f.radio_button :com_name_plate,true
         Yes
       %td{:colspan=>2} 
-        =f.radio_button :com_name_plate,'No'
-        No                    
+        =f.radio_button :com_name_plate,false
+        No  
+  %table.table.table-bordered                        
     %tr
       %th Status of premises
-      %td 
-        =f.radio_button :bus_cond,'Yes'
+      %td
+        %b Residence Area 
+        =f.radio_button :reception_area,true
         Yes
-      %td 
-        =f.radio_button :bus_cond,'No'
+        =f.radio_button :reception_area,false
         No             
       %td 
-        =f.radio_button :bus_cond,'Not Applicable'
-        Not Applicable                      
+        %b Security Guard:
+        =f.radio_button :security_guard,true
+        Yes
+        =f.radio_button :security_guard,false
+        No  
+    %tr
+      %th 
+      %td
+        %b Cabin:
+        =f.radio_button :cabin,true
+        Yes
+        =f.radio_button :cabin,false
+        No             
+      %td 
+        %b Secretary/Typist:
+        =f.radio_button :sec_or_type,true
+        Yes
+        =f.radio_button :sec_or_type,false
+        No 
+    %tr
+      %th Equipments seen:
+      %td
+        %b Air Conditioner 
+        =f.radio_button :air_condition,true
+        Yes
+        =f.radio_button :air_condition,false
+        No             
+      %td 
+        %b Xerox:
+        =f.radio_button :xerox,true
+        Yes
+        =f.radio_button :xerox,false
+        No                                           
+    %tr
+      %th 
+      %td{:colspan=>2}
+        %b Computer
+        =f.radio_button :computer,true
+        Yes
+        =f.radio_button :computer,false
+        No             
+    %tr
+      %th Furnishing seen:
+      %td{:colspan=>2}
+        =f.radio_button :furni_seen,'Posh'
+        Posh
+        =f.radio_button :furni_seen,'Good'
+        Good             
+        =f.radio_button :furni_seen,'Fair'
+        Fair
+        =f.radio_button :furni_seen,'Poor'
+        Poor                                        
+    %tr
+      %th Business Activities seen:
+      %td{:colspan=>2}
+        =f.radio_button :busi_act_seen,true
+        Yes
+        =f.radio_button :busi_act_seen,false
+        No  
+    %tr
+      %th Approximate size of office:
+      %td
+        =f.text_field :size_of_off
+        Sq.ft
+      %td
+        %b No of people:
+        =f.text_field :no_of_people
+    %tr
+      %th Amount of Business:
+      %td{:colspan=>2}
+        =f.radio_button :amount,'Active'
+        Active
+        =f.radio_button :amount,'Inactive'
+        Inactive 
+    %tr
+      %th Briefly describe the nature of Business:
+      %td{:colspan=>2}
+        =f.text_area :des_of_business,:rows=>5
+  
+  %table.table.table-bordered 
+    %tr
+      %th FOLLOWING ARE BASED ON INFORMATION FROM PERSON CONTACTED:
+    %tr
+      %td
+        %b person contacted(Name):
+        =f.text_field :person_contacted1
+    %tr   
+      %td
+        %b Designation/Relation:
+        =f.text_field :des_or_rel 
+    
+  %table.table.table-bordered
+    %tr
+      %th If applicant was met was he met at
+      %td
+        =f.radio_button :app_met,'His Desk'
+        His Desk      
+      %td
+        =f.radio_button :app_met,'Reception Area'
+        Reception Area 
+      %td
+        =f.radio_button :app_met,'Not Applicable'
+        Not Applicable
+    %tr
+      %th If met at his desk,Was there a phone on his desk:
+      %td
+        =f.radio_button :met_disk,true
+        Yes    
+      %td{:colspan=>2}
+        =f.radio_button :met_disk,false
+        No
+    %tr
+      %th Number of years at business(Self Employed)/at work(salaried)
+      %td{:colspan=>3}
+        =f.text_field :years_business
+    %tr
+      %th Office Phone Nos:
+      %td{:colspan=>3}
+        =f.text_field :off_phone               
+    %tr
+      %th Applicants DOB
+      %td{:colspan=>3}
+        =f.text_field :app_dob
+    %tr
+      %th{:colspan=>4} FOR SELF EMPLOYED APPLICANTS ONLY:
+    %tr 
+      %th Ownership ststus of business premises(for self-employed applications only)
+      %td{:colspan=>3}
+        =f.radio_button :ownership_stat,'Owned'
+        Owned   
+        =f.radio_button :ownership_stat,'Rented'
+        Rented 
+    %tr 
+      %th BUSINESS ORGANIZATION:
+      %td{:colspan=>3} 
+        =f.radio_button :bus_org,'Proprietorship'
+        Proprietorship   
+        =f.radio_button :bus_org,'Partnership'
+        partnership 
+        =f.radio_button :bus_org,'Family Business'
+        Family Business
+    %tr
+      %th
+      %td{:colspan=>3}
+        =f.radio_button :bus_org,'Private Ltd'
+        Private Ltd. 
+        =f.radio_button :bus_org,'Public Ltd.Company'
+        Public Ltd Company 
+    %tr
+      %th No.of years of existence of Company/Firm:
+      %td{:colspan=>3}
+        =f.text_field :exist_of_firm
+    %tr
+      %th Company/Firm's DOI:
+      %td{:colspan=>3}
+        =f.text_field :firms_doi      
+    %tr
+      %th Number of Branches /Locations: 
+      %td{:colspan=>3}
+        =f.text_field :no_of_branch 
+    %tr
+      %th Number of Employees:
+      %td{:colspan=>3}
+        =f.text_field :no_of_emp    
+    %tr
+      %th NEIGHBOURHOOD CHECK
+      %td{:colspan=>3}
+        =f.text_field :neighbour_check 
+    %tr
+      %th Person Contacted:
+      %td{:colspan=>3}
+        =f.text_field :person_contacted2
+    %tr
+      %th Years of operation at this address
+      %td{:colspan=>3}
+        =f.text_field :years_op_addr 
+    %tr
+      %th Nature of Business
+      %td{:colspan=>3}
+        =f.text_area :nat_of_business ,:rows=>5
+    %tr
+      %th Verifiers Comments:
+      %td{:colspan=>3}
+        =f.text_area :verifiers_comm,:rows=>5
+  %table.table.table-bordered        
+    %tr
+      %th Date of Verification:
+      %td
+        =f.date_select :date_verify,:start_year => Time.now.year - 30,:end_year => Time.now.year + 1,:include_blank => true
+    %tr     
+      %th Time of Verification:
+      %td
+        =f.text_field :time
+    %tr
+      %th Verifiers Name:
+      %td{:colspan=>2}
+        =f.text_field :verifiers_name
+    %tr
+      %th Status:
+      %td{:colspan=>2}
+        =f.radio_button :status,'Accept'
+        Accept
+        =f.radio_button :status,'Reject'
+        Reject
+        =f.radio_button :status,'Refer'
+        Refer
+    %tr
+      %th If Reject of Refer Please state reason: 
+      %td{:colspan=>2}
+        =f.text_area :reason,:rows=>5
+    %tr
+      %th Date: 
+      %td{:colspan=>2}
+        = f.date_select :date2,:start_year => Time.now.year - 30,:end_year => Time.now.year + 1,:include_blank => true 
+                                                                                                                                  
   .actions
     = f.submit 'Save'

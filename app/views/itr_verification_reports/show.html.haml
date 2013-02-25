@@ -1,64 +1,101 @@
 %p#notice= notice
-%p
-%h2 TELEPHONE VERIFICATION REPORT
-%p
-  %b BRANCH:
-  = @itr_verification_report.branch
-  %br
-%p
-  %b CUSTOMER NAME:
-  =@itr_verification_report.customer_name
-%p
-  %b CO-APPLICANT NAME:
-  = @itr_verification_report.co_applicant_name
-%h4 APPLICANT
-%h5 AY
-%h5 AY
-%h5 AY
-%h4 CO OBLIGANT
-%h5 AY
-%h5 AY
-%h5 AY
-%p
-  %b Acknowledgement No
-  = @itr_verification_report.app_acknowledge_no_1
-  = @itr_verification_report.app_acknowledge_no_2
-  = @itr_verification_report.app_acknowledge_no_3
-  %br
-  = @itr_verification_report.co_obligant_acknowledge_no_1 
-  = @itr_verification_report.co_obligant_acknowledge_no_2
-  = @itr_verification_report.co_obligant_acknowledge_no_3
   
-%p
-  %b Date of Filling I.T.Return
-  = @itr_verification_report.app_date_IT_return_no_1
-  = @itr_verification_report.app_date_IT_return_no_2
-  = @itr_verification_report.app_date_IT_return_no_3
-  %br
-  = @itr_verification_report.co_obligant_date_IT_return_no_1
-  = @itr_verification_report.co_obligant_date_IT_return_no_2
-  = @itr_verification_report.co_obligant_date_IT_return_no_3
-  
-%p
-  %b Returned income (Rs)
-  = @itr_verification_report.app_return_income_1
-  = @itr_verification_report.app_return_income_2
-  = @itr_verification_report.app_return_income_3
-  %br
-  = @itr_verification_report.co_obligant_return_income_1
-  = @itr_verification_report.co_obligant_return_income_2
-  = @itr_verification_report.co_obligant_return_income_3 
-  
-%p
-  %b Income Tax Paid (Rs)
-  = @itr_verification_report.app_income_tax_1 
-  = @itr_verification_report.app_income_tax_2 
-  = @itr_verification_report.app_income_tax_3 
-  %br
-  = @itr_verification_report.co_obligant_income_tax_1
-  = @itr_verification_report.co_obligant_income_tax_2
-  = @itr_verification_report.co_obligant_income_tax_3
-  %br
+%table.table.table-bordered
+  %tr
+    %td
+      %b CORPORATION BANK
+    %td
+      %b BRANCH:
+      =@itr_verification_report.branch
+
+%table.table.table-bordered
+  %tr
+    %td
+      %b CORP
+    %td 
+      %b CUSTOMER NAME:
+      =@itr_verification_report.customer_name
+  %tr    
+    %td{:colspan=>2} 
+      %b CO-APPLICANT NAME:
+      =@itr_verification_report.co_applicant_name
+      
+%table.table.table-bordered
+  %tr
+    %th{:rowspan=>2}     
+    %td{:colspan=>3}
+      %b APPLICANT
+    %td{:colspan=>3}
+      %b CO OBLIGANT  
+  %tr
+    %td
+      %b AY
+    %td
+      %b AY
+    %td
+      %b AY
+    %td
+      %b AY 
+    %td
+      %b AY
+    %td
+      %b AY
+  %tr
+    %th Acknowledgement No           
+    %td
+      %b=@itr_verification_report.app_acknowledge_no_1
+    %td
+      %b=@itr_verification_report.app_acknowledge_no_2
+    %td
+      %b=@itr_verification_report.app_acknowledge_no_3 
+    %td
+      %b=@itr_verification_report.co_obligant_acknowledge_no_1   
+    %td
+      %b=@itr_verification_report.co_obligant_acknowledge_no_1  
+    %td
+      %b=@itr_verification_report.co_obligant_acknowledge_no_3
+  %tr
+    %th Date of Filling I.T.Return           
+    %td
+      =@itr_verification_report.app_date_IT_return_no_1
+    %td
+      =@itr_verification_report.app_date_IT_return_no_2
+    %td
+      =@itr_verification_report.app_date_IT_return_no_3
+    %td
+      =@itr_verification_report.co_obligant_date_IT_return_no_1   
+    %td
+      =@itr_verification_report.co_obligant_date_IT_return_no_2 
+    %td
+      =@itr_verification_report.co_obligant_date_IT_return_no_3
+  %tr
+    %th Returned income (Rs)          
+    %td
+      %b=@itr_verification_report.app_return_income_1
+    %td
+      %b=@itr_verification_report.app_return_income_2
+    %td
+      %b=@itr_verification_report.app_return_income_3
+    %td
+      %b=@itr_verification_report.co_obligant_return_income_1  
+    %td
+      %b=@itr_verification_report.co_obligant_return_income_2
+    %td
+      %b=@itr_verification_report.co_obligant_return_income_3          
+  %tr
+    %th Income Tax Paid (Rs)          
+    %td
+      %b=@itr_verification_report.app_income_tax_1 
+    %td
+      %b=@itr_verification_report.app_income_tax_2
+    %td
+      %b=@itr_verification_report.app_income_tax_3
+    %td
+      %b=@itr_verification_report.co_obligant_income_tax_1 
+    %td
+      %b=@itr_verification_report.co_obligant_income_tax_2
+    %td
+      %b=@itr_verification_report.co_obligant_income_tax_3 
 %p
   %b REMARKS
   =@itr_verification_report.remarks
@@ -68,8 +105,8 @@
 %p
   %b PLACE
   =@itr_verification_report.place      
-     
-  
+   
+
   
   
     

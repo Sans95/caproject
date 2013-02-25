@@ -24,8 +24,8 @@
         =f.check_box :plot_loan
         PLOT LOAN
       %td  
-        =f.check_box :others
-        =f.label :others, 'OTHERS'
+        =f.check_box :oth_loan
+        OTHERS
       %td
         %b (Specify):  
         =f.text_field :other_loan
@@ -309,7 +309,7 @@
       %td{:colspan=>3}
         = check_box_tag("residence_verification_report[assets_seen][others]","1", ((@residence_verification_report.assets_seen['others'] == "1")? true : false) )
         Others
-        = f.text_field :others
+        = f.text_field :assets_others
     %tr   
       %th Does the residence appear to be
       %td 

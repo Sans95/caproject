@@ -5,82 +5,127 @@
       %ul
         - @telephone_verification.errors.full_messages.each do |msg|
           %li= msg
-  
-  =f.label :borrowers_name, 'BORROWERS NAME:'
-  = f.text_field :borrowers_name
-  %br
-  = f.label :date_of_receipt, 'DATE OF RECEIPT:'       
-  = f.date_select :date_of_receipt,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
-  %br
-  =f.label :Res_phone_no, 'RESIDENCE CONTACT PHONE NO:'
-  = f.text_field :Res_phone_no
-  %br
-  =f.label :person_contacted, 'PERSON CONTACTED/RELATIONSHIP:'
-  = f.text_field :person_contacted
-  %br
-  =f.label :res_addr, 'RESIDENCE ADDRESS:'
-  = f.text_area :res_addr,:rows=>5
-  
-  %br
-  =f.label :phone_no_borrower1, 'PHONE NUMBER:'
-  = f.text_field :phone_no_borrower1
-  %br
-  = f.label :borrowers_dob, 'BORROWERS DATE OF BIRTH:'       
-  = f.date_select :borrowers_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
-  %br
-  =f.label :years_at_res, 'YEARS AT RESIDENCE:'
-  = f.text_field :years_at_res
-  %br
-  =f.label :premises, 'PREMISES:'
-  = f.text_field :premises
-  %br
-  =f.label :cell_no, 'CELLULAR NUMBER:'
-  = f.text_field :cell_no
-  %br
-  =f.label :comments1, 'COMMENTS:'
-  = f.text_area :comments1,:rows=>5
-  
-  %br
-  =f.label :business_contact_no, 'BUSINESS CONTACT PHONE NO:'
-  = f.text_field :business_contact_no
-  %br
-  =f.label :person_contacted_des, 'PERSON CONTACTED/DESIGNATION:'
-  = f.text_field :person_contacted_des
-  %br
-  =f.label :business_addr, 'BUSINESS ADDRESS:'
-  = f.text_area :business_addr,:rows=>5
-  
-  %br
-  =f.label :designation_borrower, 'DESIGNATION OF BORROWER:'
-  = f.text_field :designation_borrower
-  %br
-  =f.label :nature_of_business, 'NATURE OF BUSINESS:'
-  = f.text_area :nature_of_business,:rows=>5
-  %br
-  =f.label :phone_no_borrower2, 'PHONE NUMBER:'
-  = f.text_field :phone_no_borrower2
-  %br
-  =f.label :comments2, 'COMMENTS:'
-  = f.text_area :comments2,:rows=>5
-  
-  %br
-  =f.label :call_attempts, 'CALL ATTEMPTS:'
-  = f.text_field :call_attempts
-  %br
-  =f.label :residence, 'RESIDENCE:'
-  = f.text_field :residence
-  %br
-  =f.label :office, 'OFFICE:'
-  = f.text_field :office
-  %br
-  =f.label :verifiers_name, 'VERIFIERS NAME:'
-  = f.text_field :verifiers_name
-  %br
-  = f.label :date_of_contact, 'DATE OF CONTACT:'       
-  = f.date_select :date_of_contact,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
-  %br
-  = f.label :date, 'DATE:'       
-  = f.date_select :date,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  %table.table.table-bordered
+    %tr
+      %td
+        =f.label :borrowers_name, 'BORROWERS NAME:'
+      %td
+        =f.text_field :borrowers_name
+    %tr
+      %td
+        =f.label :date_of_receipt, 'DATE OF RECEIPT:' 
+      %td      
+        =f.date_select :date_of_receipt,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+    %tr
+      %td
+        =f.label :Res_phone_no, 'RESIDENCE CONTACT PHONE NO:'
+      %td  
+        = f.text_field :Res_phone_no
+    %tr    
+      %td
+        =f.label :person_contacted, 'PERSON CONTACTED/RELATIONSHIP:'
+      %td
+        = f.text_field :person_contacted
+    %tr
+      %td
+        =f.label :res_addr, 'RESIDENCE ADDRESS:'
+      %td
+        = f.text_area :res_addr,:rows=>5
+    %tr
+      %td
+        =f.label :phone_no_borrower1, 'PHONE NUMBER:'
+      %td
+        =f.text_field :phone_no_borrower1
+    %tr
+      %td
+        =f.label :borrowers_dob, 'BORROWERS DATE OF BIRTH:'
+      %td       
+        =f.date_select :borrowers_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+    %tr
+      %td
+        =f.label :years_at_res, 'YEARS AT RESIDENCE:'
+      %td  
+        = f.text_field :years_at_res
+    %tr
+      %td
+        =f.label :premises, 'PREMISES:'
+      %td
+        = f.text_field :premises
+    %tr
+      %td
+        =f.label :cell_no, 'CELLULAR NUMBER:'
+      %td 
+        =f.text_field :cell_no
+    %tr
+      %td
+        =f.label :comments1, 'COMMENTS:'
+      %td  
+        =f.text_area :comments1,:rows=>5
+    %tr
+      %td 
+        =f.label :business_contact_no, 'BUSINESS CONTACT PHONE NO:'
+      %td
+        =f.text_field :business_contact_no
+    %tr
+      %td
+        =f.label :person_contacted_des, 'PERSON CONTACTED/DESIGNATION:'
+      %td
+        =f.text_field :person_contacted_des
+    %tr
+      %td
+        =f.label :business_addr, 'BUSINESS ADDRESS:'
+      %td  
+        =f.text_area :business_addr,:rows=>5
+    %tr
+      %td
+        =f.label :designation_borrower, 'DESIGNATION OF BORROWER:'
+      %td 
+        =f.text_field :designation_borrower
+    %tr
+      %td
+        =f.label :nature_of_business, 'NATURE OF BUSINESS:'
+      %td
+        =f.text_area :nature_of_business,:rows=>5
+    %tr
+      %td
+        =f.label :phone_no_borrower2, 'PHONE NUMBER:'
+      %td
+        =f.text_field :phone_no_borrower2
+    %tr
+      %td
+        =f.label :comments2, 'COMMENTS:'
+      %td
+        =f.text_area :comments2,:rows=>5
+    %tr
+      %td
+        =f.label :call_attempts, 'CALL ATTEMPTS:'
+      %td 
+        =f.text_field :call_attempts
+    %tr
+      %td
+        =f.label :residence, 'RESIDENCE:'
+      %td
+        =f.text_field :residence
+    %tr
+      %td
+        =f.label :office, 'OFFICE:'
+      %td
+        =f.text_field :office
+    %tr
+      %td
+        =f.label :verifiers_name, 'VERIFIERS NAME:'
+      %td
+        =f.text_field :verifiers_name
+    %tr
+      %td
+        =f.label :date_of_contact, 'DATE OF CONTACT:'
+      %td       
+        =f.date_select :date_of_contact,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+    %tr
+      %td
+        =f.label :date, 'DATE:'  
+      %td     
+        =f.date_select :date,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
   
   .actions
     = f.submit 'Save'
