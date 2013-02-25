@@ -9,4 +9,4 @@
   = f.text_field :credit_limit_fixed 
 
   = f.label :date_of_expiry, 'Date of Expiry'
-  = f.text_field :date_of_expiry,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  = f.date_select :date_of_expiry,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 

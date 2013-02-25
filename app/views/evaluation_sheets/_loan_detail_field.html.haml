@@ -12,7 +12,7 @@
   = f.text_field :tenure 
 
   = f.label :date_of_loan, 'Date of Loan'
-  = f.text_field :date_of_loan,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+  = f.date_select :date_of_loan,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
 
   = f.label :emi, 'EMI'
   = f.text_field :emi 

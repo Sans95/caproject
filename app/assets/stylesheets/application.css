@@ -29,3 +29,16 @@ label {
     display: inline;
     margin: 10px 0px 0px 0px;
 }
+
+th.loan_details{width:150px;}
+
+th.self_employed{width:190px;}
+
+th.income_details1{text-align:center;}
+th.income_details{text-align:center;width:260px;}
+td.observation{height:65px;}
+
+th.property{width:210px;}
+th.property_details{font-size:17px;}
+th.builders{width:170px;}
+hr.tele{margin:5px;}
