@@ -11,7 +11,7 @@
         %td   
           = f.label :date_of_report_greater_than_or_equal_to, "Date Of The Report" 
         %td
-          = f.date_select :date_of_report_greater_than_or_equal_to, :include_blank => "true"
+          = f.date_select :date_of_report_greater_than_or_equal_to, :include_blank => "true", :class => "span2"
         %td    
           = f.submit "Search",:class => "btn btn-inverse"  
 .clearfix  
@@ -19,7 +19,7 @@
 
 
 .section  
-  .section-header.clearfix
+  .section-header
     %h3.left Evaluation Sheet
     = link_to '<i class="icon-plus-sign"></i> New Evaluation sheet'.html_safe, new_evaluation_sheet_path, class: 'right btn'
   .section-body
@@ -27,15 +27,15 @@
       %tr
         %th Date Of Receipt Of The File
         %th Date Of The Report
-        %th
+        %th Action
 
       - @evaluation_sheets.each do |evaluation_sheet|
         %tr
           %td= evaluation_sheet.date_of_receipt
           %td= evaluation_sheet.date_of_report
-          %td= link_to 'Show', evaluation_sheet
-          %td= link_to 'Edit', edit_evaluation_sheet_path(evaluation_sheet)
-          %td= link_to 'Destroy', evaluation_sheet, method: :delete, data: { confirm: 'Are you sure?' }  
+          %td= link_to 'Show', evaluation_sheet, :class => "btn"
+          %td= link_to 'Edit', edit_evaluation_sheet_path(evaluation_sheet), :class => "btn"
+          %td= link_to 'Destroy', evaluation_sheet, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn"  
           
           
 = will_paginate(@evaluation_sheets)	               

@@ -2,8 +2,8 @@ class TelephoneVerificationsController < ApplicationController
   # GET /telephone_verifications
   # GET /telephone_verifications.json
   def index
-    @telephone_verifications = TelephoneVerification.all
-
+    @search = TelephoneVerification.search(params[:search])
+    @telephone_verifications = @search.paginate(:per_page => 20, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @telephone_verifications }

@@ -1,18 +1,44 @@
-%h1 Listing telephone_verifications
+%h1 Telephone verifications
 
-%table
-  %tr
-    %th
-    %th
-    %th
+.form-search.form-search_factory
+  = form_for @search, :url => telephone_verifications_path do |f|
+    %table.search_factory
+      %tr
+        %td
+          = f.label :borrowers_name_contains, "BORROWER'S NAME"      
+        %td
+          = f.text_field :borrowers_name_contains, :class => "span2", :placeholder => "Enter borrower's name"
+        %td   
+          = f.label :date_of_receipt_greater_than_or_equal_to, "DATE OF RECEIPT" 
+        %td
+          = f.date_select :date_of_receipt_greater_than_or_equal_to, :include_blank => "true", :class => "span1"
+        %td   
+          = f.label :borrowers_dob_greater_than_or_equal_to, "BORROWER'S DATE OF BIRTH" 
+        %td
+          = f.date_select :borrowers_dob_greater_than_or_equal_to, :include_blank => "true", :class => "span1"
+        %td    
+          = f.submit "Search",:class => "btn btn-inverse"  
+.clearfix  
 
-  - @telephone_verifications.each do |telephone_verification|
-    %tr
-      %td= telephone_verification.borrowers_name
-      %td= link_to 'Show', telephone_verification
-      %td= link_to 'Edit', edit_telephone_verification_path(telephone_verification)
-      %td= link_to 'Destroy', telephone_verification, method: :delete, data: { confirm: 'Are you sure?' }
+.section  
+  .section-header
+    %h3.left Telephone verification
+    = link_to '<i class="icon-plus-sign"></i> New Telephone verification'.html_safe, new_telephone_verification_path, class: 'right btn'
+  .section-body
+    %table.table.table-bordered
+      %tr
+        %th BORROWER'S NAME
+        %th DATE OF RECEIPT
+        %th BORROWER'S DATE OF BIRTH
+        %th ACTION
+      - @telephone_verifications.each do |telephone_verification|
+        %tr
+          %td= telephone_verification.borrowers_name
+          %td= telephone_verification.date_of_receipt
+          %td= telephone_verification.borrowers_dob
+          %td= link_to 'Show', telephone_verification, :class => "btn"
+          %td= link_to 'Edit', edit_telephone_verification_path(telephone_verification), :class => "btn"
+          %td= link_to 'Destroy', telephone_verification, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn"
 
-%br
 
-= link_to 'New Telephone verification', new_telephone_verification_path
+= will_paginate(@telephone_verifications)
