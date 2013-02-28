@@ -42,7 +42,7 @@ th.property{width:210px;}
 th.property_details{font-size:17px;}
 th.builders{width:170px;}
 hr.tele{margin:5px;}
-
+.sign{float:right;}
 .section{
   border: 1px solid #ccc; 
   -webkit-border-radius: 7px; 
@@ -184,3 +184,8 @@ label abbr{color: red;}
 .form-search_factory label{margin-left: 30px;}
 
 .right{float: right;}
+table.no-border {border:none;}
+table.no-border tr {border:none;}
+table.no-border td {border:none;}
+table.no-border th {border:none;}
+.tvr{width:353px;}

@@ -6,6 +6,7 @@
     %title= content_for?(:title) ? yield(:title) : "CA"
     = csrf_meta_tags
     = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'print', :media => "print"
     = javascript_include_tag 'application'
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]

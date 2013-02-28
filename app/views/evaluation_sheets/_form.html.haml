@@ -10,7 +10,7 @@
       %td
         = f.label :date_of_receipt, 'DATE OF RECEIPT OF THE FILE:' 
       %td      
-        = f.date_select :date_of_receipt, :start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true 
+        = f.date_select :date_of_receipt, :start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true  
     %tr 
       %td
         = f.label :date_of_report, 'DATE OF THE REPORT:'  
@@ -56,7 +56,7 @@
       %td
         =f.label :app_dob, 'Date Of Birth'
       %td{:colspan=>3}
-        = f.date_select :app_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true
+        = f.date_select :app_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true, :class => "span2"
         
       
   %table.table.table-bordered

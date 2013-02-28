@@ -1,572 +1,579 @@
 %p#notice= notice
-%h2{:style => "text-align:center;"} EVALUATION SHEET   
-%table
-  %tr
-    %td 
-      %b DATE OF RECEIPT OF THE FILE:
-      = @evaluation_sheet.date_of_receipt 
-  %br
-  %tr
-    %td 
-      %b DATE OF THE REPORT:
-      = @evaluation_sheet.date_of_report
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 A.APPLICANT
-
-  %tbody
+.print-display
+  %h2{:style => "text-align:center;"} EVALUATION SHEET   
+  %table
     %tr
       %td 
-        %b RESIDENCE ADDRESS
-        = @evaluation_sheet.app_res_address
-      %td
-        %b OFFICE ADDRESS
-        = @evaluation_sheet.app_office_address
-    %tr
-      %td{:rowspan => "2"} &nbsp; 
-      %td{:rowspan => "2"} &nbsp;
-    %tr
-    %tr 
-      %td{:rowspan => "2"} 
-        %b Ph:
-        = @evaluation_sheet.app_residence_phone
-      %td{:rowspan => "2"} 
-        %b Ph:
-        = @evaluation_sheet.app_office_phone
-    %tr
+        %b DATE OF RECEIPT OF THE FILE:
+        = @evaluation_sheet.date_of_receipt 
+    %br
     %tr
       %td 
-        %b Mobile:
-        = @evaluation_sheet.app_mobile
-      %td 
-        %b Design:
-        = @evaluation_sheet.app_designation
-    %tr
-      %td 
-        %b E-Mail Id:
-        = @evaluation_sheet.app_email_id
-      %td
-    %tr
-      %td{:colspan => "2"} 
-        %b Date of Birth:
-        = @evaluation_sheet.app_dob
+        %b DATE OF THE REPORT:
+        = @evaluation_sheet.date_of_report
 
-%br
-%table.table.table-bordered
-  %thead
-    %tr
-      %th
-        %h4 CO-APPLICANT
-
-  %tbody
-    %tr
-      %td 
-        %b RESIDENCE ADDRESS
-        = @evaluation_sheet.co_app_res_address
-      %td
-        %b OFFICE ADDRESS
-        = @evaluation_sheet.co_app_office_address
-    %tr
-      %td{:rowspan => "2"} &nbsp; 
-      %td{:rowspan => "2"} &nbsp;
-    %tr
-    %tr 
-      %td{:rowspan => "2"} 
-        %b Ph:
-        = @evaluation_sheet.co_app_residence_phone
-      %td{:rowspan => "2"} 
-        %b Ph:
-        = @evaluation_sheet.co_app_office_phone
-    %tr
-    %tr
-      %td 
-        %b Mobile:
-        = @evaluation_sheet.co_app_mobile
-      %td 
-        %b Design:
-        = @evaluation_sheet.co_app_designation
-    %tr
-      %td 
-        %b Relationship:
-        = @evaluation_sheet.co_app_relationship
-      %td
-    %tr
-      %td{:colspan => "2"} 
-        %b Date of Birth:
-        = @evaluation_sheet.co_app_dob
-      
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 B.PERSONAL DETAILS
-  %tbody
-    %tr
-      %td{:style => "height:30px;"} 
-        %b Education Back Ground:
-        = @evaluation_sheet.education_background
-    
-    %tr
-      %td{:style => "height:65px;"} 
-        %b Family Back Ground:
-        = @evaluation_sheet.family_background
-
-    %tr
-      %th
-        %h5 Residence Details  
-        %b Owned/Rented/Lease:
-        = @evaluation_sheet.residence_detials 
-        %br      
-        %b In present residence since:
-        = @evaluation_sheet.residence_since
-        %br
-        %b No of Dependants:
-        = @evaluation_sheet.no_of_dependants
-  
-    %tr
-      %th
-        %h5 In case of Salaried 
-        %b Years in Current Company:
-        = @evaluation_sheet.years_in_current_company        
-        %br  
-        %b Nature Of Business Activities:
-        = @evaluation_sheet.nature_of_business_activities  
-        %br
-        %b Total Experience:
-        = @evaluation_sheet.total_experience  
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 LOAN DETAILS
-  %tbody
-    %tr
-      %th.loan_details Loan Type
-      %td 
-        = @evaluation_sheet.loan_type
-
-    %tr
-      %th Loan Requested
-      %td 
-        = @evaluation_sheet.loan_requested
-  
-    %tr
-      %th Loan Eligibility
-      %td 
-        = @evaluation_sheet.loan_eligibility
-  
-    %tr
-      %th Tenor
-      %td  
-        = @evaluation_sheet.tenor
-
-    %tr
-      %th ROI
-      %td  
-        = @evaluation_sheet.ROI
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 IN CASE OF SELF EMPLOYED  
-  %tbody
-    %tr
-      %th.self_employed Personal Discussion By
-      %td
-        = @evaluation_sheet.personal_discussion_by
-  
-    %tr
-      %th Name Of Business Organisation
-      %td
-        = @evaluation_sheet.name_of_business_org 
-  
-    %tr
-      %th Nature Of Business
-      %td
-        = @evaluation_sheet.nature_of_business 
-  
-    %tr
-      %th Years in The Current Business
-      %td
-        = @evaluation_sheet.years_in_the_current_business 
-  
-    %tr
-      %th No Of Partners/Directors
-      %td
-        = @evaluation_sheet.no_of_partners_or_directors 
-  
-    %tr
-      %th Turnover of The Company
-      %td
-        = @evaluation_sheet.turnover_of_the_company
-
-    %tr
-      %th 
-        Office Premises
-        %br
-        Rent/Own/Lease
-      %td
-        = @evaluation_sheet.office_premises
-
-    %tr
-      %th Employee Details:
-      %td
-        = @evaluation_sheet.employee_details
-        
-    %tr
-      %th Main Clients:
-      %td
-        = @evaluation_sheet.main_clients
-
-    %tr
-      %th Comments on Mode of Sales, Collection Cycle and Margins:
-      %td
-        = @evaluation_sheet.comments_on_mode_of_sales  
-                       
-%h4 Existing Loan Details(Secured & Unsecured Loans)      
-%table.table.table-bordered
-  %tr
-    %th Bank/Institution
-    %th Loan Type
-    %th Loan Amount
-    %th Tenure
-    %th Date of Loan
-    %th EMI
-  -@evaluation_sheet.loan_details.each do |ld|
-    %tr
-      %td= ld.bank 
-      %td= ld.loan_type
-      %td= ld.loan_amount
-      %td= ld.tenure
-      %td= ld.date_of_loan
-      %td= ld.emi 
-
-%table.table.table-bordered
-  %thead
-    %tr
-      %th
-        %h4 Credit Card Details
-  %tbody
-    %tr
-      %th Issued By
-      %th Card Number
-      %th Credit Limit Fixed
-      %th Date of Expiry 
-    -@evaluation_sheet.credit_cards.each do |cd|
+  %table.table.table-bordered
+    %thead
       %tr
-        %td= cd.issued_by 
-        %td= cd.card_number
-        %td= cd.credit_limit_fixed
-        %td= cd.date_of_expiry
+        %th 
+          %h4 A.APPLICANT
 
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 D. Assets
-    %tr
-      %td{:colspan => "3"} 
-        %b Liabilities:
-        = @evaluation_sheet.liabilities
-    %tr
-      %th.self_employed With Corporation Bank
-      %td
-        = @evaluation_sheet.with_corporation_bank_1 
-      %td
-        = @evaluation_sheet.with_corporation_bank_2
-    %tr
-      %th.self_employed Other Banks
-      %td
-        = @evaluation_sheet.other_banks_1 
-      %td
-        = @evaluation_sheet.other_banks_2 
-  
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 E. Income Details(Per Month):
-    %tr
-      %th.income_details Particulars
-      %th.income_details1 Applicant
-      %th.income_details1 Co-Applicant
-    %tr
-      %th Income from Business
-      %td
-        = @evaluation_sheet.app_income_from_business 
-      %td
-        = @evaluation_sheet.co_app_income_from_business 
+    %tbody
+      %tr
+        %td 
+          %b RESIDENCE ADDRESS
+          = @evaluation_sheet.app_res_address
+        %td
+          %b OFFICE ADDRESS
+          = @evaluation_sheet.app_office_address
+      %tr
+        %td{:rowspan => "2"} &nbsp; 
+        %td{:rowspan => "2"} &nbsp;
+      %tr
+      %tr 
+        %td{:rowspan => "2"} 
+          %b Ph:
+          = @evaluation_sheet.app_residence_phone
+        %td{:rowspan => "2"} 
+          %b Ph:
+          = @evaluation_sheet.app_office_phone
+      %tr
+      %tr
+        %td 
+          %b Mobile:
+          = @evaluation_sheet.app_mobile
+        %td 
+          %b Design:
+          = @evaluation_sheet.app_designation
+      %tr
+        %td 
+          %b E-Mail Id:
+          = @evaluation_sheet.app_email_id
+        %td
+      %tr
+        %td{:colspan => "2"} 
+          %b Date of Birth:
+          = @evaluation_sheet.app_dob
 
-    %tr
-      %th Salary(Net)
-      %td
-        = @evaluation_sheet.app_salary
-      %td
-        = @evaluation_sheet.co_app_salary
+  %br
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th
+          %h4 CO-APPLICANT
 
-    %tr
-      %th Rental Income
-      %td
-        = @evaluation_sheet.app_rental_income 
-      %td
-        = @evaluation_sheet.co_app_rental_income
+    %tbody
+      %tr
+        %td 
+          %b RESIDENCE ADDRESS
+          = @evaluation_sheet.co_app_res_address
+        %td
+          %b OFFICE ADDRESS
+          = @evaluation_sheet.co_app_office_address
+      %tr
+        %td{:rowspan => "2"} &nbsp; 
+        %td{:rowspan => "2"} &nbsp;
+      %tr
+      %tr 
+        %td{:rowspan => "2"} 
+          %b Ph:
+          = @evaluation_sheet.co_app_residence_phone
+        %td{:rowspan => "2"} 
+          %b Ph:
+          = @evaluation_sheet.co_app_office_phone
+      %tr
+      %tr
+        %td 
+          %b Mobile:
+          = @evaluation_sheet.co_app_mobile
+        %td 
+          %b Design:
+          = @evaluation_sheet.co_app_designation
+      %tr
+        %td 
+          %b Relationship:
+          = @evaluation_sheet.co_app_relationship
+        %td
+      %tr
+        %td{:colspan => "2"} 
+          %b Date of Birth:
+          = @evaluation_sheet.co_app_dob
+        
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 B.PERSONAL DETAILS
+    %tbody
+      %tr
+        %td{:style => "height:30px;"} 
+          %b Education Back Ground:
+          = @evaluation_sheet.education_background
+      
+      %tr
+        %td{:style => "height:65px;"} 
+          %b Family Back Ground:
+          = @evaluation_sheet.family_background
 
-    %tr
-      %th Other Source of Income
-      %td
-        = @evaluation_sheet.app_other_source_income
-      %td
-        = @evaluation_sheet.co_app_other_source_income
+      %tr
+        %th
+          %h5 Residence Details  
+          %b Owned/Rented/Lease:
+          = @evaluation_sheet.residence_detials 
+          %br      
+          %b In present residence since:
+          = @evaluation_sheet.residence_since
+          %br
+          %b No of Dependants:
+          = @evaluation_sheet.no_of_dependants
+    
+      %tr
+        %th
+          %h5 In case of Salaried 
+          %b Years in Current Company:
+          = @evaluation_sheet.years_in_current_company        
+          %br  
+          %b Nature Of Business Activities:
+          = @evaluation_sheet.nature_of_business_activities  
+          %br
+          %b Total Experience:
+          = @evaluation_sheet.total_experience  
 
-    %tr
-      %th Total Income
-      %td
-        = @evaluation_sheet.app_total_income
-      %td
-        = @evaluation_sheet.co_app_total_income
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 LOAN DETAILS
+    %tbody
+      %tr
+        %th.loan_details Loan Type
+        %td 
+          = @evaluation_sheet.loan_type
 
-    %tr
-      %th House Hold Expense
-      %td
-        = @evaluation_sheet.app_house_hold_expense
-      %td
-        = @evaluation_sheet.co_app_house_hold_expense
+      %tr
+        %th Loan Requested
+        %td 
+          = @evaluation_sheet.loan_requested
+    
+      %tr
+        %th Loan Eligibility
+        %td 
+          = @evaluation_sheet.loan_eligibility
+    
+      %tr
+        %th Tenor
+        %td  
+          = @evaluation_sheet.tenor
 
+      %tr
+        %th ROI
+        %td  
+          = @evaluation_sheet.ROI
+
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 IN CASE OF SELF EMPLOYED  
+    %tbody
+      %tr
+        %th.self_employed Personal Discussion By
+        %td
+          = @evaluation_sheet.personal_discussion_by
+    
+      %tr
+        %th Name Of Business Organisation
+        %td
+          = @evaluation_sheet.name_of_business_org 
+    
+      %tr
+        %th Nature Of Business
+        %td
+          = @evaluation_sheet.nature_of_business 
+    
+      %tr
+        %th Years in The Current Business
+        %td
+          = @evaluation_sheet.years_in_the_current_business 
+    
+      %tr
+        %th No Of Partners/Directors
+        %td
+          = @evaluation_sheet.no_of_partners_or_directors 
+    
+      %tr
+        %th Turnover of The Company
+        %td
+          = @evaluation_sheet.turnover_of_the_company
+
+      %tr
+        %th 
+          Office Premises
+          %br
+          Rent/Own/Lease
+        %td
+          = @evaluation_sheet.office_premises
+
+      %tr
+        %th Employee Details:
+        %td
+          = @evaluation_sheet.employee_details
+          
+      %tr
+        %th Main Clients:
+        %td
+          = @evaluation_sheet.main_clients
+
+      %tr
+        %th Comments on Mode of Sales, Collection Cycle and Margins:
+        %td
+          = @evaluation_sheet.comments_on_mode_of_sales  
+                         
+  %h4 Existing Loan Details(Secured & Unsecured Loans)      
+  %table.table.table-bordered
     %tr
-      %th Disposable Income
-      %td
-        = @evaluation_sheet.app_disposable_income
-      %td
-        = @evaluation_sheet.co_app_disposable_income
+      %th Bank/Institution
+      %th Loan Type
+      %th Loan Amount
+      %th Tenure
+      %th Date of Loan
+      %th EMI
+    -@evaluation_sheet.loan_details.each do |ld|
+      %tr
+        %td= ld.bank 
+        %td= ld.loan_type
+        %td= ld.loan_amount
+        %td= ld.tenure
+        %td= ld.date_of_loan
+        %td= ld.emi 
+
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th
+          %h4 Credit Card Details
+    %tbody
+      %tr
+        %th Issued By
+        %th Card Number
+        %th Credit Limit Fixed
+        %th Date of Expiry 
+      -@evaluation_sheet.credit_cards.each do |cd|
+        %tr
+          %td= cd.issued_by 
+          %td= cd.card_number
+          %td= cd.credit_limit_fixed
+          %td= cd.date_of_expiry
+
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 D. Assets
+      %tr
+        %td{:colspan => "3"} 
+          %b Liabilities:
+          = @evaluation_sheet.liabilities
+      %tr
+        %th.self_employed With Corporation Bank
+        %td
+          = @evaluation_sheet.with_corporation_bank_1 
+        %td
+          = @evaluation_sheet.with_corporation_bank_2
+      %tr
+        %th.self_employed Other Banks
+        %td
+          = @evaluation_sheet.other_banks_1 
+        %td
+          = @evaluation_sheet.other_banks_2 
+    
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 E. Income Details(Per Month):
+      %tr
+        %th.income_details Particulars
+        %th.income_details1 Applicant
+        %th.income_details1 Co-Applicant
+      %tr
+        %th Income from Business
+        %td
+          = @evaluation_sheet.app_income_from_business 
+        %td
+          = @evaluation_sheet.co_app_income_from_business 
+
+      %tr
+        %th Salary(Net)
+        %td
+          = @evaluation_sheet.app_salary
+        %td
+          = @evaluation_sheet.co_app_salary
+
+      %tr
+        %th Rental Income
+        %td
+          = @evaluation_sheet.app_rental_income 
+        %td
+          = @evaluation_sheet.co_app_rental_income
+
+      %tr
+        %th Other Source of Income
+        %td
+          = @evaluation_sheet.app_other_source_income
+        %td
+          = @evaluation_sheet.co_app_other_source_income
+
+      %tr
+        %th Total Income
+        %td
+          = @evaluation_sheet.app_total_income
+        %td
+          = @evaluation_sheet.co_app_total_income
+
+      %tr
+        %th House Hold Expense
+        %td
+          = @evaluation_sheet.app_house_hold_expense
+        %td
+          = @evaluation_sheet.co_app_house_hold_expense
+
+      %tr
+        %th Disposable Income
+        %td
+          = @evaluation_sheet.app_disposable_income
+        %td
+          = @evaluation_sheet.co_app_disposable_income
 
 
-%table.table.table-bordered
-  %thead
-    %tr
-      %th.property_details 
-        %b F.PROPERTY DETAILS 
-      %td 
-    %tr
-      %th.property ADDRESS
-      %td{:style => "height:65px;"} 
-        = @evaluation_sheet.property_address
-    %tr
-      %th Date Of Site Visit
-      %td
-        = @evaluation_sheet.date_of_site_visit   
-    %tr
-      %th Person Visited
-      %td
-        = @evaluation_sheet.person_visited    
-    %tr
-      %th 
-        Type of Locality 
-        %br
-        (Residential/Commercial/Industrial/Agricultural)
-      %td
-        = @evaluation_sheet.type_of_locality   
-    %tr
-      %th Neighborhood Confirmation
-      %td
-        = @evaluation_sheet.neighborhood_confirmation   
-    %tr
-      %th Total No.Of Floors in bldg
-      %td
-        = @evaluation_sheet.total_no_of_floors_building    
-    %tr
-      %th Is the Property Ready ?
-      %td
-        = @evaluation_sheet.is_the_property_ready  
-    %tr
-      %th Year of Construction
-      %td
-        = @evaluation_sheet.year_of_construction   
-    %tr
-      %th Area of Land/Flat
-      %td
-        = @evaluation_sheet.area_of_land_or_flat   
-    %tr
-      %th Cost of Land/Flat
-      %td
-        = @evaluation_sheet.cost_of_land_or_flat    
-    %tr
-      %th Cost of Construction
-      %td
-        = @evaluation_sheet.cost_of_construction 
-    %tr
-      %th Total Cost of Property
-      %td
-        = @evaluation_sheet.total_cost_of_property 
-    %tr
-      %th Date Completion
-      %td
-        = @evaluation_sheet.date_completion
-    %tr
-      %th Land Mark
-      %td
-        = @evaluation_sheet.land_mark  
-    %tr
-      %td.observation{:colspan => "3"}
-        %b Observations  
-        = @evaluation_sheet.observations
-    %tr
-      %th End Use
-      %td.observation
-        = @evaluation_sheet.end_use  
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th.property_details 
+          %b F.PROPERTY DETAILS 
+        %td 
+      %tr
+        %th.property ADDRESS
+        %td{:style => "height:65px;"} 
+          = @evaluation_sheet.property_address
+      %tr
+        %th Date Of Site Visit
+        %td
+          = @evaluation_sheet.date_of_site_visit   
+      %tr
+        %th Person Visited
+        %td
+          = @evaluation_sheet.person_visited    
+      %tr
+        %th 
+          Type of Locality 
+          %br
+          (Residential/Commercial/Industrial/Agricultural)
+        %td
+          = @evaluation_sheet.type_of_locality   
+      %tr
+        %th Neighborhood Confirmation
+        %td
+          = @evaluation_sheet.neighborhood_confirmation   
+      %tr
+        %th Total No.Of Floors in bldg
+        %td
+          = @evaluation_sheet.total_no_of_floors_building    
+      %tr
+        %th Is the Property Ready ?
+        %td
+          = @evaluation_sheet.is_the_property_ready  
+      %tr
+        %th Year of Construction
+        %td
+          = @evaluation_sheet.year_of_construction   
+      %tr
+        %th Area of Land/Flat
+        %td
+          = @evaluation_sheet.area_of_land_or_flat   
+      %tr
+        %th Cost of Land/Flat
+        %td
+          = @evaluation_sheet.cost_of_land_or_flat    
+      %tr
+        %th Cost of Construction
+        %td
+          = @evaluation_sheet.cost_of_construction 
+      %tr
+        %th Total Cost of Property
+        %td
+          = @evaluation_sheet.total_cost_of_property 
+      %tr
+        %th Date Completion
+        %td
+          = @evaluation_sheet.date_completion
+      %tr
+        %th Land Mark
+        %td
+          = @evaluation_sheet.land_mark  
+      %tr
+        %td.observation{:colspan => "3"}
+          %b Observations  
+          = @evaluation_sheet.observations
+      %tr
+        %th End Use
+        %td.observation
+          = @evaluation_sheet.end_use  
 
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 In Case of Builders 
-    %tr
-      %th.builders Established Since
-      %td
-        = @evaluation_sheet.established_since 
-    %tr
-      %th No of projects executed so far
-      %td
-        = @evaluation_sheet.no_of_projects_executed_so_far
-    %tr
-      %th No of Flats Sold
-      %td
-        = @evaluation_sheet.no_of_flats_sold
-    %tr
-      %th No of Flats Constructed
-      %td
-        = @evaluation_sheet.no_of_flats_constructed
-    %tr
-      %th Enquiries made
-      %td
-        = @evaluation_sheet.enquiries_made
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 In Case of Builders 
+      %tr
+        %th.builders Established Since
+        %td
+          = @evaluation_sheet.established_since 
+      %tr
+        %th No of projects executed so far
+        %td
+          = @evaluation_sheet.no_of_projects_executed_so_far
+      %tr
+        %th No of Flats Sold
+        %td
+          = @evaluation_sheet.no_of_flats_sold
+      %tr
+        %th No of Flats Constructed
+        %td
+          = @evaluation_sheet.no_of_flats_constructed
+      %tr
+        %th Enquiries made
+        %td
+          = @evaluation_sheet.enquiries_made
 
-%table.table.table-bordered
-  %thead
-    %tr
-      %th 
-        %h4 Details of Verification Carried out:
-    %tr
-      %th.income_details Particulars
-      %th.income_details1 Applicant
-      %th.income_details1 Co-Applicant1
-      %th.income_details1 CO-Applicant2/Guarantor
-    %tr
-      %th Residence(Physical)
-      %td
-        = @evaluation_sheet.app_residence_physical
-      %td
-        = @evaluation_sheet.co_app1_residence_physical
-      %td
-        = @evaluation_sheet.co_app2_residence_physical 
-    %tr
-      %th Business(Physical)
-      %td
-        = @evaluation_sheet.app_business_physical
-      %td
-        = @evaluation_sheet.co_app1_business_physical
-      %td
-        = @evaluation_sheet.co_app2_business_physical 
-    %tr
-      %th 
-        Telephone Verification:
-        %hr.tele
-        Residence
-        %hr.tele
-        office
-      %td
-        &nbsp;
-        %hr.tele
-        = @evaluation_sheet.app_telephone_verify_residence 
-        %hr.tele   
-        = @evaluation_sheet.app_telephone_verify_office
-      %td
-        &nbsp;
-        %hr.tele
-        = @evaluation_sheet.co_app1_phone_verify_residence  
-        %hr.tele   
-        = @evaluation_sheet.co_app1_phone_verify_office
-      %td
-        &nbsp;
-        %hr.tele
-        = @evaluation_sheet.co_app2_telephone_verify_residence  
-        %hr.tele   
-        = @evaluation_sheet.co_app2_telephone_verify_office
-    %tr
-      %th Documents Verified (Original)
-      %td
-        = @evaluation_sheet.app_doc_verified_original
-      %td
-        = @evaluation_sheet.co_app1_doc_verified_original
-      %td
-        = @evaluation_sheet.co_app2_doc_verified_original
-    %tr
-      %th 
-        DOB & Signature Proof:
-        %hr.tele
-        ID Proof:
-      %td
-        &nbsp;
-        = @evaluation_sheet.app_dob_signature_proof  
-        %hr.tele   
-        = @evaluation_sheet.app_id_proof
-      %td
-        &nbsp;
-        = @evaluation_sheet.co_app1_dob_signature_proof  
-        %hr.tele   
-        = @evaluation_sheet.co_app1_id_proof
-      %td
-        &nbsp;
-        = @evaluation_sheet.co_app2_dob_signature_proof 
-        %hr.tele   
-        = @evaluation_sheet.co_app2_id_proof
-    %tr
-      %th Pay Slips/Financials
-      %td
-        = @evaluation_sheet.app_pay_slips
-      %td
-        = @evaluation_sheet.co_app1_pay_slips
-      %td
-        = @evaluation_sheet.co_app2_pay_slips 
-    %tr
-      %th Bank Statement:
-      %td
-        = @evaluation_sheet.app_bank_statement
-      %td
-        = @evaluation_sheet.co_app1_bank_statement
-      %td
-        = @evaluation_sheet.co_app2_bank_statement
-    %tr
-      %th 
-        Form 16 
-        %br 
-        IT Return
-      %td
-        = @evaluation_sheet.app_IT_return
-      %td
-        = @evaluation_sheet.co_app1_IT_return
-      %td
-        = @evaluation_sheet.co_app2_IT_return
-    %tr
-      %th ITR Check Status:
-      %td
-        = @evaluation_sheet.app_ITR_check_status
-      %td
-        = @evaluation_sheet.co_app1_ITR_check_status
-      %td
-        = @evaluation_sheet.co_app2_ITR_check_status
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 
+          %h4 Details of Verification Carried out:
+      %tr
+        %th.income_details Particulars
+        %th.income_details1 Applicant
+        %th.income_details1 Co-Applicant1
+        %th.income_details1 CO-Applicant2/Guarantor
+      %tr
+        %th Residence(Physical)
+        %td
+          = @evaluation_sheet.app_residence_physical
+        %td
+          = @evaluation_sheet.co_app1_residence_physical
+        %td
+          = @evaluation_sheet.co_app2_residence_physical 
+      %tr
+        %th Business(Physical)
+        %td
+          = @evaluation_sheet.app_business_physical
+        %td
+          = @evaluation_sheet.co_app1_business_physical
+        %td
+          = @evaluation_sheet.co_app2_business_physical 
+      %tr
+        %th 
+          Telephone Verification:
+          %hr.tele
+          Residence
+          %hr.tele
+          office
+        %td
+          &nbsp;
+          %hr.tele
+          = @evaluation_sheet.app_telephone_verify_residence 
+          %hr.tele   
+          = @evaluation_sheet.app_telephone_verify_office
+        %td
+          &nbsp;
+          %hr.tele
+          = @evaluation_sheet.co_app1_phone_verify_residence  
+          %hr.tele   
+          = @evaluation_sheet.co_app1_phone_verify_office
+        %td
+          &nbsp;
+          %hr.tele
+          = @evaluation_sheet.co_app2_telephone_verify_residence  
+          %hr.tele   
+          = @evaluation_sheet.co_app2_telephone_verify_office
+      %tr
+        %th Documents Verified (Original)
+        %td
+          = @evaluation_sheet.app_doc_verified_original
+        %td
+          = @evaluation_sheet.co_app1_doc_verified_original
+        %td
+          = @evaluation_sheet.co_app2_doc_verified_original
+      %tr
+        %th 
+          DOB & Signature Proof:
+          %hr.tele
+          ID Proof:
+        %td
+          &nbsp;
+          = @evaluation_sheet.app_dob_signature_proof  
+          %hr.tele   
+          = @evaluation_sheet.app_id_proof
+        %td
+          &nbsp;
+          = @evaluation_sheet.co_app1_dob_signature_proof  
+          %hr.tele   
+          = @evaluation_sheet.co_app1_id_proof
+        %td
+          &nbsp;
+          = @evaluation_sheet.co_app2_dob_signature_proof 
+          %hr.tele   
+          = @evaluation_sheet.co_app2_id_proof
+      %tr
+        %th Pay Slips/Financials
+        %td
+          = @evaluation_sheet.app_pay_slips
+        %td
+          = @evaluation_sheet.co_app1_pay_slips
+        %td
+          = @evaluation_sheet.co_app2_pay_slips 
+      %tr
+        %th Bank Statement:
+        %td
+          = @evaluation_sheet.app_bank_statement
+        %td
+          = @evaluation_sheet.co_app1_bank_statement
+        %td
+          = @evaluation_sheet.co_app2_bank_statement
+      %tr
+        %th 
+          Form 16 
+          %br 
+          IT Return
+        %td
+          = @evaluation_sheet.app_IT_return
+        %td
+          = @evaluation_sheet.co_app1_IT_return
+        %td
+          = @evaluation_sheet.co_app2_IT_return
+      %tr
+        %th ITR Check Status:
+        %td
+          = @evaluation_sheet.app_ITR_check_status
+        %td
+          = @evaluation_sheet.co_app1_ITR_check_status
+        %td
+          = @evaluation_sheet.co_app2_ITR_check_status
 
-%h4 Particulars of References made: At least two references shall be obtained to confirm the identification of the Applicant:
-%b Remarks:
-= @evaluation_sheet.app_remarks
-%br  
-= link_to 'Edit', edit_evaluation_sheet_path(@evaluation_sheet)
-\|
-= link_to 'Back', evaluation_sheets_path
+  %h4 Particulars of References made: At least two references shall be obtained to confirm the identification of the Applicant:
+  %b Remarks:
+  = @evaluation_sheet.app_remarks
+%br 
+%br
+  %b Date:
+  = @evaluation_sheet.date
+  .sign
+    %b Authorised Signatory
+.display 
+  = link_to 'Edit', edit_evaluation_sheet_path(@evaluation_sheet)
+  \|
+  = link_to 'Back', evaluation_sheets_path
 
 
 

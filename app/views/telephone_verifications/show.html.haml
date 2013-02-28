@@ -1,144 +1,188 @@
 %p#notice= notice
-%table
+%h3{:style => "text-align:center;"} TELEPHONE VERIFICATION REPORT
+%table.table.table-bordered.no-border
   %tr
-    %td
-      %b BORROWERS NAME
+    %th
+      BORROWERS NAME
+      .right :
+      .clear
     %td
       =@telephone_verification.borrowers_name
   %tr
-    %td
-      %b DATE OF RECEIPT
+    %th
+      DATE OF RECEIPT
+      .right :
+      .clear
     %td
       =@telephone_verification.date_of_receipt
   %tr
-    %td
-      %b RESIDENCE CONTACT PHONE NO
+    %th
+      RESIDENCE CONTACT PHONE NO
+      .right :
+      .clear
     %td
       =@telephone_verification.Res_phone_no
   %tr
-    %td
-      %b PERSON CONTACTED/RELATIONSHIP:
+    %th
+      PERSON CONTACTED/RELATIONSHIP
+      .right :
+      .clear
     %td
       =@telephone_verification.person_contacted
   %tr
-    %td
-      %b RESIDENCE ADDRESS:
+    %th
+      RESIDENCE ADDRESS
+      .right :
+      .clear
     %td 
       =@telephone_verification.res_addr
 %br
-%br
-%br
+
  
-%table   
+%table.table.table-bordered.no-border
   %tr
-    %td
-      %b PHONE NUMBER:
+    %th.tvr
+      PHONE NUMBER
+      .right :
+      .clear      
     %td 
       =@telephone_verification.phone_no_borrower1
   %tr
-    %td
-      %b BORROWERS DATE OF BIRTH:
+    %th
+      BORROWERS DATE OF BIRTH
+      .right :
+      .clear      
     %td
       =@telephone_verification.borrowers_dob
   %tr
-    %td
-      %b YEARS AT RESIDENCE:
+    %th
+      YEARS AT RESIDENCE
+      .right :
+      .clear      
     %td 
       =@telephone_verification.years_at_res
   %tr
-    %td
-      %b  PREMISES:
+    %th
+      PREMISES
+      .right :
+      .clear        
     %td
       =@telephone_verification.premises
   %tr
-    %td
-      %b CELLULAR NUMBER:
+    %th
+      CELLULAR NUMBER
+      .right :
+      .clear        
     %td
       =@telephone_verification.cell_no 
   %tr
-    %td
-      %b COMMENTS:
+    %th
+      COMMENTS
+      .right :
+      .clear        
     %td
       =@telephone_verification.comments1
 %br
-%br
-%br      
-%table      
+
+      
+%table.table.table-bordered.no-border      
   %tr
-    %td
-      %b BUSINESS CONTACT PHONE NO:
+    %th.tvr
+      BUSINESS CONTACT PHONE NO
+      .right :
+      .clear  
     %td 
       =@telephone_verification.business_contact_no
     %tr
-      %td  
-        %b PERSON CONTACTED/DESIGNATION:
+      %th  
+        PERSON CONTACTED/DESIGNATION
+        .right :
+        .clear          
       %td
         =@telephone_verification.person_contacted_des 
   %tr
-    %td
-      %b BUSINESS ADDRESS:
+    %th
+      BUSINESS ADDRESS
+      .right :
+      .clear        
     %td
       =@telephone_verification.business_addr
 %br
-%br
-%br
-%table      
+
+
+%table.table.table-bordered.no-border     
   %tr
-    %td
-      %b DESIGNATION OF BORROWER:
+    %th.tvr
+      DESIGNATION OF BORROWER
+      .right :
+      .clear        
     %td
       =@telephone_verification.designation_borrower
   %tr
-    %td
-      %b NATURE OF BUSINESS:
+    %th
+      NATURE OF BUSINESS
+      .right :
+      .clear        
     %td
       =@telephone_verification.nature_of_business
   %tr
-    %td
-      %b PHONE NUMBER:
+    %th
+      PHONE NUMBER
+      .right :
+      .clear        
     %td
       =@telephone_verification.phone_no_borrower2
   %tr
-    %td
-      %b COMMENTS:
+    %th
+      COMMENTS
+      .right :
+      .clear        
     %td
       =@telephone_verification.comments2
 %br
-%br
-%br 
+
      
-%table      
+%table.table.table-bordered.no-border     
   %tr
-    %td
-      %b CALL ATTEMPTS:
+    %th.tvr
+      CALL ATTEMPTS
+      .right :
+      .clear        
     %td
       =@telephone_verification.call_attempts
-    %td
-      %b RESIDENCE:
+    %th
+      RESIDENCE
+      .right :
+      .clear       
     %td
       =@telephone_verification.residence
-    %td
-      %b OFFICE:
+    %th
+      OFFICE
+      .right :
+      .clear       
     %td
       =@telephone_verification.office
   %tr
-    %td
-      %b VERIFIERS NAME:
+    %th
+      VERIFIERS NAME
+      .right :
+      .clear       
     %td{:colspan=>5}
       =@telephone_verification.verifiers_name
   %tr
-    %td
-      %b DATE OF CONTACT:
+    %th
+      DATE OF CONTACT
+      .right :
+      .clear       
     %td{:colspan=>5}
       =@telephone_verification.date_of_contact
-  %tr
-    %td
-      %b DATE:
-    %td
-      =@telephone_verification.date
-    %td{:colspan=>4}
-      %b Authorised signatory  
- 
-= link_to 'Edit', edit_telephone_verification_path(@telephone_verification)
-\|
-= link_to 'Back', telephone_verifications_path
+%br
+%b Date:
+=@telephone_verification.date
+.sign  
+  %b Authorised signatory  
+%br
+.display 
+  = link_to 'Edit', edit_telephone_verification_path(@telephone_verification)
+  \|
+  = link_to 'Back', telephone_verifications_path
