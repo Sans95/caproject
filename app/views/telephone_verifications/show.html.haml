@@ -36,10 +36,12 @@
       .clear
     %td 
       =@telephone_verification.res_addr
-%br
-
- 
-%table.table.table-bordered.no-border
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}    
   %tr
     %th.tvr
       PHONE NUMBER
@@ -82,10 +84,12 @@
       .clear        
     %td
       =@telephone_verification.comments1
-%br
-
-      
-%table.table.table-bordered.no-border      
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}          
   %tr
     %th.tvr
       BUSINESS CONTACT PHONE NO
@@ -107,10 +111,12 @@
       .clear        
     %td
       =@telephone_verification.business_addr
-%br
-
-
-%table.table.table-bordered.no-border     
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}  
+  %tr
+    %td{:colspan => 2}     
   %tr
     %th.tvr
       DESIGNATION OF BORROWER
@@ -139,10 +145,13 @@
       .clear        
     %td
       =@telephone_verification.comments2
-%br
-
-     
-%table.table.table-bordered.no-border     
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}
+  %tr
+    %td{:colspan => 2}    
+%table.table.table-bordered.no-border
   %tr
     %th.tvr
       CALL ATTEMPTS
@@ -151,15 +160,11 @@
     %td
       =@telephone_verification.call_attempts
     %th
-      RESIDENCE
-      .right :
-      .clear       
+      RESIDENCE:  
     %td
       =@telephone_verification.residence
     %th
-      OFFICE
-      .right :
-      .clear       
+      OFFICE:
     %td
       =@telephone_verification.office
   %tr
