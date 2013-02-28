@@ -2,8 +2,8 @@ class BusinessVerificationReportsController < ApplicationController
   # GET /business_verification_reports
   # GET /business_verification_reports.json
   def index
-    @business_verification_reports = BusinessVerificationReport.all
-
+   @search =  BusinessVerificationReport.search(params[:search])
+    @business_verification_report = @search.paginate(:per_page => 20, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @business_verification_reports }

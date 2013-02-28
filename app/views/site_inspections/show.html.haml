@@ -1,90 +1,85 @@
 %p#notice= notice
 
-%table
+%table.table-bordered.nobordertable
   %tr
-    %td{:width=>"50"}
+    %td{:width=>"250"}
       %b CORPORATION BANK
     %td
       %b BRANCH:
       =@site_inspection.branch
       
-%table     
+%table.table.table-bordered.nobordertable 
   %tr
-    %td{:width => "50"}
+  %tr
+    %td{:width => "230"}
       %b CORP
-    %td
+    %td{:width =>"220"}
       %b CUSTOMER NAME:
     %td
       =@site_inspection.name
-%table
+      
+%table.table.table-bordered.nobordertable 
   %tr
-    %td{:width => "200"}
-      %b ADDRESS(SITE):
-    %td{:width => "200"}
-    %td{:width => "200"}
+    %th{:width =>"464"}ADDRESS(SITE):
+    %td
       =@site_inspection.address
+      
+%table.table.table-bordered.nobordertable      
   %tr
-    %td{:width => "100"}
-    %td{:colspan=>2,:width => "500"}
+    %td{:width =>"300"}
+    %td{:width =>"150"}
       %b TEL NO:
+    %td
       =@site_inspection.phone
+      
+%table.table.table-bordered.nobordertable     
   %tr
-    %td{:width => "200"}
-      %b Date of Site Visit
-    %td{:width => "200"}
-    %td{:width => "200"}
-      %b :
+    %td{:width=>"470"}
+      %b Date of Site Visit:
+    %td
       =@site_inspection.date_site_visit
   %tr
-    %td{:width => "200"}
+    %td
       %b Name of the Verifier:
-    %td{:width => "200"}
-    %td{:width => "200"}
-      %b :  
+    %td
       =@site_inspection.verifier_name
   %tr
-    %td{:width => "200"}
+    %td
       %b Contact Person/Designation
-    %td{:width => "200"}
-    %td{:width => "200"}
-      %b :  
+    %td
       =@site_inspection.contact_person
       =@site_inspection.designation
   %tr
-    %td{:width => "200"}
+    %td
       %b Land Mark
-    %td{:width => "200"}
-    %td{:width => "200"}
-      %b : 
+    %td
       =@site_inspection.landmark
   %tr
-    %td{:width => "200"}
+    %td
       %b Remarks
-    %td{:width => "200"}
-    %td{:width => "200"}
-      %b :  
+    %td  
       =@site_inspection.remarks
       
-%table      
+%table.table.table-bordered.nobordertable     
   %tr
-    %td{:width => "200"}
+    %td{:width=>'400px'}
       %b Verifier Name:
       =@site_inspection.verifier_name2
-    %td{:width => "200"}
+    %td{:width=>'380px'}
       %b Signature:
-    %td{:width => "500"}
+    %td
       %b Date of Verification:
       =@site_inspection.date_of_verification
     
-%table
+%table.table.table-bordered.nobordertable 
   %tr
-    %td{:colspan=>2,:width => "200"}   
+    %td  
       %b Date:
       =@site_inspection.date 
   %tr
-    %td{:width => "400"}
+    %td{:width=>'800px'}
       %b Place:Mangalore
-    %td{:width => "200"}
+    %td
       %b Authorized Signature: 
   %tr
     %td{:colspan=>2}

@@ -2,9 +2,9 @@ class ItrVerificationReportsController < ApplicationController
   # GET /itr_verification_reports
   # GET /itr_verification_reports.json
   def index
-    @itr_verification_reports = ItrVerificationReport.all
-
-    respond_to do |format|
+     @search = ItrVerificationReport.search(params[:search])
+     @itr_verification_report = @search.paginate(:per_page => 20, :page => params[:page])
+     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @itr_verification_reports }
     end

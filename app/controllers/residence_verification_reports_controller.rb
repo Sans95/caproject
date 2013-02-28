@@ -2,8 +2,8 @@ class ResidenceVerificationReportsController < ApplicationController
   # GET /residence_verification_reports
   # GET /residence_verification_reports.json
   def index
-    @residence_verification_reports = ResidenceVerificationReport.all
-
+    @search = ResidenceVerificationReport.search(params[:search])
+    @residence_verification_report = @search.paginate(:per_page => 20, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @residence_verification_reports }

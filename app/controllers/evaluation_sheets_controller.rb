@@ -1,5 +1,4 @@
 class EvaluationSheetsController < ApplicationController
-  layout 'application'
   # GET /evaluation_sheets
   # GET /evaluation_sheets.json
   def index

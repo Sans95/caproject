@@ -1,4 +1,4 @@
-%h1 Evaluation Sheets
+%h5 EVALUATION SHEET
 
 .form-search.form-search_factory
   = form_for @search, :url => evaluation_sheets_path do |f|
@@ -7,11 +7,11 @@
         %td
           = f.label :date_of_receipt_greater_than_or_equal_to, "Date Of Receipt Of The File"      
         %td
-          = f.date_select :date_of_receipt_greater_than_or_equal_to, :include_blank => "true", :class => "span2"
+          = f.date_select :date_of_receipt_greater_than_or_equal_to,{:include_blank => true}, {:class => "span1"}
         %td   
           = f.label :date_of_report_greater_than_or_equal_to, "Date Of The Report" 
         %td
-          = f.date_select :date_of_report_greater_than_or_equal_to, :include_blank => "true", :class => "span2"
+          = f.date_select :date_of_report_greater_than_or_equal_to, {:include_blank =>true}, {:class => "span1"}
         %td    
           = f.submit "Search",:class => "btn btn-inverse"  
 .clearfix  

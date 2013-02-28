@@ -1,17 +1,38 @@
-%h1 Listing itr_verification_reports
+%h5 ITR VERIFICATION REPORT
 
-%table
-  %tr
-    %th
-    %th
-    %th
+.form-search.form-search_factory
+  = form_for @search, :url => itr_verification_reports_path do |f|
+    %table.search_factory
+      %tr
+        %td
+          = f.label :branch_contains, "BRANCH:"      
+        %td
+          = f.text_field :branch_contains,:class => "span2", :placeholder => "Enter Branch "
+        %td   
+          = f.label :customer_name_contains, "CUSTOMER NAME:" 
+        %td
+          = f.text_field :customer_name_contains,:class => "span1"
+        %td    
+          = f.submit "Search",:class => "btn btn-inverse"  
+.clearfix  
 
-  - @itr_verification_reports.each do |itr_verification_report|
-    %tr
-      %td= link_to 'Show', itr_verification_report
-      %td= link_to 'Edit', edit_itr_verification_report_path(itr_verification_report)
-      %td= link_to 'Destroy', itr_verification_report, method: :delete, data: { confirm: 'Are you sure?' }
+.section  
+  .section-header
+    %h3.left ITR verification
+    = link_to '<i class="icon-plus-sign"></i> New ITR VERIFICATION REPORT'.html_safe, new_itr_verification_report_path, class: 'right btn'
+  .section-body
+    %table.table.table-bordered
+      %tr
+        %th BRANCH
+        %th CUSTOMER NAME
+        %th ACTION
+      - @itr_verification_report.each do |itr_verification|
+        %tr
+          %td= itr_verification.branch
+          %td= itr_verification.customer_name
+          %td= link_to 'Show', itr_verification, :class => "btn"
+          %td= link_to 'Edit', edit_itr_verification_report_path(itr_verification), :class => "btn"
+          %td= link_to 'Destroy', itr_verification, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn"
 
-%br
 
-= link_to 'New Itr verification report', new_itr_verification_report_path
+= will_paginate(@itr_verification_report)

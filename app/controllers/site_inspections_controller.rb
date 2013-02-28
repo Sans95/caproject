@@ -2,9 +2,9 @@ class SiteInspectionsController < ApplicationController
   # GET /site_inspections
   # GET /site_inspections.json
   def index
-    @site_inspections = SiteInspection.all
-
-    respond_to do |format|
+     @search = SiteInspection.search(params[:search])
+     @site_inspection = @search.paginate(:per_page => 20, :page => params[:page])
+     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @site_inspections }
     end

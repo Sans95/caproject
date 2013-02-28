@@ -1,17 +1,33 @@
-%h1 Listing business_verification_reports
+%h5 BUSINESS VERIFICATION REPORT
 
-%table
-  %tr
-    %th
-    %th
-    %th
+.form-search.form-search_factory
+  = form_for @search, :url =>  business_verification_reports_path do |f|
+    %table.search_factory
+      %tr
+        %td
+          = f.label :name_contains, "NAME:"      
+        %td
+          = f.text_field :name_contains,:class => "span2", :placeholder => "Enter Name "
+        %td    
+          = f.submit "Search",:class => "btn btn-inverse"  
+.clearfix  
 
-  - @business_verification_reports.each do |business_verification_report|
-    %tr
-      %td= link_to 'Show', business_verification_report
-      %td= link_to 'Edit', edit_business_verification_report_path(business_verification_report)
-      %td= link_to 'Destroy', business_verification_report, method: :delete, data: { confirm: 'Are you sure?' }
+.section  
+  .section-header
+    %h3.left BUSINESS VERIFICATION 
+    = link_to '<i class="icon-plus-sign"></i> New BUSINESS VERIFICATION REPORT'.html_safe, new_business_verification_report_path, class: 'right btn'
+  .section-body
+    %table.table.table-bordered
+      %tr
+        %th NAME
+        %th ACTION
+      - @business_verification_report.each do |bus_verification|
+        %tr
+          %td= bus_verification.name
+          %td= link_to 'Show', bus_verification, :class => "btn"
+          %td= link_to 'Edit', edit_business_verification_report_path(res_verification), :class => "btn"
+          %td= link_to 'Destroy', bus_verification, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn"
 
-%br
 
-= link_to 'New Business verification report', new_business_verification_report_path
+= will_paginate(@business_verification_report)
+

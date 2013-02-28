@@ -1,17 +1,38 @@
-%h1 Listing site_inspections
+%h5 SITE INSPECTION REPORT
 
-%table
-  %tr
-    %th
-    %th
-    %th
+.form-search.form-search_factory
+  = form_for @search, :url =>site_inspections_path do |f|
+    %table.search_factory
+      %tr
+        %td
+          = f.label :branch_contains, "BRANCH:"      
+        %td
+          = f.text_field :branch_contains,:class => "span2", :placeholder => "Enter Branch "
+        %td   
+          = f.label :name_contains, "CUSTOMER NAME:" 
+        %td
+          = f.text_field :name_contains,:class => "span1"
+        %td    
+          = f.submit "Search",:class => "btn btn-inverse"  
+.clearfix  
 
-  - @site_inspections.each do |site_inspection|
-    %tr
-      %td= link_to 'Show', site_inspection
-      %td= link_to 'Edit', edit_site_inspection_path(site_inspection)
-      %td= link_to 'Destroy', site_inspection, method: :delete, data: { confirm: 'Are you sure?' }
+.section  
+  .section-header
+    %h3.left ITR verification
+    = link_to '<i class="icon-plus-sign"></i> New SITE INSPECTION REPORT'.html_safe, new_site_inspection_path, class: 'right btn'
+  .section-body
+    %table.table.table-bordered
+      %tr
+        %th BRANCH
+        %th CUSTOMER NAME
+        %th ACTION
+      - @site_inspection.each do |site_inspection|
+        %tr
+          %td= site_inspection.branch
+          %td= site_inspection.name
+          %td= link_to 'Show', site_inspection, :class => "btn"
+          %td= link_to 'Edit', edit_site_inspection_path(site_inspection), :class => "btn"
+          %td= link_to 'Destroy', site_inspection, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn"
 
-%br
 
-= link_to 'New Site inspection', new_site_inspection_path
+= will_paginate(@site_inspection)
