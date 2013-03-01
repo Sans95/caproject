@@ -1,90 +1,107 @@
 %p#notice= notice
-
-%table.table-bordered.nobordertable
+%h3{:style => "text-align:center;"} SITE INSPECTION REPORT 
+%table.table-bordered.no-border
   %tr
-    %td{:width=>"250"}
+    %td.site1{:width=>"370"}
       %b CORPORATION BANK
     %td
       %b BRANCH:
       =@site_inspection.branch
       
-%table.table.table-bordered.nobordertable 
+%table.table.table-bordered.no-border
   %tr
   %tr
-    %td{:width => "230"}
-      %b CORP
-    %td{:width =>"220"}
-      %b CUSTOMER NAME:
+    %th{:width => "230"}
+      CORP
+    %th.site2{:width =>"145"}
+      CUSTOMER NAME
+      .right :
+      .clear         
     %td
       =@site_inspection.name
       
-%table.table.table-bordered.nobordertable 
+%table.table.table-bordered.no-border
   %tr
-    %th{:width =>"464"}ADDRESS(SITE):
+    %th.site3{:width =>"388"}
+      ADDRESS(SITE)
+      .right :
+      .clear         
     %td
       =@site_inspection.address
-      
-%table.table.table-bordered.nobordertable      
+%br
+%br      
+%table.table.table-bordered.no-border     
   %tr
-    %td{:width =>"300"}
-    %td{:width =>"150"}
-      %b TEL NO:
+    %th{:width =>"300"}
+    %th.site4{:width =>"75"}
+      TEL NO
+      .right :
+      .clear         
     %td
       =@site_inspection.phone
       
-%table.table.table-bordered.nobordertable     
+%table.table.table-bordered.no-border
   %tr
-    %td{:width=>"470"}
-      %b Date of Site Visit:
+    %th.site5{:width=>"388"}
+      Date of Site Visit:
+      .right :
+      .clear         
     %td
       =@site_inspection.date_site_visit
   %tr
-    %td
-      %b Name of the Verifier:
+    %th
+      Name of the Verifier
+      .right :
+      .clear           
     %td
       =@site_inspection.verifier_name
   %tr
-    %td
-      %b Contact Person/Designation
+    %th
+      Contact Person/Designation
+      .right :
+      .clear           
     %td
       =@site_inspection.contact_person
       =@site_inspection.designation
   %tr
+    %th
+      Land Mark
+      .right :
+      .clear           
     %td
-      %b Land Mark
-    %td
-      =@site_inspection.landmark
+      =@site_inspection.landmark    
   %tr
-    %td
-      %b Remarks
-    %td  
+    %th
+      Remarks
+      .right :
+      .clear               
+    %td 
       =@site_inspection.remarks
-      
-%table.table.table-bordered.nobordertable     
+ 
+%br
+%br      
+%table.table.table-bordered.no-border
   %tr
-    %td{:width=>'400px'}
+    %td.left
       %b Verifier Name:
       =@site_inspection.verifier_name2
-    %td{:width=>'380px'}
+    %td.left
       %b Signature:
-    %td
+    %td.left
       %b Date of Verification:
       =@site_inspection.date_of_verification
-    
-%table.table.table-bordered.nobordertable 
-  %tr
-    %td  
-      %b Date:
-      =@site_inspection.date 
-  %tr
-    %td{:width=>'800px'}
-      %b Place:Mangalore
-    %td
-      %b Authorized Signature: 
-  %tr
-    %td{:colspan=>2}
-      %b For ROUTE MAP-See overleaf          
-
+               
+%b Date:
+=@site_inspection.date 
+%br 
+%b Place:Mangalore
+.authorised 
+  %b Authorised signatory 
+%br
+%br   
+%b For ROUTE MAP-See overleaf  
+%br
+.display  
 = link_to 'Edit', edit_site_inspection_path(@site_inspection)
 \|
 = link_to 'Back', site_inspections_path

@@ -1,6 +1,6 @@
 %p#notice= notice
-  
-%table.table.table-bordered
+%h3{:style => "text-align:center;"} ITR VERIFICATION REPORT 
+%table.table.table-bordered.no-border
   %tr
     %td
       %b CORPORATION BANK
@@ -8,7 +8,7 @@
       %b BRANCH:
       =@itr_verification_report.branch
 
-%table.table.table-bordered
+%table.table.table-bordered.no-border
   %tr
     %td
       %b CORP
@@ -99,17 +99,18 @@
 %p
   %b REMARKS
   =@itr_verification_report.remarks
-%p
-  %b DATE
-  =@itr_verification_report.date    
-%p
-  %b PLACE
-  =@itr_verification_report.place      
-   
-
-  
-  
-    
-= link_to 'Edit', edit_itr_verification_report_path(@itr_verification_report)
-\|
-= link_to 'Back', itr_verification_reports_path
+%br
+%br
+%br
+%b DATE
+=@itr_verification_report.date 
+%br 
+%b PLACE
+=@itr_verification_report.place 
+.sign  
+  %b Authorised signatory  
+%br
+.display       
+  = link_to 'Edit', edit_itr_verification_report_path(@itr_verification_report)
+  \|
+  = link_to 'Back', itr_verification_reports_path
