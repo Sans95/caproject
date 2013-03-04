@@ -14,7 +14,7 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 .large {font-size:1.1em;}
 .quiet {color:#999;}
 .hide {display:none;}
- 
+ h5{width:120px;background:red;margin:1px 0px}
 
     .navbar-fixed-top{display:none;}
  
@@ -23,14 +23,19 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
   background-color: transparent;
   border-collapse: collapse;
   border-spacing: 0;
+  font-size:11px;
+  font-weight:normal;
 }
+
+.statusbox{width:50px;float:left;}
+.main{border:1px solid #000;height:100px;}
 .table {
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom:25px;
 }
 .table th,
 .table td {
-  padding: 2px 2px 2px 10px;
+  padding: 2px 0px 0px 3px;
   line-height: 20px;
   text-align: left;
   vertical-align: top;
@@ -75,4 +80,58 @@ table.no-border th {border:none;}
 .tvr{width:270px;}
 .clear{clear:both;}
 .authorised{margin-left:31em;}
+td.underline{text-decoration:underline;}
+th.locality {width:200px;}
+td.loc1{width:200px;}
+td.loc2{width:100px;}
+td.loc3{width:65px;}
+th.type{width:200px;}
+th.entrance{width:300px;}
+th.relation{width:150px;}
+input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
+    width: auto;
+}
+input[type="radio"], input[type="checkbox"] {
+    line-height: normal;
+    margin: 4px 0 0;
+}
+label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+input, textarea, .uneditable-input {
+    width: 206px;
+}
+input, button, select, textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+label, input, button, select, textarea {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+
+
+
 }

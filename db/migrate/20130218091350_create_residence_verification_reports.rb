@@ -3,9 +3,9 @@ class CreateResidenceVerificationReports < ActiveRecord::Migration
     create_table :residence_verification_reports do |t|
       t.string :name
       t.text :address
-      t.boolean :home_loan
-      t.boolean :plot_loan
-      t.boolean :oth_loan
+      t.boolean :home_loan,:default => false
+      t.boolean :plot_loan,:default => false
+      t.boolean :oth_loan,:default => false
       t.string :other_loan
       t.string :salaried
       t.string :other_sal

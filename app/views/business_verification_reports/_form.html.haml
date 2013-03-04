@@ -298,7 +298,7 @@
     %tr
       %th Applicants DOB
       %td{:colspan=>3}
-        =f.text_field :app_dob
+        =f.date_select :app_dob,:start_year => Time.now.year - 30, :end_year => Time.now.year + 1, :include_blank => true, :class => "span1"
     %tr
       %th{:colspan=>4} FOR SELF EMPLOYED APPLICANTS ONLY:
     %tr 

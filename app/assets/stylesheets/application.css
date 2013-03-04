@@ -182,12 +182,17 @@ label abbr{color: red;}
     border:1px solid #fff4be;
 }
 .form-search_factory label{margin-left: 30px;}
-
+.statusbox{width:50px;float:left;}
+.main{border:1px solid #000;height:150px;}
+.table {margin-bottom:50px;}
 .right{float: right;}
 table.no-border {border:none;}
 table.no-border tr {border:none;}
 table.no-border td {border:none;}
 table.no-border th {border:none;}
+th.no-border {border:none;}
+td.no-border {border:none;}
+tr.no-border {border:none;}
 .tvr{width:360px;}
 .authorised{margin-left:50em;}
 .site1{width:380;}
@@ -195,4 +200,14 @@ table.no-border th {border:none;}
 .site3{width:465;}
 .site4{width:149;}
 .site5{width:465;}
+td.underline{text-decoration:underline;}
+th.locality {width:200px;}
+td.loc1{width:200px;}
+td.loc2{width:100px;}
+td.loc3{width:70px;}
+th.type{width:200px;}
+th.entrance{width:300px;}
+th.relation{width:150px;}
 
+.ty_off{width:250px;}
+.ph_desk{width:390px;} 

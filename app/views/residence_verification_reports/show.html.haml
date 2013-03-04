@@ -8,44 +8,52 @@
 %p
   %b ADDRESS:
   = @residence_verification_report.address
-  %br
-  %table
-    %tr
-      %td
-        =check_box_tag 'home_loan', "", (@residence_verification_report.home_loan)
-        %b HOME LOAN
-      %td
-        =check_box_tag 'plot_loan', "", (@residence_verification_report.plot_loan) 
-        %b PLOT LOAN
-      %td
-        =check_box_tag 'oth_loan' , "", (@residence_verification_report.oth_loan)
-        %b OTHERS-->
-      %td
-        %b OTHER LOAN:
-        =@residence_verification_report.other_loan
-    %tr
-      %td
-        =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SALARIED')?  true : false) 
-        %b SALARIED
-      %td
-        =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
-      %b SELF EMPLOYED
-      %td{:colspan=>2}
-        =check_box_tag 'salaried', "",((@residence_verification_report.salaried =='OTHERS')?  true : false) 
-        %b OTHERS
-    %tr
-      %td{:colspan=>4}
-        %b Loan Amount : Rs.
-        =@residence_verification_report.loan_amount
-    %tr
-      %td{:colspan=>4}
-        %b FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
-  
-%table
+%br
+%br
+
+%table.table.table-bordered.no-border
   %tr
-    %th
-      %b Locality/ :
     %td
+      =check_box_tag 'home_loan', "", (@residence_verification_report.home_loan)
+      HOME LOAN
+    %td
+      =check_box_tag 'plot_loan', "", (@residence_verification_report.plot_loan) 
+      PLOT LOAN
+    %td
+      =check_box_tag 'oth_loan' , "", (@residence_verification_report.other_loan)
+      OTHERS-->
+    %td
+      OTHER LOAN:
+      =@residence_verification_report.other_loan
+  %tr
+    %td
+      =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SALARIED')?  true : false) 
+      SALARIED
+    %td
+      =check_box_tag 'salaried', "",((@residence_verification_report.salaried == 'SELF EMPLOYED')?  true : false) 
+      SELF EMPLOYED
+    %td
+      =check_box_tag 'salaried', "",((@residence_verification_report.salaried =='OTHERS')?  true : false) 
+      OTHERS-->
+    %td
+      OTHER SAL:
+      =@residence_verification_report.other_sal      
+  %tr
+    %td{:colspan=>4}
+      %b Loan Amount : Rs.
+      =@residence_verification_report.loan_amount
+  %tr
+    %td.underline{:colspan=>4}
+      %b FOLLOWING ARE BASED ON VERIFIER'S OBSERVATION AND ARE NOT TO BE ASKED FROM APPLICANT:
+  
+%table.table.table-bordered.no-border
+  %tr
+    %th.locality 
+      Locality/ 
+      .right :
+      .clear
+      
+    %td.loc1
       =check_box_tag 'locality',"",((@residence_verification_report.locality == 'Slum Area')?  true : false) 
       %b Slum Area
     %td
@@ -53,34 +61,38 @@
       %b Chawl Area
   
   %tr
-    %th
-      %b Surroundings :
+    %th 
+      Surroundings 
+      .right :
+      .clear      
     %td
       =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Underdeveloped Area')?  true : false)
-      %b Underdeveloped Area
+      Underdeveloped Area
     %td  
       =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Big Housing Complex')?  true : false)
-      %b Big Housing Complex
+      Big Housing Complex
   %tr
     %th    
     %td
       =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Residential Building')?  true : false)
-      %b Residential Building
+      Residential Building
     %td
       =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Commercial Buildings')?  true : false)
-      %b Commercial Buildings
+      Commercial Buildings
   %tr
     %th        
     %td 
       =check_box_tag 'surroundings',"",((@residence_verification_report.surroundings == 'Small/Mediam Size Shops')?  true : false)
-      %b Small/Mediam Size Shops
+      Small/Mediam Size Shops
   
   %tr
     %th
-      %b Accessibility :
+      Accessibility
+      .right :
+      .clear          
     %td
       =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Easy to Locate and Access')?  true : false)
-      %b Easy to Locate and Access
+      Easy to Locate and Access
   %tr
     %th      
     %td
@@ -91,15 +103,17 @@
       %b Untraceable
   %tr
     %th      
-    %td   
+    %td{:colspan => '2'}   
       =check_box_tag 'accessibility',"",((@residence_verification_report.accessibility == 'Gulli (Verry Narrow Road-Less Than 6Ft.Wide)')?  true : false)
       %b Gulli (Verry Narrow Road-Less Than 6Ft.Wide)
-  
+
+%table.table.table-bordered.no-border 
   %tr
-    %th
-      %b Is the entrance motorable :
-    %td
-    %td  
+    %th.entrance
+      Is the entrance motorable
+      .right :
+      .clear         
+    %td.loc2
       =check_box_tag 'entrance_motorable',"", (@residence_verification_report.entrance_motorable)
       %b Yes
     %td  
@@ -107,34 +121,36 @@
       %b No
   %tr
     %th
-      %b Is The Address Confirmed :
-    %td
+      Is The Address Confirmed
+      .right :
+      .clear        
     %td    
       =check_box_tag 'add_conf',"", (@residence_verification_report.add_conf)
       %b Yes
     %td  
       =check_box_tag 'add_conf',"", !(@residence_verification_report.add_conf)
       %b No
-  
+  .clear
   %tr
-    %th
-      %b Correct Pincode:
-    %td   
+    %th Correct Pincode:
+    %td{:colspan => 2}   
       = @residence_verification_report.correct_pin
       %b Prominent Landmark: 
-    %td  
       = @residence_verification_report.prominent_landmark 
-  
+
+%table.table.table-bordered.no-border      
   %tr
-    %th
-      %b Type of
-    %td  
+    %th.type 
+      Type of
+      .right :
+      .clear        
+    %td.loc3   
       =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Chawl')?  true : false)
       %b Chawl
-    %td   
+    %td.loc3   
       =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Slum')?  true : false)
       %b Slum
-    %td   
+    %td.loc3  
       =check_box_tag 'type_off',"",((@residence_verification_report.type_off == 'Flat')?  true : false)
       %b Flat  
     %td
@@ -143,24 +159,26 @@
   
   %tr
     %th
-      %b Accomodation:
-    %td  
+      Accomodation
+      .right :
+      .clear          
+    %td{:colspan => 3}  
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Small Independent House')?  true : false)
       %b Small Independent House
-    %td  
+    %td{:colspan => 2}   
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Large Independent House')?  true : false)
       %b Large Independent House
   %tr
     %th
-    %td    
+    %td{:colspan => 2}    
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Hostel')?  true : false)
       %b Hostel
-    %td  
+    %td{:colspan => 3}   
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Bachelor/Shared Accomodation')?  true : false)
       %b Bachelor/Shared Accomodation
   %tr
     %th
-    %td    
+    %td{:colspan => 5}     
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Small Unit Within a House (Garage/Varsati etc)')?  true : false)
       %b Small Unit Within a House (Garage/Varsati etc)
   %tr
@@ -168,25 +186,26 @@
     %td  
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Block')?  true : false)
       %b Block
-    %td  
+    %td{:colspan => 4}   
       =check_box_tag 'accomodation',"",((@residence_verification_report.accomodation == 'Others(PI.Specify)')?  true : false)
-      %b Others(PI.Specify)
-    %td  
+      %b Others(PI.Specify)  
       = @residence_verification_report.accom_others
   
   %tr
     %th
-      %b Residence:
-    %td  
-      %b No of Stories:
+      Residence
+      .right :
+      .clear          
+    %td{:colspan => 2} 
+      %b .  No of Stories:
       = @residence_verification_report.no_of_stories
-    %td  
+    %td{:colspan => 3} 
       %b Watchman:
       =check_box_tag 'watchman',"", (@residence_verification_report.watchman)
       %b Yes
       =check_box_tag 'watchman',"", !(@residence_verification_report.watchman)
-      %b No
-    %td  
+      %b No 
+      &nbsp;&nbsp;&nbsp;
       %b Lift:
       =check_box_tag 'lift',"", (@residence_verification_report.lift)
       %b Yes
@@ -195,9 +214,9 @@
   
   %tr
     %th
-    %td
-      %b Security Board:
-    %td  
+    %td{:colspan => 2}
+      %b .  Security Board
+    %td{:colspan => 3}  
       =check_box_tag 'security_board',"", (@residence_verification_report.security_board)
       %b Yes
       =check_box_tag 'security_board',"", !(@residence_verification_report.security_board)
@@ -205,9 +224,9 @@
   
   %tr
     %th
-    %td
-      %b Applicant name outside door/gate
-    %td  
+    %td{:colspan => 3} 
+      %b . Applicant name outside door/gate
+    %td{:colspan => 2}   
       =check_box_tag 'app_name_outside_door',"", (@residence_verification_report.app_name_outside_door)
       %b Yes
       =check_box_tag 'app_name_outside_door',"", !(@residence_verification_report.app_name_outside_door)
@@ -215,164 +234,183 @@
   
   %tr
     %th
-    %td
-      %b No of Cars Seen in and around residence
-    %td  
+    %td{:colspan => 5} 
+      %b . No of Cars Seen in and around residence 
       = @residence_verification_report.cars_seen_in_around_res
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       %b make
       = @residence_verification_report.make
   
   %tr
     %th
-    %td
-      %b External appearance of the building/society
+    %td{:colspan => 5} 
+      %b . External appearance of the building/society
   %tr
     %th
-    %td
+    %td{:colspan => 5}
+      %b .
       =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Excellent')?  true : false)
       %b Excellent 
-    %td  
+      &nbsp;&nbsp;&nbsp;
       =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Good')?  true : false)
       %b Good
+      &nbsp;&nbsp;&nbsp;
       =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Fair')?  true : false)
       %b Fair 
+      &nbsp;&nbsp;&nbsp;
       =check_box_tag 'ext_appearence_of_build',"",((@residence_verification_report.ext_appearence_of_build == 'Fair')?  true : false)
       %b Poor
   
   %tr
     %th
-    %td
+    %td{:colspan => 3}
       %b Seperate Car Parking Slot
-    %td  
+    %td{:colspan => 2}  
       =check_box_tag 'car_park',"", (@residence_verification_report.car_park)
       %b Yes
+      &nbsp;&nbsp;&nbsp;
       =check_box_tag 'car_park',"", !(@residence_verification_report.car_park)
       %b No
    
   %tr
-    %th
+    %th{:colspan => 2}
+      Entry Into Residence Permited
     %td
-      %b Entry Into Residence Permited:
-    %td  
       =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'Yes')?  true : false)
       %b Yes
+    %td  
       =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'No')?  true : false)
       %b No
+    %td{:colspan => 3}  
       =check_box_tag 'entry_into_res_permited',"",((@residence_verification_report.entry_into_res_permited == 'Door Locked')?  true : false)
       %b Door Locked
   
   %tr
     %th
-      %b Person Contacted (Name):
+      Person Contacted (Name)
+      .right :
+      .clear  
+    %td{:colspan => 5}   
       = @residence_verification_report.person_cont_name  
   
   %tr
-    %th
-      %b Relationship: 
+    %th.relation
+      Relationship
+      .right :
+      .clear
+    %td{:colspan => 5}   
       = @residence_verification_report.relationship 
-  
+      
+%table.table.table-bordered.no-border       
   %tr
     %th
-      %b Residence Internal furnishing:
-    %td 
+      Residence Internal furnishing
+    %td
       =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Plush Interior')?  true : false)
       %b Plush Interior
+    %td 
       =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Good/Fair Interior')?  true : false)
       %b Good/Fair Interior
+    %td 
       =check_box_tag 'res_internal_furni',"",((@residence_verification_report.res_internal_furni == 'Poor Interior')?  true : false)
       %b Poor Interior
-  
+     
+
   %tr
     %th
-      %b Assets seen:
-    %td 
+      Assets seen
+    %td
       =check_box_tag 'assets_seen_wallunit', "", @residence_verification_report.assets_seen['wallunit']
       %b Wall Unit
+    %td 
       =check_box_tag 'assets_seen_sofaset', "", @residence_verification_report.assets_seen['sofaset']
       %b Sofa Set
+    %td 
       =check_box_tag 'assets_seen_carpet', "", @residence_verification_report.assets_seen['carpet']
       %b Carpet
   %tr 
     %th   
-    %td   
+    %td
       =check_box_tag 'assets_seen_Fridge', "", @residence_verification_report.assets_seen['Fridge']
       %b Fridge
+    %td 
       =check_box_tag 'assets_seen_Phone', "", @residence_verification_report.assets_seen['Phone']
       %b Phone
+    %td 
       =check_box_tag 'assets_seen_TV', "", @residence_verification_report.assets_seen['TV']
       %b TV
   %tr
     %th    
-    %td        
+    %td      
       =check_box_tag 'assets_seen_Dining_Table', "", @residence_verification_report.assets_seen['Dining Table']
       %b Dining Table
+    %td
       =check_box_tag 'assets_seen_Music_System', "", @residence_verification_report.assets_seen['Music System']
       %b Music System
+    %td 
       =check_box_tag 'assets_seen_Others', "", @residence_verification_report.assets_seen['Others']
       %b Others
-  
+ 
   %tr
-    %th
-      %b Does the residence appear to be:
+    %th{:colspan => 2}
+      Does the residence appear to be
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
     %td 
       =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == 'Single Room Unit')?  true : false)
       %b Single Room Unit
+    %td 
       =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == '04 BR Unit')?  true : false)
       %b '04 BR Unit'
-  %tr
-    %th
-    %td    
+  %tr 
+    %th{:colspan => 2}
+    %td  
       =check_box_tag 'res_appear_to_be',"",((@residence_verification_report.res_appear_to_be == 'More than 1 Bed Room')?  true : false)
       %b 'More than 1 Bed Room'
- 
-  %tr
-    %th
-      %b Approximate Size of Flat/House Sq.ft__________
-      = @residence_verification_report.appro_size_flat_sqft
     %td  
-      %b OR Sq.yards__________
+%table.table.table-bordered.no-border{:style => "width:60%;"}   
+  %tr
+    %td
+      Approximate Size of Flat/House Sq.ft:
+    %td  
+      = @residence_verification_report.appro_size_flat_sqft
+    %td 
+      OR Sq.yards:
     %td  
       = @residence_verification_report.sq_yards
   %tr
-    %th
-    %td     
-      %b  OR Ground__________
-  %tr
-    %th
-    %td
-    %td    
+    %td{:colspan => 2}
+    %td{:colspan => 2}
+      OR Ground:
       = @residence_verification_report.ground
-  
+
+
+%table.table.table-bordered.no-border    
   %tr
     %th
-      %b Domestic Help Seen:
-    %td 
+      Domestic Help Seen
+    %td
       =check_box_tag 'domestic_help',"", (@residence_verification_report.domestic_help)
       %b Yes
+    %td  
       =check_box_tag 'domestic_help',"", !(@residence_verification_report.domestic_help)
       %b No
-  
   %tr
-    %th
-      %b Date:
-    %td 
+    %th{:colspan => 3} 
+      Date:
       = @residence_verification_report.date_1
- 
-%table    
-  %tr
-    %th
-      %b Remarks:
-    %td
+  %tr  
+    %th{:colspan => 3} 
+      Remarks:
       = @residence_verification_report.remarks
 
-
-  %tr
-    %th
-      %b Date:
-    %td 
-  = @residence_verification_report.date_2
- 
-= link_to 'Edit', edit_residence_verification_report_path(@residence_verification_report)
-\|
-= link_to 'Back', residence_verification_reports_path
+%br
+%b Date:
+= @residence_verification_report.date_2
+.sign  
+  %b Authorised signatory  
+%br
+.display 
+  = link_to 'Edit', edit_residence_verification_report_path(@residence_verification_report)
+  \|
+  = link_to 'Back', residence_verification_reports_path
 
